@@ -101,6 +101,7 @@ easy_admin:
                     - { type: 'group', css_class: 'col-sm-6', label: 'Général' }
                     - { property: 'name', label: 'Nom' }
                     - { property: 'link', label: 'Lien' }
+                    - { property: 'toolFamily', label: "Famille d'outils" }
                     - { type: 'group', css_class: 'col-sm-6', label: 'Infos supplémentaires' }
                     - { property: 'infoFr', label: 'Info (FR)'}
                     - { property: 'infoDe', label: 'Info (DE)'}
