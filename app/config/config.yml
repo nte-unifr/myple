@@ -66,6 +66,10 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# vich uploader
+vich_uploader:
+    db_driver: orm
+
 # easy admin
 easy_admin:
     site_name: 'MyPLE'
