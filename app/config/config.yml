@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
@@ -29,6 +29,7 @@ framework:
         handler_id: ~
     fragments: ~
     http_method_override: true
+    translator: { fallbacks: [ '%locale%'] }
 
 # Twig Configuration
 twig:
@@ -64,3 +65,44 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# easy admin
+easy_admin:
+    site_name: 'MyPLE'
+    entities:
+        ToolFamily:
+            class: AppBundle\Entity\ToolFamily
+            list:
+                sort: ['nameFr', 'ASC']
+                fields:
+                    - { property: 'nameFr', label: 'Nom' }
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-6', label: 'FR' }
+                    - { property: 'nameFr', label: 'Nom' }
+                    - { property: 'helpFr', label: 'Aide' }
+                    - { type: 'group', css_class: 'col-sm-6', label: 'DE' }
+                    - { property: 'nameDe', label: 'Nom' }
+                    - { property: 'helpDe', label: 'Aide' }
+                    - { type: 'group', css_class: 'col-sm-6', label: 'IT' }
+                    - { property: 'nameIt', label: 'Nom' }
+                    - { property: 'helpIt', label: 'Aide' }
+                    - { type: 'group', css_class: 'col-sm-6', label: 'EN' }
+                    - { property: 'nameEn', label: 'Nom' }
+                    - { property: 'helpEn', label: 'Aide' }
+        Tool:
+            class: AppBundle\Entity\Tool
+            list:
+                sort: ['name', 'ASC']
+                fields:
+                    - { property: 'name', label: 'Nom' }
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-6', label: 'Général' }
+                    - { property: 'name', label: 'Nom' }
+                    - { property: 'link', label: 'Lien' }
+                    - { type: 'group', css_class: 'col-sm-6', label: 'Infos supplémentaires' }
+                    - { property: 'infoFr', label: 'Info (FR)'}
+                    - { property: 'infoDe', label: 'Info (DE)'}
+                    - { property: 'infoIt', label: 'Info (IT)'}
+                    - { property: 'infoEn', label: 'Info (EN)'}
