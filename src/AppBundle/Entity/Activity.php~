@@ -175,11 +175,6 @@ class Activity
     private $task;
 
 
-    public function __toString()
-    {
-        return $this->getNameFr();
-    }
-    
     /**
      * Get id
      *
@@ -671,28 +666,5 @@ class Activity
     public function getBiblio()
     {
         return $this->biblio;
-    }
-
-    /**
-     * Set task
-     *
-     * @param \AppBundle\Entity\Task $task
-     * @return Activity
-     */
-    public function setTask(\AppBundle\Entity\Task $task = null)
-    {
-        $this->task = $task;
-
-        return $this;
-    }
-
-    /**
-     * Get task
-     *
-     * @return \AppBundle\Entity\Task 
-     */
-    public function getTask()
-    {
-        return $this->task;
     }
 }

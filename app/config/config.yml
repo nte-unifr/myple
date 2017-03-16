@@ -81,6 +81,16 @@ vich_uploader:
             upload_destination: '%kernel.root_dir%/../web/uploads/images/tools'
             namer:              vich_uploader.namer_uniqid
 
+# ivory ckeditor
+ivory_ck_editor:
+    input_sync: true
+    default_config: base_config
+    configs:
+        base_config:
+            toolbar:
+                - { name: 'styles', items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
+                - { name: 'paragraph',   items : [ 'NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-' ] }
+
 # easy admin
 easy_admin:
     site_name: 'MyPLE'
@@ -116,6 +126,7 @@ easy_admin:
                 fields:
                     - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images% }
                     - { property: 'name', label: 'Nom' }
+                    - { property: 'toolFamily', label: "Famille d'outils" }
             form:
                 fields:
                     - { type: 'group', css_class: 'col-sm-6', label: 'Général' }
@@ -146,29 +157,34 @@ easy_admin:
                 sort: ['nameFr', 'ASC']
                 fields:
                     - { property: 'nameFr', label: 'Nom' }
+                    - { property: 'task', label: 'Tâche' }
             form:
                 fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'Tâche' }
+                    - { property: 'task', label: ' ' }
                     - { type: 'group', css_class: 'col-sm-12', label: 'FR' }
                     - { property: 'nameFr', label: 'Nom' }
-                    - { property: 'helpFr', label: 'Aide' }
-                    - { property: 'stepsFr', label: 'Étapes' }
-                    - { property: 'goalFr', label: 'Finalités' }
-                    - { property: 'refFr', label: 'Référentiel' }
+                    - { property: 'helpFr', label: 'Aide', type: 'ckeditor' }
+                    - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
+                    - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
+                    - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
                     - { type: 'group', css_class: 'col-sm-12', label: 'DE' }
                     - { property: 'nameDe', label: 'Nom' }
-                    - { property: 'helpDe', label: 'Aide' }
-                    - { property: 'stepsDe', label: 'Étapes' }
-                    - { property: 'goalDe', label: 'Finalités' }
-                    - { property: 'refDe', label: 'Référentiel' }
+                    - { property: 'helpDe', label: 'Aide', type: 'ckeditor' }
+                    - { property: 'stepsDe', label: 'Étapes', type: 'ckeditor' }
+                    - { property: 'goalDe', label: 'Finalités', type: 'ckeditor' }
+                    - { property: 'refDe', label: 'Référentiel', type: 'ckeditor' }
                     - { type: 'group', css_class: 'col-sm-12', label: 'IT' }
                     - { property: 'nameIt', label: 'Nom' }
-                    - { property: 'helpIt', label: 'Aide' }
-                    - { property: 'stepsIt', label: 'Étapes' }
-                    - { property: 'goalIt', label: 'Finalités' }
-                    - { property: 'refIt', label: 'Référentiel' }
+                    - { property: 'helpIt', label: 'Aide', type: 'ckeditor' }
+                    - { property: 'stepsIt', label: 'Étapes', type: 'ckeditor' }
+                    - { property: 'goalIt', label: 'Finalités', type: 'ckeditor' }
+                    - { property: 'refIt', label: 'Référentiel', type: 'ckeditor' }
                     - { type: 'group', css_class: 'col-sm-12', label: 'EN' }
                     - { property: 'nameEn', label: 'Nom' }
-                    - { property: 'helpEn', label: 'Aide' }
-                    - { property: 'stepsEn', label: 'Étapes' }
-                    - { property: 'goalEn', label: 'Finalités' }
-                    - { property: 'refEn', label: 'Référentiel' }
+                    - { property: 'helpEn', label: 'Aide', type: 'ckeditor' }
+                    - { property: 'stepsEn', label: 'Étapes', type: 'ckeditor' }
+                    - { property: 'goalEn', label: 'Finalités', type: 'ckeditor' }
+                    - { property: 'refEn', label: 'Référentiel', type: 'ckeditor' }
+                    - { type: 'group', css_class: 'col-sm-12', label: 'Autres' }
+                    - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }

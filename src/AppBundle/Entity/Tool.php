@@ -94,6 +94,11 @@ class Tool
     private $updatedAt;
 
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
      * Get id
      *
