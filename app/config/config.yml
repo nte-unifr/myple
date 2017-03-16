@@ -7,6 +7,8 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app.path.tool_images: /uploads/images/tools
+    app.path.toolFamily_comparatives: /uploads/files/toolFamilies
 
 framework:
     #esi: ~
@@ -69,10 +71,21 @@ swiftmailer:
 # vich uploader
 vich_uploader:
     db_driver: orm
+    mappings:
+        toolFamily_comparative:
+            uri_prefix:         %app.path.toolFamily_comparatives%
+            upload_destination: '%kernel.root_dir%/../web/uploads/files/toolFamilies'
+            namer:               vich_uploader.namer_uniqid
+        tool_image:
+            uri_prefix:         %app.path.tool_images%
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/tools'
+            namer:              vich_uploader.namer_uniqid
 
 # easy admin
 easy_admin:
     site_name: 'MyPLE'
+    design:
+        brand_color: '#00134a'
     entities:
         ToolFamily:
             class: AppBundle\Entity\ToolFamily
@@ -82,6 +95,8 @@ easy_admin:
                     - { property: 'nameFr', label: 'Nom' }
             form:
                 fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'Général' }
+                    - { property: 'comparativeFile', label: 'Tableau comparatif', type: 'vich_file' }
                     - { type: 'group', css_class: 'col-sm-6', label: 'FR' }
                     - { property: 'nameFr', label: 'Nom' }
                     - { property: 'helpFr', label: 'Aide' }
@@ -99,6 +114,7 @@ easy_admin:
             list:
                 sort: ['name', 'ASC']
                 fields:
+                    - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images% }
                     - { property: 'name', label: 'Nom' }
             form:
                 fields:
@@ -106,8 +122,53 @@ easy_admin:
                     - { property: 'name', label: 'Nom' }
                     - { property: 'link', label: 'Lien' }
                     - { property: 'toolFamily', label: "Famille d'outils" }
+                    - { property: 'imageFile', label: 'Image', type: 'vich_image' }
                     - { type: 'group', css_class: 'col-sm-6', label: 'Infos supplémentaires' }
                     - { property: 'infoFr', label: 'Info (FR)'}
                     - { property: 'infoDe', label: 'Info (DE)'}
                     - { property: 'infoIt', label: 'Info (IT)'}
                     - { property: 'infoEn', label: 'Info (EN)'}
+        Task:
+            class: AppBundle\Entity\Task
+            list:
+                sort: ['nameFr', 'ASC']
+                fields:
+                    - { property: 'nameFr', label: 'Nom' }
+            form:
+                fields:
+                    - { property: 'nameFr', label: 'Nom (FR)' }
+                    - { property: 'nameDe', label: 'Nom (DE)' }
+                    - { property: 'nameIt', label: 'Nom (IT)' }
+                    - { property: 'nameEn', label: 'Nom (EN)' }
+        Activity:
+            class: AppBundle\Entity\Activity
+            list:
+                sort: ['nameFr', 'ASC']
+                fields:
+                    - { property: 'nameFr', label: 'Nom' }
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'FR' }
+                    - { property: 'nameFr', label: 'Nom' }
+                    - { property: 'helpFr', label: 'Aide' }
+                    - { property: 'stepsFr', label: 'Étapes' }
+                    - { property: 'goalFr', label: 'Finalités' }
+                    - { property: 'refFr', label: 'Référentiel' }
+                    - { type: 'group', css_class: 'col-sm-12', label: 'DE' }
+                    - { property: 'nameDe', label: 'Nom' }
+                    - { property: 'helpDe', label: 'Aide' }
+                    - { property: 'stepsDe', label: 'Étapes' }
+                    - { property: 'goalDe', label: 'Finalités' }
+                    - { property: 'refDe', label: 'Référentiel' }
+                    - { type: 'group', css_class: 'col-sm-12', label: 'IT' }
+                    - { property: 'nameIt', label: 'Nom' }
+                    - { property: 'helpIt', label: 'Aide' }
+                    - { property: 'stepsIt', label: 'Étapes' }
+                    - { property: 'goalIt', label: 'Finalités' }
+                    - { property: 'refIt', label: 'Référentiel' }
+                    - { type: 'group', css_class: 'col-sm-12', label: 'EN' }
+                    - { property: 'nameEn', label: 'Nom' }
+                    - { property: 'helpEn', label: 'Aide' }
+                    - { property: 'stepsEn', label: 'Étapes' }
+                    - { property: 'goalEn', label: 'Finalités' }
+                    - { property: 'refEn', label: 'Référentiel' }
