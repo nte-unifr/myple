@@ -68,6 +68,13 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# assetic
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+
 # vich uploader
 vich_uploader:
     db_driver: orm
