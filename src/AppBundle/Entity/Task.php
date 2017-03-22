@@ -31,21 +31,21 @@ class Task
     /**
      * @var string
      *
-     * @ORM\Column(name="nameDe", type="string", length=255)
+     * @ORM\Column(name="nameDe", type="string", length=255, nullable=true)
      */
     private $nameDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameIt", type="string", length=255)
+     * @ORM\Column(name="nameIt", type="string", length=255, nullable=true)
      */
     private $nameIt;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameEn", type="string", length=255)
+     * @ORM\Column(name="nameEn", type="string", length=255, nullable=true)
      */
     private $nameEn;
 

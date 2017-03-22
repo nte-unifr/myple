@@ -34,21 +34,21 @@ class ToolFamily
     /**
      * @var string
      *
-     * @ORM\Column(name="nameDe", type="string", length=255)
+     * @ORM\Column(name="nameDe", type="string", length=255, nullable=true)
      */
     private $nameDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameEn", type="string", length=255)
+     * @ORM\Column(name="nameEn", type="string", length=255, nullable=true)
      */
     private $nameEn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameIt", type="string", length=255)
+     * @ORM\Column(name="nameIt", type="string", length=255, nullable=true)
      */
     private $nameIt;
 
@@ -89,13 +89,13 @@ class ToolFamily
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private $comparative;
+    private $comparativeFr;
 
     /**
-     * @Vich\UploadableField(mapping="toolFamily_comparative", fileNameProperty="comparative")
+     * @Vich\UploadableField(mapping="toolFamily_comparative", fileNameProperty="comparativeFr")
      * @var File
      */
-    private $comparativeFile;
+    private $comparativeFileFr;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -354,9 +354,9 @@ class ToolFamily
      *
      * @return ToolFamily
      */
-    public function setComparativeFile(File $file = null)
+    public function setComparativeFileFr(File $file = null)
     {
-        $this->comparativeFile = $file;
+        $this->comparativeFileFr = $file;
 
         if ($file) {
             // It is required that at least one field changes if you are using doctrine
@@ -370,19 +370,19 @@ class ToolFamily
     /**
      * @return File|null
      */
-    public function getComparativeFile()
+    public function getComparativeFileFr()
     {
-        return $this->comparativeFile;
+        return $this->comparativeFileFr;
     }
 
     /**
-     * @param string $comparative
+     * @param string $comparativeFr
      *
      * @return ToolFamily
      */
-    public function setComparative($comparative)
+    public function setComparativeFr($comparativeFr)
     {
-        $this->comparative = $comparative;
+        $this->comparativeFr = $comparativeFr;
 
         return $this;
     }
@@ -390,8 +390,8 @@ class ToolFamily
     /**
      * @return string|null
      */
-    public function getComparative()
+    public function getComparativeFr()
     {
-        return $this->comparative;
+        return $this->comparativeFr;
     }
 }

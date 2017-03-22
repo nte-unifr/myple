@@ -105,20 +105,9 @@ easy_admin:
                     - { property: 'nameFr', label: 'Nom' }
             form:
                 fields:
-                    - { type: 'group', css_class: 'col-sm-12', label: 'Général' }
-                    - { property: 'comparativeFile', label: 'Tableau comparatif', type: 'vich_file' }
-                    - { type: 'group', css_class: 'col-sm-6', label: 'FR' }
                     - { property: 'nameFr', label: 'Nom' }
                     - { property: 'helpFr', label: 'Aide' }
-                    - { type: 'group', css_class: 'col-sm-6', label: 'DE' }
-                    - { property: 'nameDe', label: 'Nom' }
-                    - { property: 'helpDe', label: 'Aide' }
-                    - { type: 'group', css_class: 'col-sm-6', label: 'IT' }
-                    - { property: 'nameIt', label: 'Nom' }
-                    - { property: 'helpIt', label: 'Aide' }
-                    - { type: 'group', css_class: 'col-sm-6', label: 'EN' }
-                    - { property: 'nameEn', label: 'Nom' }
-                    - { property: 'helpEn', label: 'Aide' }
+                    - { property: 'comparativeFileFr', label: 'Tableau comparatif', type: 'vich_file' }
         Tool:
             class: AppBundle\Entity\Tool
             list:
@@ -129,16 +118,11 @@ easy_admin:
                     - { property: 'toolFamily', label: "Famille d'outils" }
             form:
                 fields:
-                    - { type: 'group', css_class: 'col-sm-6', label: 'Général' }
+                    - { property: 'toolFamily', label: "Famille d'outils" }
                     - { property: 'name', label: 'Nom' }
                     - { property: 'link', label: 'Lien' }
-                    - { property: 'toolFamily', label: "Famille d'outils" }
+                    - { property: 'infoFr', label: 'Info'}
                     - { property: 'imageFile', label: 'Image', type: 'vich_image' }
-                    - { type: 'group', css_class: 'col-sm-6', label: 'Infos supplémentaires' }
-                    - { property: 'infoFr', label: 'Info (FR)'}
-                    - { property: 'infoDe', label: 'Info (DE)'}
-                    - { property: 'infoIt', label: 'Info (IT)'}
-                    - { property: 'infoEn', label: 'Info (EN)'}
         Task:
             class: AppBundle\Entity\Task
             list:
@@ -147,10 +131,7 @@ easy_admin:
                     - { property: 'nameFr', label: 'Nom' }
             form:
                 fields:
-                    - { property: 'nameFr', label: 'Nom (FR)' }
-                    - { property: 'nameDe', label: 'Nom (DE)' }
-                    - { property: 'nameIt', label: 'Nom (IT)' }
-                    - { property: 'nameEn', label: 'Nom (EN)' }
+                    - { property: 'nameFr', label: 'Nom' }
         Activity:
             class: AppBundle\Entity\Activity
             list:
@@ -160,31 +141,10 @@ easy_admin:
                     - { property: 'task', label: 'Tâche' }
             form:
                 fields:
-                    - { type: 'group', css_class: 'col-sm-12', label: 'Tâche' }
-                    - { property: 'task', label: ' ' }
-                    - { type: 'group', css_class: 'col-sm-12', label: 'FR' }
+                    - { property: 'task', label: 'Tâche' }
                     - { property: 'nameFr', label: 'Nom' }
                     - { property: 'helpFr', label: 'Aide', type: 'ckeditor' }
                     - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
                     - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
                     - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
-                    - { type: 'group', css_class: 'col-sm-12', label: 'DE' }
-                    - { property: 'nameDe', label: 'Nom' }
-                    - { property: 'helpDe', label: 'Aide', type: 'ckeditor' }
-                    - { property: 'stepsDe', label: 'Étapes', type: 'ckeditor' }
-                    - { property: 'goalDe', label: 'Finalités', type: 'ckeditor' }
-                    - { property: 'refDe', label: 'Référentiel', type: 'ckeditor' }
-                    - { type: 'group', css_class: 'col-sm-12', label: 'IT' }
-                    - { property: 'nameIt', label: 'Nom' }
-                    - { property: 'helpIt', label: 'Aide', type: 'ckeditor' }
-                    - { property: 'stepsIt', label: 'Étapes', type: 'ckeditor' }
-                    - { property: 'goalIt', label: 'Finalités', type: 'ckeditor' }
-                    - { property: 'refIt', label: 'Référentiel', type: 'ckeditor' }
-                    - { type: 'group', css_class: 'col-sm-12', label: 'EN' }
-                    - { property: 'nameEn', label: 'Nom' }
-                    - { property: 'helpEn', label: 'Aide', type: 'ckeditor' }
-                    - { property: 'stepsEn', label: 'Étapes', type: 'ckeditor' }
-                    - { property: 'goalEn', label: 'Finalités', type: 'ckeditor' }
-                    - { property: 'refEn', label: 'Référentiel', type: 'ckeditor' }
-                    - { type: 'group', css_class: 'col-sm-12', label: 'Autres' }
                     - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }

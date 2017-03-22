@@ -31,21 +31,21 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="nameDe", type="string", length=255)
+     * @ORM\Column(name="nameDe", type="string", length=255, nullable=true)
      */
     private $nameDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameIt", type="string", length=255)
+     * @ORM\Column(name="nameIt", type="string", length=255, nullable=true)
      */
     private $nameIt;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nameEn", type="string", length=255)
+     * @ORM\Column(name="nameEn", type="string", length=255, nullable=true)
      */
     private $nameEn;
 
@@ -59,21 +59,21 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="helpDe", type="text")
+     * @ORM\Column(name="helpDe", type="text", nullable=true)
      */
     private $helpDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="helpIt", type="text")
+     * @ORM\Column(name="helpIt", type="text", nullable=true)
      */
     private $helpIt;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="helpEn", type="text")
+     * @ORM\Column(name="helpEn", type="text", nullable=true)
      */
     private $helpEn;
 
@@ -87,21 +87,21 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="stepsDe", type="text")
+     * @ORM\Column(name="stepsDe", type="text", nullable=true)
      */
     private $stepsDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="stepsIt", type="text")
+     * @ORM\Column(name="stepsIt", type="text", nullable=true)
      */
     private $stepsIt;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="stepsEn", type="text")
+     * @ORM\Column(name="stepsEn", type="text", nullable=true)
      */
     private $stepsEn;
 
@@ -115,21 +115,21 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="goalDe", type="text")
+     * @ORM\Column(name="goalDe", type="text", nullable=true)
      */
     private $goalDe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="goalIt", type="text")
+     * @ORM\Column(name="goalIt", type="text", nullable=true)
      */
     private $goalIt;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="goalEn", type="text")
+     * @ORM\Column(name="goalEn", type="text", nullable=true)
      */
     private $goalEn;
 
