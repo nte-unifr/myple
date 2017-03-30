@@ -52,7 +52,7 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="helpFr", type="text")
+     * @ORM\Column(name="helpFr", type="text", nullable=true)
      */
     private $helpFr;
 
