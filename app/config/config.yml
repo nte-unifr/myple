@@ -95,7 +95,8 @@ ivory_ck_editor:
         base_config:
             toolbar:
                 - { name: 'styles', items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
-                - { name: 'paragraph',   items : [ 'NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-' ] }
+                - { name: 'paragraph', items : ['NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'] }
+                - { name: 'insert', items : ['Image'] }
 
 # easy admin
 easy_admin:
