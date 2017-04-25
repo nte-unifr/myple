@@ -187,27 +187,4 @@ class Resource
     {
         return $this->additional;
     }
-
-    /**
-     * Set type
-     *
-     * @param \AppBundle\Entity\ResourceType $type
-     * @return Resource
-     */
-    public function setType(\AppBundle\Entity\ResourceType $type = null)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return \AppBundle\Entity\ResourceType 
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 }
