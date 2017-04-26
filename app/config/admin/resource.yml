@@ -16,7 +16,7 @@ easy_admin:
           - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'name', label: 'Nom' }
           - { property: 'url', label: 'Url' }
-          - { property: 'additional', label: 'Informations additionnelles' }
+          - { property: 'additional', label: 'Informations additionnelles', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'tutorial', label: 'Tutoriel' }
           - { property: 'type', label: 'Type' }
