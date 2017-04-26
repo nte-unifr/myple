@@ -1,0 +1,15 @@
+easy_admin:
+  entities:
+    ToolFamily:
+      class: AppBundle\Entity\ToolFamily
+      list:
+        sort: ['nameFr', 'ASC']
+        fields:
+          - { property: 'nameFr', label: 'Nom' }
+      form:
+        fields:
+          - { type: 'group', css_class: 'col-sm-9' }
+          - { property: 'nameFr', label: 'Nom' }
+          - { property: 'helpFr', label: 'Aide' }
+          - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'comparativeFileFr', label: 'Tableau comparatif', type: 'vich_file' }

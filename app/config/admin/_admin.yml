@@ -1,0 +1,14 @@
+easy_admin:
+  site_name: 'MyPLE'
+  design:
+    brand_color: '#00134a'
+    form_theme: 'vertical'
+    menu:
+      - { label: 'Scénario' }
+      - { entity: 'Task', icon: 'th-list', label: 'Tâches' }
+      - { entity: 'Activity', icon: 'th-list', label: 'Activités' }
+      - { entity: 'Activity', icon: 'plus-circle', label: 'Ajouter une activité', params: { action: 'new' } }
+      - { label: 'Autres' }
+      - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
+      - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
+      - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
