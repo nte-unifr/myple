@@ -1,0 +1,11 @@
+easy_admin:
+  entities:
+    Task:
+      class: AppBundle\Entity\Task
+      list:
+        sort: ['nameFr', 'ASC']
+        fields:
+          - { property: 'nameFr', label: 'Nom' }
+      form:
+        fields:
+          - { property: 'nameFr', label: 'Nom' }
