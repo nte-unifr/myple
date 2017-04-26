@@ -1,0 +1,20 @@
+parameters:
+  app.path.tool_images: /uploads/images/tools
+  app.path.toolFamily_comparatives: /uploads/files/toolFamilies
+  app.path.resource_images: /uploads/images/resources
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        toolFamily_comparative:
+            uri_prefix:         %app.path.toolFamily_comparatives%
+            upload_destination: '%kernel.root_dir%/../web/uploads/files/toolFamilies'
+            namer:               vich_uploader.namer_uniqid
+        tool_image:
+            uri_prefix:         %app.path.tool_images%
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/tools'
+            namer:              vich_uploader.namer_uniqid
+        resource_image:
+            uri_prefix:         %app.path.resource_images%
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/resources'
+            namer:              vich_uploader.namer_uniqid

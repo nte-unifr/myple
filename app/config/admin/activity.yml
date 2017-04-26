@@ -1,0 +1,18 @@
+easy_admin:
+  entities:
+    Activity:
+      class: AppBundle\Entity\Activity
+      list:
+        sort: ['nameFr', 'ASC']
+        fields:
+          - { property: 'nameFr', label: 'Nom' }
+          - { property: 'task', label: 'Tâche' }
+      form:
+        fields:
+          - { property: 'task', label: 'Tâche' }
+          - { property: 'nameFr', label: 'Nom' }
+          - { property: 'helpFr', label: 'Aide', type: 'ckeditor' }
+          - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
+          - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
+          - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
+          - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }

@@ -1,0 +1,19 @@
+easy_admin:
+  entities:
+    Tool:
+      class: AppBundle\Entity\Tool
+      list:
+        sort: ['name', 'ASC']
+        fields:
+          - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images % }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'toolFamily', label: "Famille d'outils" }
+      form:
+        fields:
+          - { type: 'group', css_class: 'col-sm-9' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'link', label: 'Lien' }
+          - { property: 'infoFr', label: 'Info' }
+          - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'toolFamily', label: "Famille d'outils" }
+          - { property: 'imageFile', label: 'Image', type: 'vich_image' }

@@ -1,13 +1,13 @@
 imports:
     - { resource: parameters.yml }
     - { resource: services.yml }
+    - { resource: vich.yml }
+    - { resource: admin/ }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-    app.path.tool_images: /uploads/images/tools
-    app.path.toolFamily_comparatives: /uploads/files/toolFamilies
 
 framework:
     #esi: ~
@@ -74,19 +74,6 @@ assetic:
     filters:
         cssrewrite: ~
 
-# vich uploader
-vich_uploader:
-    db_driver: orm
-    mappings:
-        toolFamily_comparative:
-            uri_prefix:         %app.path.toolFamily_comparatives%
-            upload_destination: '%kernel.root_dir%/../web/uploads/files/toolFamilies'
-            namer:               vich_uploader.namer_uniqid
-        tool_image:
-            uri_prefix:         %app.path.tool_images%
-            upload_destination: '%kernel.root_dir%/../web/uploads/images/tools'
-            namer:              vich_uploader.namer_uniqid
-
 # ivory ckeditor
 ivory_ck_editor:
     input_sync: true
@@ -97,61 +84,3 @@ ivory_ck_editor:
                 - { name: 'styles', items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
                 - { name: 'paragraph', items : ['NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'] }
                 - { name: 'insert', items : ['Image'] }
-
-# easy admin
-easy_admin:
-    site_name: 'MyPLE'
-    design:
-        brand_color: '#00134a'
-    entities:
-        ToolFamily:
-            class: AppBundle\Entity\ToolFamily
-            list:
-                sort: ['nameFr', 'ASC']
-                fields:
-                    - { property: 'nameFr', label: 'Nom' }
-            form:
-                fields:
-                    - { property: 'nameFr', label: 'Nom' }
-                    - { property: 'helpFr', label: 'Aide' }
-                    - { property: 'comparativeFileFr', label: 'Tableau comparatif', type: 'vich_file' }
-        Tool:
-            class: AppBundle\Entity\Tool
-            list:
-                sort: ['name', 'ASC']
-                fields:
-                    - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images% }
-                    - { property: 'name', label: 'Nom' }
-                    - { property: 'toolFamily', label: "Famille d'outils" }
-            form:
-                fields:
-                    - { property: 'toolFamily', label: "Famille d'outils" }
-                    - { property: 'name', label: 'Nom' }
-                    - { property: 'link', label: 'Lien' }
-                    - { property: 'infoFr', label: 'Info'}
-                    - { property: 'imageFile', label: 'Image', type: 'vich_image' }
-        Task:
-            class: AppBundle\Entity\Task
-            list:
-                sort: ['nameFr', 'ASC']
-                fields:
-                    - { property: 'nameFr', label: 'Nom' }
-            form:
-                fields:
-                    - { property: 'nameFr', label: 'Nom' }
-        Activity:
-            class: AppBundle\Entity\Activity
-            list:
-                sort: ['nameFr', 'ASC']
-                fields:
-                    - { property: 'nameFr', label: 'Nom' }
-                    - { property: 'task', label: 'Tâche' }
-            form:
-                fields:
-                    - { property: 'task', label: 'Tâche' }
-                    - { property: 'nameFr', label: 'Nom' }
-                    - { property: 'helpFr', label: 'Aide', type: 'ckeditor' }
-                    - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
-                    - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
-                    - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
-                    - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
