@@ -8,7 +8,7 @@ easy_admin:
       - { entity: 'Task', icon: 'cube', label: 'Tâches' }
       - { entity: 'Activity', icon: 'cubes', label: 'Activités' }
       - { entity: 'Activity', icon: 'plus-circle', label: 'Ajouter une activité', params: { action: 'new' } }
-      - { label: 'Autres' }
+      - { label: 'Autre' }
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
       - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
