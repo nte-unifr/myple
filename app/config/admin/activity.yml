@@ -9,10 +9,14 @@ easy_admin:
           - { property: 'task', label: 'Tâche' }
       form:
         fields:
-          - { property: 'task', label: 'Tâche' }
+          - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'helpFr', label: 'Aide', type: 'ckeditor' }
           - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
           - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
           - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
           - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
+          - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'task', label: 'Tâche' }
+          - { property: 'tools', label: 'Outils' }
+          - { property: 'resources', label: 'Ressources' }
