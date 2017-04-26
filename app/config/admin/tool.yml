@@ -5,7 +5,7 @@ easy_admin:
       list:
         sort: ['name', 'ASC']
         fields:
-          - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images % }
+          - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images% }
           - { property: 'name', label: 'Nom' }
           - { property: 'toolFamily', label: "Famille d'outils" }
       form:

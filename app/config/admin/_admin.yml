@@ -5,8 +5,8 @@ easy_admin:
     form_theme: 'vertical'
     menu:
       - { label: 'Scénario' }
-      - { entity: 'Task', icon: 'th-list', label: 'Tâches' }
-      - { entity: 'Activity', icon: 'th-list', label: 'Activités' }
+      - { entity: 'Task', icon: 'cube', label: 'Tâches' }
+      - { entity: 'Activity', icon: 'cubes', label: 'Activités' }
       - { entity: 'Activity', icon: 'plus-circle', label: 'Ajouter une activité', params: { action: 'new' } }
       - { label: 'Autres' }
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
