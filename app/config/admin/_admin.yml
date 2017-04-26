@@ -9,7 +9,7 @@ easy_admin:
       - { entity: 'Tool', icon: 'plus-circle', label: 'Ajouter un outil', params: { action: 'new' } }
       - { entity: 'Resource', icon: 'plus-circle', label: 'Ajouter une ressource', params: { action: 'new' } }
       - { label: 'Scénario' }
-      - { entity: 'Task', icon: 'cube', label: 'Tâches' }
+      - { entity: 'Task', icon: 'cube', label: 'Tâches', default: true }
       - { entity: 'Activity', icon: 'cubes', label: 'Activités' }
       - { label: 'Autre' }
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
