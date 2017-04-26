@@ -4,10 +4,13 @@ easy_admin:
     brand_color: '#00134a'
     form_theme: 'vertical'
     menu:
+      - { label: 'Raccourcis' }
+      - { entity: 'Activity', icon: 'plus-circle', label: 'Ajouter une activité', params: { action: 'new' } }
+      - { entity: 'Tool', icon: 'plus-circle', label: 'Ajouter un outil', params: { action: 'new' } }
+      - { entity: 'Resource', icon: 'plus-circle', label: 'Ajouter une ressource', params: { action: 'new' } }
       - { label: 'Scénario' }
       - { entity: 'Task', icon: 'cube', label: 'Tâches' }
       - { entity: 'Activity', icon: 'cubes', label: 'Activités' }
-      - { entity: 'Activity', icon: 'plus-circle', label: 'Ajouter une activité', params: { action: 'new' } }
       - { label: 'Autre' }
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
       - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
