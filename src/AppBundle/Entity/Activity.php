@@ -174,6 +174,30 @@ class Activity
      */
     private $task;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Tool")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="activities_tools",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="tool_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $tools;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Resource")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="activities_resources",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="resource_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $resources;
+
+    public function __construct() {
+        $this->tools = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->resources = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     public function __toString()
     {
@@ -694,5 +718,71 @@ class Activity
     public function getTask()
     {
         return $this->task;
+    }
+
+    /**
+     * Add tools
+     *
+     * @param \AppBundle\Entity\Tool $tools
+     * @return Activity
+     */
+    public function addTool(\AppBundle\Entity\Tool $tools)
+    {
+        $this->tools[] = $tools;
+
+        return $this;
+    }
+
+    /**
+     * Remove tools
+     *
+     * @param \AppBundle\Entity\Tool $tools
+     */
+    public function removeTool(\AppBundle\Entity\Tool $tools)
+    {
+        $this->tools->removeElement($tools);
+    }
+
+    /**
+     * Get tools
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTools()
+    {
+        return $this->tools;
+    }
+
+    /**
+     * Add resources
+     *
+     * @param \AppBundle\Entity\Resource $resources
+     * @return Activity
+     */
+    public function addResource(\AppBundle\Entity\Resource $resources)
+    {
+        $this->resources[] = $resources;
+
+        return $this;
+    }
+
+    /**
+     * Remove resources
+     *
+     * @param \AppBundle\Entity\Resource $resources
+     */
+    public function removeResource(\AppBundle\Entity\Resource $resources)
+    {
+        $this->resources->removeElement($resources);
+    }
+
+    /**
+     * Get resources
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getResources()
+    {
+        return $this->resources;
     }
 }
