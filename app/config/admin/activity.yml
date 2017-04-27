@@ -19,4 +19,4 @@ easy_admin:
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'task', label: 'Tâche' }
           - { property: 'tools', label: 'Outils' }
-          - { property: 'resources', label: 'Ressources' }
+          - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
