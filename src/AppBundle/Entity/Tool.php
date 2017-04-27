@@ -93,6 +93,16 @@ class Tool
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="ToolFamily")
+     * @ORM\OrderBy({"nameFr" = "ASC"})
+     * @ORM\JoinTable(name="tools_families",
+     *      joinColumns={@ORM\JoinColumn(name="tool_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="family_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $families;
+
 
     public function __toString()
     {
@@ -320,5 +330,68 @@ class Tool
     public function getImageName()
     {
         return $this->imageName;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->families = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Tool
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Add families
+     *
+     * @param \AppBundle\Entity\ToolFamily $families
+     * @return Tool
+     */
+    public function addFamily(\AppBundle\Entity\ToolFamily $families)
+    {
+        $this->families[] = $families;
+
+        return $this;
+    }
+
+    /**
+     * Remove families
+     *
+     * @param \AppBundle\Entity\ToolFamily $families
+     */
+    public function removeFamily(\AppBundle\Entity\ToolFamily $families)
+    {
+        $this->families->removeElement($families);
+    }
+
+    /**
+     * Get families
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFamilies()
+    {
+        return $this->families;
     }
 }
