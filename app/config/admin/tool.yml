@@ -7,7 +7,7 @@ easy_admin:
         fields:
           - { property: 'imageName', label: 'Image', type: 'image', base_path: %app.path.tool_images% }
           - { property: 'name', label: 'Nom' }
-          - { property: 'toolFamily', label: "Famille d'outils" }
+          - { property: 'families', label: "Familles d'outils" }
       form:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
@@ -16,4 +16,5 @@ easy_admin:
           - { property: 'infoFr', label: 'Info' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'toolFamily', label: "Famille d'outils" }
+          - { property: 'families', label: "Familles d'outils" }
           - { property: 'imageFile', label: 'Image', type: 'vich_image' }
