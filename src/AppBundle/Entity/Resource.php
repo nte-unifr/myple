@@ -66,12 +66,6 @@ class Resource
     private $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Lang")
-     * @ORM\JoinColumn(name="lang_id", referencedColumnName="id", nullable=true)
-     */
-    private $lang;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="tutorial", type="boolean")
@@ -109,8 +103,19 @@ class Resource
      */
     private $tools;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Lang")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="resources_langs",
+     *      joinColumns={@ORM\JoinColumn(name="resource_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="lang_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $langs;
+
     public function __construct() {
         $this->tools = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->langs = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()
@@ -398,25 +403,35 @@ class Resource
     }
 
     /**
-     * Set lang
+     * Add langs
      *
-     * @param \AppBundle\Entity\Lang $lang
+     * @param \AppBundle\Entity\Lang $langs
      * @return Resource
      */
-    public function setLang(\AppBundle\Entity\Lang $lang = null)
+    public function addLang(\AppBundle\Entity\Lang $langs)
     {
-        $this->lang = $lang;
+        $this->langs[] = $langs;
 
         return $this;
     }
 
     /**
-     * Get lang
+     * Remove langs
      *
-     * @return \AppBundle\Entity\Lang 
+     * @param \AppBundle\Entity\Lang $langs
      */
-    public function getLang()
+    public function removeLang(\AppBundle\Entity\Lang $langs)
     {
-        return $this->lang;
+        $this->langs->removeElement($langs);
+    }
+
+    /**
+     * Get langs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLangs()
+    {
+        return $this->langs;
     }
 }
