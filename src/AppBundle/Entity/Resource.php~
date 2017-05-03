@@ -61,13 +61,13 @@ class Resource
 
     /**
      * @ORM\ManyToOne(targetEntity="ResourceType")
-     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
      */
     private $type;
 
     /**
      * @ORM\ManyToOne(targetEntity="Lang")
-     * @ORM\JoinColumn(name="lang_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="lang_id", referencedColumnName="id", nullable=false)
      */
     private $lang;
 
@@ -395,28 +395,5 @@ class Resource
     public function getTools()
     {
         return $this->tools;
-    }
-
-    /**
-     * Set lang
-     *
-     * @param \AppBundle\Entity\Lang $lang
-     * @return Resource
-     */
-    public function setLang(\AppBundle\Entity\Lang $lang = null)
-    {
-        $this->lang = $lang;
-
-        return $this;
-    }
-
-    /**
-     * Get lang
-     *
-     * @return \AppBundle\Entity\Lang 
-     */
-    public function getLang()
-    {
-        return $this->lang;
     }
 }
