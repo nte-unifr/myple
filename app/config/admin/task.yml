@@ -9,3 +9,4 @@ easy_admin:
       form:
         fields:
           - { property: 'nameFr', label: 'Nom' }
+          - { property: 'help', label: 'Aide', type: 'ckeditor' }
