@@ -15,6 +15,5 @@ easy_admin:
           - { property: 'link', label: 'Lien' }
           - { property: 'infoFr', label: 'Info', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
-          - { property: 'toolFamily', label: "Famille d'outils" }
           - { property: 'families', label: "Familles d'outils" }
           - { property: 'imageFile', label: 'Image', type: 'vich_image' }
