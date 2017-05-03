@@ -52,34 +52,6 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="helpFr", type="text", nullable=true)
-     */
-    private $helpFr;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="helpDe", type="text", nullable=true)
-     */
-    private $helpDe;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="helpIt", type="text", nullable=true)
-     */
-    private $helpIt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="helpEn", type="text", nullable=true)
-     */
-    private $helpEn;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="stepsFr", type="text")
      */
     private $stepsFr;
@@ -304,98 +276,6 @@ class Activity
     public function getNameEn()
     {
         return $this->nameEn;
-    }
-
-    /**
-     * Set helpFr
-     *
-     * @param string $helpFr
-     * @return Activity
-     */
-    public function setHelpFr($helpFr)
-    {
-        $this->helpFr = $helpFr;
-
-        return $this;
-    }
-
-    /**
-     * Get helpFr
-     *
-     * @return string 
-     */
-    public function getHelpFr()
-    {
-        return $this->helpFr;
-    }
-
-    /**
-     * Set helpDe
-     *
-     * @param string $helpDe
-     * @return Activity
-     */
-    public function setHelpDe($helpDe)
-    {
-        $this->helpDe = $helpDe;
-
-        return $this;
-    }
-
-    /**
-     * Get helpDe
-     *
-     * @return string 
-     */
-    public function getHelpDe()
-    {
-        return $this->helpDe;
-    }
-
-    /**
-     * Set helpIt
-     *
-     * @param string $helpIt
-     * @return Activity
-     */
-    public function setHelpIt($helpIt)
-    {
-        $this->helpIt = $helpIt;
-
-        return $this;
-    }
-
-    /**
-     * Get helpIt
-     *
-     * @return string 
-     */
-    public function getHelpIt()
-    {
-        return $this->helpIt;
-    }
-
-    /**
-     * Set helpEn
-     *
-     * @param string $helpEn
-     * @return Activity
-     */
-    public function setHelpEn($helpEn)
-    {
-        $this->helpEn = $helpEn;
-
-        return $this;
-    }
-
-    /**
-     * Get helpEn
-     *
-     * @return string 
-     */
-    public function getHelpEn()
-    {
-        return $this->helpEn;
     }
 
     /**
