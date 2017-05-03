@@ -13,7 +13,7 @@ easy_admin:
           - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'name', label: 'Nom' }
           - { property: 'link', label: 'Lien' }
-          - { property: 'infoFr', label: 'Info' }
+          - { property: 'infoFr', label: 'Info', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'toolFamily', label: "Famille d'outils" }
           - { property: 'families', label: "Familles d'outils" }
