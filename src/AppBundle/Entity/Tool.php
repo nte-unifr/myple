@@ -67,12 +67,6 @@ class Tool
     private $infoEn;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ToolFamily", inversedBy="tools")
-     * @ORM\JoinColumn(name="toolFamily_id", referencedColumnName="id", nullable=false)
-     */
-    private $toolFamily;
-
-    /**
      * @Vich\UploadableField(mapping="tool_image", fileNameProperty="imageName")
      * 
      * @var File
@@ -255,29 +249,6 @@ class Tool
     public function getInfoEn()
     {
         return $this->infoEn;
-    }
-
-    /**
-     * Set toolFamily
-     *
-     * @param \AppBundle\Entity\ToolFamily $toolFamily
-     * @return Tool
-     */
-    public function setToolFamily(\AppBundle\Entity\ToolFamily $toolFamily = null)
-    {
-        $this->toolFamily = $toolFamily;
-
-        return $this;
-    }
-
-    /**
-     * Get toolFamily
-     *
-     * @return \AppBundle\Entity\ToolFamily 
-     */
-    public function getToolFamily()
-    {
-        return $this->toolFamily;
     }
 
     /**
