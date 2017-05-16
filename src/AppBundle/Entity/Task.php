@@ -84,6 +84,26 @@ class Task
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Resource")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="tasks_resources",
+     *      joinColumns={@ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="resource_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $resources;
+
+
+    public function __construct() {
+        $this->resources = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->activities = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getNameFr();
+    }
 
     /**
      * Get id
@@ -185,19 +205,6 @@ class Task
     public function getNameEn()
     {
         return $this->nameEn;
-    }
-    
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->activities = new ArrayCollection();
-    }
-
-    public function __toString()
-    {
-        return $this->getNameFr();
     }
 
     /**
@@ -306,5 +313,38 @@ class Task
     public function getRecap()
     {
         return $this->recap;
+    }
+
+    /**
+     * Add resources
+     *
+     * @param \AppBundle\Entity\Resource $resources
+     * @return Activity
+     */
+    public function addResource(\AppBundle\Entity\Resource $resources)
+    {
+        $this->resources[] = $resources;
+
+        return $this;
+    }
+
+    /**
+     * Remove resources
+     *
+     * @param \AppBundle\Entity\Resource $resources
+     */
+    public function removeResource(\AppBundle\Entity\Resource $resources)
+    {
+        $this->resources->removeElement($resources);
+    }
+
+    /**
+     * Get resources
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getResources()
+    {
+        return $this->resources;
     }
 }

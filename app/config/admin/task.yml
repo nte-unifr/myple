@@ -13,3 +13,4 @@ easy_admin:
           - { property: 'help', label: 'Aide', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'recapFile', label: 'Récapitulatif', type: 'vich_file' }
+          - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
