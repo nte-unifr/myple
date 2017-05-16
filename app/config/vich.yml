@@ -8,8 +8,8 @@ vich_uploader:
     db_driver: orm
     mappings:
         toolFamily_comparative:
-            uri_prefix:         %app.path.toolFamiles%
-            upload_destination: '%kernel.root_dir%/../web%app.path.toolFamiles%'
+            uri_prefix:         %app.path.toolFamilies%
+            upload_destination: '%kernel.root_dir%/../web%app.path.toolFamilies%'
             namer:               vich_uploader.namer_uniqid
         tool_image:
             uri_prefix:         %app.path.tools%
