@@ -113,9 +113,15 @@ class Resource
      */
     private $langs;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Task", mappedBy="resources")
+     **/
+    private $tasks;
+
     public function __construct() {
         $this->tools = new \Doctrine\Common\Collections\ArrayCollection();
         $this->langs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tasks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()

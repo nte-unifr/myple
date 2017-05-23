@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            Activités
+            <span class="label label-primary pull-right">{{ task.activities | length }}</span>
+        </h2>
+    </div>
+    <div class="panel-body">
+        <ul class="side-list activities-list nav nav-pills nav-stacked">
+            {% for activity in task.activities %}
+                <li role="presentation">
+                    <a href="#">
+                        <span>{{ activity }}</span>
+                    </a
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
