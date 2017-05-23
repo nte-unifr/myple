@@ -1,0 +1,69 @@
+.pointer { cursor: pointer; }
+@media (min-width: 1200px) {
+  #main-container { width: 88% }
+}
+
+/* better bootstrap collapse */
+#accordion .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+  outline: none;
+  font-weight:bold;
+  text-decoration: none;
+}
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+  content: "\f077";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 1em;
+}
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+  content: "\f078";
+}
+#accordion h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+
+/* sidelists in tasks view */
+#tasks .side-list a {
+  display: table;
+  text-decoration: none;
+}
+#tasks .side-list a span {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+#tasks .activities-list a::before {
+  content: "\f054";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 1em;
+  display: table-cell;
+  vertical-align: middle;
+}
+#tasks .resources-list .pdf::before {
+  content: "\f1c1";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 1em;
+  display: table-cell;
+  vertical-align: middle;
+}
+#tasks .resources-list .web::before {
+  content: "\f08e";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 1em;
+  display: table-cell;
+  vertical-align: middle;
+}
+#tasks .resources-list .video::before {
+  content: "\f03d";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 1em;
+  display: table-cell;
+  vertical-align: middle;
+}
