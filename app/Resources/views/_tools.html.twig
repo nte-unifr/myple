@@ -1,0 +1,21 @@
+{% if tools | length > 0 %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                Outils liés
+                <span class="label label-primary pull-right">{{ tools | length }}</span>
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                {% for tool in tools %}
+                    <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img src="{{ vich_uploader_asset(tool, 'imageFile') }}" alt="{{ tool.name }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
