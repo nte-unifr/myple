@@ -11,7 +11,7 @@
                 {% for tool in tools %}
                     <div class="col-xs-6 col-md-3">
                         <a href="#" class="thumbnail">
-                            <img src="{{ ('/uploads/images/tools/' ~ tool.imageName) | imagine_filter('index_thumb') }}">
+                            <img src="{{ vich_uploader_asset(tool, 'imageFile') }}">
                         </a>
                     </div>
                 {% endfor %}
