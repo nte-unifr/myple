@@ -118,10 +118,16 @@ class Resource
      **/
     private $tasks;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Activity", mappedBy="resources")
+     **/
+    private $activities;
+
     public function __construct() {
         $this->tools = new \Doctrine\Common\Collections\ArrayCollection();
         $this->langs = new \Doctrine\Common\Collections\ArrayCollection();
         $this->tasks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->activities = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()
