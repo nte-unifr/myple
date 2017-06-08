@@ -10,7 +10,7 @@
             <ul class="side-list resources-list nav nav-pills nav-stacked">
                 {% for resource in resources %}
                     <li role="presentation">
-                        <a class="{{ resource.type }}" href="#">
+                        <a class="{{ resource.type }}" href="{{ resource.url }}">
                             <span>{{ resource }}</span>
                         </a>
                     </li>
@@ -32,7 +32,7 @@
             <ul class="side-list resources-list nav nav-pills nav-stacked">
                 {% for tutorial in tutorials %}
                     <li role="presentation">
-                        <a class="{{ tutorial.type }}" href="#">
+                        <a class="{{ tutorial.type }}" href="{{ tutorial.url }}">
                             <span>{{ tutorial }}</span>
                         </a>
                     </li>

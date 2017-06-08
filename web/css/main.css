@@ -26,16 +26,16 @@
 
 
 /* sidelists in tasks view */
-#tasks .side-list a {
+.side-list a {
   display: table;
   text-decoration: none;
 }
-#tasks .side-list a span {
+.side-list a span {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
 }
-#tasks .activities-list a::before {
+.activities-list a::before {
   content: "\f054";
   float: left;
   font-family: FontAwesome;
@@ -43,7 +43,7 @@
   display: table-cell;
   vertical-align: middle;
 }
-#tasks .resources-list .pdf::before {
+.resources-list .pdf::before {
   content: "\f1c1";
   float: left;
   font-family: FontAwesome;
@@ -51,7 +51,7 @@
   display: table-cell;
   vertical-align: middle;
 }
-#tasks .resources-list .web::before {
+.resources-list .web::before {
   content: "\f08e";
   float: left;
   font-family: FontAwesome;
@@ -59,7 +59,7 @@
   display: table-cell;
   vertical-align: middle;
 }
-#tasks .resources-list .video::before {
+.resources-list .video::before {
   content: "\f03d";
   float: left;
   font-family: FontAwesome;
