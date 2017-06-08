@@ -10,13 +10,13 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <h2>Résumé du scénario</h2>
+                    <h3>Résumé du scénario</h3>
                     <p>{{ task.help | raw }}</p>
                 </div>
                 <div class="col-xs-12 col-sm-4">
                     {% include 'tasks/_task_recap.html.twig' %}
-                    {% include 'tasks/_task_activities.html.twig' %}
-                    {% include 'tasks/_task_resources.html.twig' %}
+                    {% include '_activities.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
+                    {% include '_resources.html.twig' %}
                 </div>
             </div>
         </div>
