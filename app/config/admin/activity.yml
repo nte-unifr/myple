@@ -11,8 +11,8 @@ easy_admin:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'nameFr', label: 'Nom' }
-          - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
           - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
+          - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
           - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
           - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }

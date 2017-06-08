@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ activity.nameFr }}{% endblock %}
+
+{% block body %}
+    <div id="activity" class="row">
+        <div class="page-header col-xs-12">
+            <h1>{{ activity.nameFr }} <small>{{ activity.task.nameFr }}</small></h1>
+        </div>
+        <div class="col-xs-12 col-sm-4 pull-right">
+            <p>
+                <a href="{{ path('tasks_index') }}" class="btn btn-default btn-block">Retour à la liste des scénarios</a>
+            </p>
+            {% include '_activities.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                {% include 'activities/_goals.html.twig' %}
+                {% include 'activities/_steps.html.twig' %}
+                {% include 'activities/_biblio.html.twig' %}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 pull-right">
+            {% include '_resources.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
