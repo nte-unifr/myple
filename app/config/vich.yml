@@ -1,9 +1,8 @@
 parameters:
-  app.path.sub:             /myple
-  app.path.tools:           %app.path.sub%/uploads/images/tools
-  app.path.toolFamilies:    %app.path.sub%/myple/uploads/files/toolFamilies
-  app.path.resources:       %app.path.sub%/myple/uploads/images/resources
-  app.path.tasks:           %app.path.sub%/myple/uploads/files/tasks
+  app.path.tools:           /uploads/images/tools
+  app.path.toolFamilies:    /uploads/files/toolFamilies
+  app.path.resources:       /uploads/images/resources
+  app.path.tasks:           /uploads/files/tasks
 
 vich_uploader:
     db_driver: orm
