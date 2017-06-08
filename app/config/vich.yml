@@ -1,4 +1,5 @@
 parameters:
+  app.path.sub:             /myple
   app.path.tools:           /uploads/images/tools
   app.path.toolFamilies:    /uploads/files/toolFamilies
   app.path.resources:       /uploads/images/resources
@@ -8,18 +9,18 @@ vich_uploader:
     db_driver: orm
     mappings:
         toolFamily_comparative:
-            uri_prefix:         %app.path.toolFamilies%
+            uri_prefix:         %app.path.sub%%app.path.toolFamilies%
             upload_destination: '%kernel.root_dir%/../web%app.path.toolFamilies%'
             namer:               vich_uploader.namer_uniqid
         tool_image:
-            uri_prefix:         %app.path.tools%
+            uri_prefix:         %app.path.sub%%app.path.tools%
             upload_destination: '%kernel.root_dir%/../web%app.path.tools%'
             namer:              vich_uploader.namer_uniqid
         resource_image:
-            uri_prefix:         %app.path.resources%
+            uri_prefix:         %app.path.sub%%app.path.resources%
             upload_destination: '%kernel.root_dir%/../web%app.path.resources%'
             namer:              vich_uploader.namer_uniqid
         task_recap:
-            uri_prefix:         %app.path.tasks%
+            uri_prefix:         %app.path.sub%%app.path.tasks%
             upload_destination: '%kernel.root_dir%/../web%app.path.tasks%'
             namer:              vich_uploader.namer_uniqid
