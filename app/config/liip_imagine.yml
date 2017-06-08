@@ -1,0 +1,10 @@
+liip_imagine:
+  resolvers:
+    default:
+      web_path: ~
+  filter_sets:
+    cache: ~
+    index_thumb:
+      quality: 100
+      filters:
+        thumbnail: { size: [300, 300], mode: outbound }
