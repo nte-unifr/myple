@@ -23,5 +23,8 @@
         <div class="col-xs-12 col-sm-4 pull-right">
             {% include '_resources.html.twig' %}
         </div>
+        <div class="col-xs-12 col-sm-4 pull-right">
+            {% include '_tools.html.twig' with { 'tools': activity.tools } %}
+        </div>
     </div>
 {% endblock %}
