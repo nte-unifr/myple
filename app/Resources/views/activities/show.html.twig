@@ -5,7 +5,8 @@
 {% block body %}
     <div id="activity" class="row">
         <div class="page-header col-xs-12">
-            <h1>{{ activity.nameFr }} <small>{{ activity.task.nameFr }}</small></h1>
+            <h1>{{ activity.task.nameFr }} <small>Scénario</small></h1>
+            <h2>{{ activity.nameFr }} <small>Activité</small></h2>
         </div>
         <div class="col-xs-12 col-sm-4 pull-right">
             <p>
@@ -14,15 +15,41 @@
             {% include '_activities.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
         </div>
         <div class="col-xs-12 col-sm-8">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                {% include 'activities/_goals.html.twig' %}
-                {% include 'activities/_steps.html.twig' %}
-                {% include 'activities/_biblio.html.twig' %}
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#goals" aria-controls="goals" role="tab" data-toggle="tab"><h3>Finalités</h3></a></li>
+                    <li role="presentation"><a href="#steps" aria-controls="steps" role="tab" data-toggle="tab"><h3>Etapes</h3></a></li>
+                    {% if activity.biblio %}
+                        <li role="presentation"><a href="#biblio" aria-controls="biblio" role="tab" data-toggle="tab"><h3>Bibliographie</h3></a></li>
+                    {% endif %}
+                    {% if activity.tools is not empty or resources is not empty or tutorials is not empty %}
+                        <li role="presentation"><a href="#resources" aria-controls="resources" role="tab" data-toggle="tab"><h3>Ressources</h3></a></li>
+                    {% endif %}
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="goals">
+                        <div class="tab-inner">{{ activity.goalFr | raw }}</div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="steps">
+                        <div class="tab-inner">{{ activity.stepsFr | raw }}</div>
+                    </div>
+                    {% if activity.biblio %}
+                        <div role="tabpanel" class="tab-pane" id="biblio">
+                            <div class="tab-inner">{{ activity.biblio | raw }}</div>
+                        </div>
+                    {% endif %}
+                    {% if activity.tools is not empty or resources is not empty or tutorials is not empty %}
+                        <div role="tabpanel" class="tab-pane" id="resources">
+                            <div class="tab-inner">
+                                {% include '_tools.html.twig' with { 'tools': activity.tools } %}
+                                {% include '_resources.html.twig' %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 pull-right">
-            {% include '_resources.html.twig' %}
-            {% include '_tools.html.twig' with { 'tools': activity.tools } %}
         </div>
     </div>
 {% endblock %}
