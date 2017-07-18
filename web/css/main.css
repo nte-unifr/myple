@@ -24,7 +24,6 @@
   margin-top: 0;
 }
 
-
 /* sidelists in tasks view */
 .side-list a {
   display: table;
@@ -66,4 +65,10 @@
 	margin-right: 1em;
   display: table-cell;
   vertical-align: middle;
+}
+
+/* content inside tabs of activities */
+.tab-inner {
+  font-size: 16px;
+  padding: 30px 5px;
 }

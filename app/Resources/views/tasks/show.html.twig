@@ -10,13 +10,26 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <h3>Résumé du scénario</h3>
-                    <p>{{ task.help | raw }}</p>
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#help{{ task.id }}" aria-controls="help" role="tab" data-toggle="tab"><h3>Résumé</h3></a></li>
+                            <li role="presentation"><a href="#resources{{ task.id }}" aria-controls="resources" role="tab" data-toggle="tab"><h3>Ressources</h3></a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="help{{ task.id }}">
+                                <div class="tab-inner">{{ task.help | raw }}</div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="resources{{ task.id }}">
+                                <div class="tab-inner">{% include '_resources.html.twig' %}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
                     {% include 'tasks/_task_recap.html.twig' %}
                     {% include '_activities.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
-                    {% include '_resources.html.twig' %}
                 </div>
             </div>
         </div>
