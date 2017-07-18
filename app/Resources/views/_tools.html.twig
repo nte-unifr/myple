@@ -10,8 +10,11 @@
             <div class="row">
                 {% for tool in tools %}
                     <div class="col-xs-6 col-md-3">
-                        <a href="#" class="thumbnail">
+                        <a href="{{ tool.link }}" class="thumbnail">
                             <img src="{{ vich_uploader_asset(tool, 'imageFile') }}">
+                            <div class="caption text-center">
+                                {{ tool.name }}
+                            </div>
                         </a>
                     </div>
                 {% endfor %}
