@@ -32,6 +32,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
+                    {% if task.humanUpdatedAt is not empty %}
+                        <p class="well">Mise à jour le {{ task.humanUpdatedAt | date("d.m.Y") }}</p>
+                    {% endif %}
                     {% include 'tasks/_task_recap.html.twig' %}
                     {% include '_activities.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
                 </div>
