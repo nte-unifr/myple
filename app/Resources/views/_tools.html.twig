@@ -1,4 +1,4 @@
-{% if tools | length > 0 %}
+{% if tools is not empty %}
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">
@@ -13,7 +13,7 @@
                         <a href="{{ tool.link }}" class="thumbnail">
                             <img src="{{ vich_uploader_asset(tool, 'imageFile') }}">
                             <div class="caption text-center">
-                                {{ tool.name }}
+                                <span class="label label-default">{{ tool.name }}</span>
                             </div>
                         </a>
                     </div>
