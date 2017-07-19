@@ -98,7 +98,7 @@ class Tool
     private $families;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Activity", mappedBy="tools")
+     * @ORM\ManyToMany(targetEntity="Activity")
      */
     private $activities;
 
@@ -370,38 +370,5 @@ class Tool
     public function getFamilies()
     {
         return $this->families;
-    }
-
-    /**
-     * Add activities
-     *
-     * @param \AppBundle\Entity\Activity $activities
-     * @return Tool
-     */
-    public function addActivity(\AppBundle\Entity\Activity $activities)
-    {
-        $this->activities[] = $activities;
-
-        return $this;
-    }
-
-    /**
-     * Remove activities
-     *
-     * @param \AppBundle\Entity\Activity $activities
-     */
-    public function removeActivity(\AppBundle\Entity\Activity $activities)
-    {
-        $this->activities->removeElement($activities);
-    }
-
-    /**
-     * Get activities
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getActivities()
-    {
-        return $this->activities;
     }
 }

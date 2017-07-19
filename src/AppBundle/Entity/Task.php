@@ -86,7 +86,7 @@ class Task
     private $updatedAt;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Resource")
+     * @ORM\ManyToMany(targetEntity="Resource", inversedBy="tasks")
      * @ORM\OrderBy({"name" = "ASC"})
      * @ORM\JoinTable(name="tasks_resources",
      *      joinColumns={@ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")},
