@@ -12,4 +12,5 @@ easy_admin:
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'helpFr', label: 'Aide' }
           - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'comparativeFileFr', label: 'Tableau comparatif', type: 'vich_file' }
