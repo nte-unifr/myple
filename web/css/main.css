@@ -76,3 +76,7 @@
 .btn, .tab-content a, .panel-activities a {
   font-style: italic;
 }
+
+#license img {
+  width: 30px;
+}
