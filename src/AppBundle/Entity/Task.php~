@@ -6,15 +6,16 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Criteria;
 
 /**
- * ToolFamily
+ * Task
  *
- * @ORM\Table(name="tool_family")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ToolFamilyRepository")
+ * @ORM\Table(name="task")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  * @Vich\Uploadable
  */
-class ToolFamily
+class Task
 {
     /**
      * @var int
@@ -42,13 +43,6 @@ class ToolFamily
     /**
      * @var string
      *
-     * @ORM\Column(name="nameEn", type="string", length=255, nullable=true)
-     */
-    private $nameEn;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="nameIt", type="string", length=255, nullable=true)
      */
     private $nameIt;
@@ -56,42 +50,34 @@ class ToolFamily
     /**
      * @var string
      *
-     * @ORM\Column(name="helpFr", type="text", nullable=true)
+     * @ORM\Column(name="nameEn", type="string", length=255, nullable=true)
      */
-    private $helpFr;
+    private $nameEn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="helpDe", type="text", nullable=true)
+     * @ORM\Column(name="help", type="text", nullable=true)
      */
-    private $helpDe;
+    private $help;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="helpEn", type="text", nullable=true)
+     * @ORM\OrderBy({"rank" = "ASC"})
+     * @ORM\OneToMany(targetEntity="Activity", mappedBy="task")
      */
-    private $helpEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="helpIt", type="text", nullable=true)
-     */
-    private $helpIt;
+    private $activities;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
-    private $comparativeFr;
+    private $recap;
 
     /**
-     * @Vich\UploadableField(mapping="toolFamily_comparative", fileNameProperty="comparativeFr")
+     * @Vich\UploadableField(mapping="task_recap", fileNameProperty="recap")
      * @var File
      */
-    private $comparativeFileFr;
+    private $recapFile;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -100,17 +86,33 @@ class ToolFamily
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     *
+     * @var \Date
+     */
+    private $humanUpdatedAt;
 
-    public function __construct()
-    {
-        $this->tools = new ArrayCollection();
+    /**
+     * @ORM\ManyToMany(targetEntity="Resource", inversedBy="tasks")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="tasks_resources",
+     *      joinColumns={@ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="resource_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $resources;
+
+
+    public function __construct() {
+        $this->resources = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->activities = new ArrayCollection();
     }
 
     public function __toString()
     {
         return $this->getNameFr();
     }
-
 
     /**
      * Get id
@@ -126,7 +128,7 @@ class ToolFamily
      * Set nameFr
      *
      * @param string $nameFr
-     * @return ToolFamily
+     * @return Task
      */
     public function setNameFr($nameFr)
     {
@@ -149,7 +151,7 @@ class ToolFamily
      * Set nameDe
      *
      * @param string $nameDe
-     * @return ToolFamily
+     * @return Task
      */
     public function setNameDe($nameDe)
     {
@@ -169,33 +171,10 @@ class ToolFamily
     }
 
     /**
-     * Set nameEn
-     *
-     * @param string $nameEn
-     * @return ToolFamily
-     */
-    public function setNameEn($nameEn)
-    {
-        $this->nameEn = $nameEn;
-
-        return $this;
-    }
-
-    /**
-     * Get nameEn
-     *
-     * @return string 
-     */
-    public function getNameEn()
-    {
-        return $this->nameEn;
-    }
-
-    /**
      * Set nameIt
      *
      * @param string $nameIt
-     * @return ToolFamily
+     * @return Task
      */
     public function setNameIt($nameIt)
     {
@@ -215,103 +194,83 @@ class ToolFamily
     }
 
     /**
-     * Set helpFr
+     * Set nameEn
      *
-     * @param string $helpFr
-     * @return ToolFamily
+     * @param string $nameEn
+     * @return Task
      */
-    public function setHelpFr($helpFr)
+    public function setNameEn($nameEn)
     {
-        $this->helpFr = $helpFr;
+        $this->nameEn = $nameEn;
 
         return $this;
     }
 
     /**
-     * Get helpFr
+     * Get nameEn
      *
      * @return string 
      */
-    public function getHelpFr()
+    public function getNameEn()
     {
-        return $this->helpFr;
+        return $this->nameEn;
     }
 
     /**
-     * Set helpDe
+     * Add activities
      *
-     * @param string $helpDe
-     * @return ToolFamily
+     * @param \AppBundle\Entity\Activity $activities
+     * @return Task
      */
-    public function setHelpDe($helpDe)
+    public function addActivity(\AppBundle\Entity\Activity $activities)
     {
-        $this->helpDe = $helpDe;
+        $this->activities[] = $activities;
 
         return $this;
     }
 
     /**
-     * Get helpDe
+     * Remove activities
      *
-     * @return string 
+     * @param \AppBundle\Entity\Activity $activities
      */
-    public function getHelpDe()
+    public function removeActivity(\AppBundle\Entity\Activity $activities)
     {
-        return $this->helpDe;
+        $this->activities->removeElement($activities);
     }
 
     /**
-     * Set helpEn
+     * Get activities
      *
-     * @param string $helpEn
-     * @return ToolFamily
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    public function setHelpEn($helpEn)
+    public function getActivities()
     {
-        $this->helpEn = $helpEn;
+        return $this->activities;
+    }
+
+    /**
+     * Set help
+     *
+     * @param string $help
+     * @return Task
+     */
+    public function setHelp($help)
+    {
+        $this->help = $help;
 
         return $this;
     }
 
     /**
-     * Get helpEn
+     * Get help
      *
      * @return string 
      */
-    public function getHelpEn()
+    public function getHelp()
     {
-        return $this->helpEn;
+        return $this->help;
     }
-
-    /**
-     * Set helpIt
-     *
-     * @param string $helpIt
-     * @return ToolFamily
-     */
-    public function setHelpIt($helpIt)
-    {
-        $this->helpIt = $helpIt;
-
-        return $this;
-    }
-
-    /**
-     * Get helpIt
-     *
-     * @return string 
-     */
-    public function getHelpIt()
-    {
-        return $this->helpIt;
-    }
-
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     *
-     * @var \Date
-     */
-    private $humanUpdatedAt;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -322,11 +281,11 @@ class ToolFamily
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
      *
-     * @return ToolFamily
+     * @return Task
      */
-    public function setComparativeFileFr(File $file = null)
+    public function setRecapFile(File $file = null)
     {
-        $this->comparativeFileFr = $file;
+        $this->recapFile = $file;
 
         if ($file) {
             // It is required that at least one field changes if you are using doctrine
@@ -340,19 +299,19 @@ class ToolFamily
     /**
      * @return File|null
      */
-    public function getComparativeFileFr()
+    public function getRecapFile()
     {
-        return $this->comparativeFileFr;
+        return $this->recapFile;
     }
 
     /**
-     * @param string $comparativeFr
+     * @param string $recap
      *
-     * @return ToolFamily
+     * @return Task
      */
-    public function setComparativeFr($comparativeFr)
+    public function setRecap($recap)
     {
-        $this->comparativeFr = $comparativeFr;
+        $this->recap = $recap;
 
         return $this;
     }
@@ -360,54 +319,41 @@ class ToolFamily
     /**
      * @return string|null
      */
-    public function getComparativeFr()
+    public function getRecap()
     {
-        return $this->comparativeFr;
+        return $this->recap;
     }
 
     /**
-     * Set updatedAt
+     * Add resources
      *
-     * @param \DateTime $updatedAt
-     * @return ToolFamily
+     * @param \AppBundle\Entity\Resource $resources
+     * @return Activity
      */
-    public function setUpdatedAt($updatedAt)
+    public function addResource(\AppBundle\Entity\Resource $resources)
     {
-        $this->updatedAt = $updatedAt;
+        $this->resources[] = $resources;
 
         return $this;
     }
 
     /**
-     * Get updatedAt
+     * Remove resources
      *
-     * @return \DateTime 
+     * @param \AppBundle\Entity\Resource $resources
      */
-    public function getUpdatedAt()
+    public function removeResource(\AppBundle\Entity\Resource $resources)
     {
-        return $this->updatedAt;
+        $this->resources->removeElement($resources);
     }
 
     /**
-     * Set humanUpdatedAt
+     * Get resources
      *
-     * @param \DateTime $humanUpdatedAt
-     * @return ToolFamily
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    public function setHumanUpdatedAt($humanUpdatedAt)
+    public function getResources()
     {
-        $this->humanUpdatedAt = $humanUpdatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get humanUpdatedAt
-     *
-     * @return \DateTime 
-     */
-    public function getHumanUpdatedAt()
-    {
-        return $this->humanUpdatedAt;
+        return $this->resources;
     }
 }
