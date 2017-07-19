@@ -82,11 +82,6 @@ class ToolFamily
     private $helpIt;
 
     /**
-     * @ORM\OneToMany(targetEntity="Tool", mappedBy="toolFamily")
-     */
-    private $tools;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
@@ -309,39 +304,6 @@ class ToolFamily
     public function getHelpIt()
     {
         return $this->helpIt;
-    }
-
-    /**
-     * Add tools
-     *
-     * @param \AppBundle\Entity\Tool $tools
-     * @return ToolFamily
-     */
-    public function addTool(\AppBundle\Entity\Tool $tools)
-    {
-        $this->tools[] = $tools;
-
-        return $this;
-    }
-
-    /**
-     * Remove tools
-     *
-     * @param \AppBundle\Entity\Tool $tools
-     */
-    public function removeTool(\AppBundle\Entity\Tool $tools)
-    {
-        $this->tools->removeElement($tools);
-    }
-
-    /**
-     * Get tools
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTools()
-    {
-        return $this->tools;
     }
 
     /**

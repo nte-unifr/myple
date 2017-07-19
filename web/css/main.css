@@ -72,3 +72,7 @@
   font-size: 16px;
   padding: 30px 5px;
 }
+
+.btn, .tab-content a, .panel-activities a {
+  font-style: italic;
+}

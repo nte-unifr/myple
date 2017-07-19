@@ -23,7 +23,10 @@
                     {% if activity.biblio %}
                         <li role="presentation"><a href="#biblio" aria-controls="biblio" role="tab" data-toggle="tab"><h3>Bibliographie</h3></a></li>
                     {% endif %}
-                    {% if activity.tools is not empty or resources is not empty or tutorials is not empty %}
+                    {% if activity.tools is not empty %}
+                        <li role="presentation"><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab"><h3>Outils</h3></a></li>
+                    {% endif %}
+                    {% if resources is not empty or tutorials is not empty %}
                         <li role="presentation"><a href="#resources" aria-controls="resources" role="tab" data-toggle="tab"><h3>Ressources</h3></a></li>
                     {% endif %}
                 </ul>
@@ -40,10 +43,16 @@
                             <div class="tab-inner">{{ activity.biblio | raw }}</div>
                         </div>
                     {% endif %}
-                    {% if activity.tools is not empty or resources is not empty or tutorials is not empty %}
-                        <div role="tabpanel" class="tab-pane" id="resources">
+                    {% if activity.tools is not empty %}
+                        <div role="tabpanel" class="tab-pane" id="tools">
                             <div class="tab-inner">
                                 {% include '_tools.html.twig' with { 'tools': activity.tools } %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if resources is not empty or tutorials is not empty %}
+                        <div role="tabpanel" class="tab-pane" id="resources">
+                            <div class="tab-inner">
                                 {% include '_resources.html.twig' %}
                             </div>
                         </div>
