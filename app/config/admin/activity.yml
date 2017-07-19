@@ -16,6 +16,8 @@ easy_admin:
           - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
           - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'task', label: 'Tâche' }
+          - { property: 'rank', label: 'Position' }
           - { property: 'tools', label: 'Outils' }
           - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }

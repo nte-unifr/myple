@@ -704,27 +704,4 @@ class Activity
     {
         return $this->rank;
     }
-
-    /**
-     * Set humanUpdatedAt
-     *
-     * @param \DateTime $humanUpdatedAt
-     * @return Activity
-     */
-    public function setHumanUpdatedAt($humanUpdatedAt)
-    {
-        $this->humanUpdatedAt = $humanUpdatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get humanUpdatedAt
-     *
-     * @return \DateTime 
-     */
-    public function getHumanUpdatedAt()
-    {
-        return $this->humanUpdatedAt;
-    }
 }
