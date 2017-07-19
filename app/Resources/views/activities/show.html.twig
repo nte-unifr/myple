@@ -5,8 +5,10 @@
 {% block body %}
     <div id="activity" class="row">
         <div class="page-header col-xs-12">
-            <h1>{{ activity.task.nameFr }} <small>Scénario</small></h1>
-            <h2>{{ activity.nameFr }} <small>Activité</small></h2>
+            <h1 class="h2">
+                {{ activity.nameFr }}
+                <small>{{ activity.task.nameFr }}</small>
+            </h1>
         </div>
         <div class="col-xs-12 col-sm-4 pull-right">
             <p>
