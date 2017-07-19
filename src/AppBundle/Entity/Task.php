@@ -62,6 +62,7 @@ class Task
     private $help;
 
     /**
+     * @ORM\OrderBy({"rank" = "ASC"})
      * @ORM\OneToMany(targetEntity="Activity", mappedBy="task")
      */
     private $activities;
@@ -84,6 +85,13 @@ class Task
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     *
+     * @var \Date
+     */
+    private $humanUpdatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity="Resource", inversedBy="tasks")
@@ -347,5 +355,51 @@ class Task
     public function getResources()
     {
         return $this->resources;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Task
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set humanUpdatedAt
+     *
+     * @param \DateTime $humanUpdatedAt
+     * @return Task
+     */
+    public function setHumanUpdatedAt($humanUpdatedAt)
+    {
+        $this->humanUpdatedAt = $humanUpdatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get humanUpdatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getHumanUpdatedAt()
+    {
+        return $this->humanUpdatedAt;
     }
 }
