@@ -148,7 +148,7 @@ class Activity
     private $task;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tool")
+     * @ORM\ManyToMany(targetEntity="Tool", inversedBy="activities")
      * @ORM\OrderBy({"name" = "ASC"})
      * @ORM\JoinTable(name="activities_tools",
      *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id", onDelete="CASCADE")},
@@ -158,7 +158,7 @@ class Activity
     private $tools;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Resource")
+     * @ORM\ManyToMany(targetEntity="Resource", inversedBy="activities")
      * @ORM\OrderBy({"name" = "ASC"})
      * @ORM\JoinTable(name="activities_resources",
      *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id", onDelete="CASCADE")},

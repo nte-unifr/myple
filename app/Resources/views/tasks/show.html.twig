@@ -14,12 +14,16 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#help{{ task.id }}" aria-controls="help" role="tab" data-toggle="tab"><h3>Résumé</h3></a></li>
+                            <li role="presentation"><a href="#tools{{ task.id }}" aria-controls="tools" role="tab" data-toggle="tab"><h3>Outils</h3></a></li>
                             <li role="presentation"><a href="#resources{{ task.id }}" aria-controls="resources" role="tab" data-toggle="tab"><h3>Ressources</h3></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="help{{ task.id }}">
                                 <div class="tab-inner">{{ task.help | raw }}</div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tools{{ task.id }}">
+                                <div class="tab-inner">{% include '_tools.html.twig' %}</div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="resources{{ task.id }}">
                                 <div class="tab-inner">{% include '_resources.html.twig' %}</div>
