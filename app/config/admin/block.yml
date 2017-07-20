@@ -9,4 +9,4 @@ easy_admin:
       form:
         fields:
           - { property: 'slug', label: 'Identifiant' }
-          - { property: 'content', label: 'Contenu', type: 'ckeditor' }
+          - { property: 'content', label: 'Contenu' }
