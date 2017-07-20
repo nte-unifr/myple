@@ -1,0 +1,12 @@
+easy_admin:
+  entities:
+    Block:
+      class: AppBundle\Entity\Block
+      list:
+        sort: ['slug', 'ASC']
+        fields:
+          - { property: 'slug', label: 'Identifiant' }
+      form:
+        fields:
+          - { property: 'slug', label: 'Identifiant' }
+          - { property: 'content', label: 'Contenu', type: 'ckeditor' }
