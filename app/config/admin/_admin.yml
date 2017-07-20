@@ -15,3 +15,4 @@ easy_admin:
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
       - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
+      - { entity: 'Block', icon: 'th-list', label: 'Blocs' }
