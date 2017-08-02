@@ -1,4 +1,8 @@
 liip_imagine:
+  loaders:
+    default:
+      filesystem:
+        locator: filesystem_insecure
   resolvers:
     default:
       web_path: ~
