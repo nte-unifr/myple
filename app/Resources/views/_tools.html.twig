@@ -11,7 +11,11 @@
                 {% for tool in tools %}
                     <div class="col-xs-6 col-md-3">
                         <a href="{{ tool.link }}" class="thumbnail">
-                            <img src="{{ vich_uploader_asset(tool, 'imageFile') }}">
+                            {% if tool.imageName is empty %}
+                                <img src="{{ ('/images/void.png') | imagine_filter('thumb_200') }}" alt="{{ tool.name }}" >
+                            {% else %}
+                                <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_200') }}" alt="{{ tool.name }}" >
+                            {% endif %}
                             <div class="caption text-center">
                                 <span class="label label-default">{{ tool.name }}</span>
                             </div>
