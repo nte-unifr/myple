@@ -74,7 +74,7 @@ class Task
     private $recap;
 
     /**
-     * @Vich\UploadableField(mapping="task_recap", fileNameProperty="recap")
+     * @Vich\UploadableField(mapping="uploads", fileNameProperty="recap")
      * @var File
      */
     private $recapFile;
