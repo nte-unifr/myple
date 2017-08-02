@@ -73,7 +73,7 @@ class Resource
     private $tutorial;
 
     /**
-     * @Vich\UploadableField(mapping="resource_image", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="uploads", fileNameProperty="imageName")
      * 
      * @var File
      */

@@ -88,7 +88,7 @@ class ToolFamily
     private $comparativeFr;
 
     /**
-     * @Vich\UploadableField(mapping="toolFamily_comparative", fileNameProperty="comparativeFr")
+     * @Vich\UploadableField(mapping="uploads", fileNameProperty="comparativeFr")
      * @var File
      */
     private $comparativeFileFr;

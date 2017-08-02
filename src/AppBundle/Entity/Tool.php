@@ -67,7 +67,7 @@ class Tool
     private $infoEn;
 
     /**
-     * @Vich\UploadableField(mapping="tool_image", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="uploads", fileNameProperty="imageName")
      * 
      * @var File
      */
