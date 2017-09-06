@@ -27,6 +27,13 @@ class Task
     private $id;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="published", type="boolean")
+     */
+     private $published;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nameFr", type="string", length=255)
@@ -401,5 +408,28 @@ class Task
     public function getHumanUpdatedAt()
     {
         return $this->humanUpdatedAt;
+    }
+
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     * @return Task
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean 
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 }

@@ -14,7 +14,7 @@ class TaskController extends Controller
     public function indexAction()
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
-        $tasks = $repository->findAll();
+        $tasks = $repository->findBy(array('published' => true));
         $video = $this->getDoctrine()->getRepository("AppBundle:Block")->findOneBy(array('slug' => 'video-intro'));
 
         return $this->render('tasks/index.html.twig', array(
