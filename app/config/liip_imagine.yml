@@ -8,7 +8,7 @@ liip_imagine:
       web_path: ~
   filter_sets:
     cache: ~
-    thumb_200:
+    thumb_50:
       quality: 100
       filters:
-        thumbnail: { size: [200, 200], mode: outbound }
+        thumbnail: { size: [50, 50], mode: outbound }
