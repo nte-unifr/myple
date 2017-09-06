@@ -6,12 +6,14 @@ easy_admin:
         sort: ['nameFr', 'ASC']
         fields:
           - { property: 'nameFr', label: 'Nom' }
+          - { property: 'published', label: 'Publié' }
       form:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'help', label: 'Aide', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'published', label: 'Publié' }
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'recapFile', label: 'Récapitulatif', type: 'vich_file' }
           - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
