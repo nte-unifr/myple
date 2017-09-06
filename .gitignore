@@ -10,6 +10,7 @@
 /vendor/
 /web/bundles/
 /web/uploads
+/web/media/cache
 	
 # Capistrano
 /Capfile
