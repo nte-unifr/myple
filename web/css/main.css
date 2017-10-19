@@ -42,29 +42,25 @@
   display: table-cell;
   vertical-align: middle;
 }
-.resources-list .pdf::before {
-  content: "\f1c1";
+.resources-list a::before {
+  content: "\f1b2";
   float: left;
   font-family: FontAwesome;
 	margin-right: 1em;
   display: table-cell;
   vertical-align: middle;
+}
+.resources-list .pdf::before {
+  content: "\f1c1";
 }
 .resources-list .web::before {
   content: "\f08e";
-  float: left;
-  font-family: FontAwesome;
-	margin-right: 1em;
-  display: table-cell;
-  vertical-align: middle;
 }
 .resources-list .video::before {
   content: "\f03d";
-  float: left;
-  font-family: FontAwesome;
-	margin-right: 1em;
-  display: table-cell;
-  vertical-align: middle;
+}
+.resources-list .book::before {
+  content: "\f02d";
 }
 
 /* content inside tabs of activities */
