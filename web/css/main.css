@@ -69,6 +69,11 @@
   padding: 30px 5px;
 }
 
+/* tools dropdown */
+#tools .media, #tools .media-body {
+  overflow: visible;
+}
+
 /* others */
 .tab-content a, .panel-activities a {
   font-style: italic;
