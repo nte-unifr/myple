@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Outils{% endblock %}
+{% block tools_active %}active{% endblock %}
+
+{% block body %}
+  <div id="tools" class="row">
+    {% for tool in tools %}
+      {% include 'tools/_tool.html.twig' %}
+    {% endfor %}
+  </div>
+{% endblock %}
