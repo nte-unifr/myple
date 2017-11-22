@@ -1,4 +1,5 @@
-<div class="col-sm-6 col-md-3">
+<div class="tool col-sm-6 col-lg-3" data-title="{{ tool.name }}"
+  data-groups='[{% for family in tool.families %}{{ family.id }}{% if not loop.last %},{% endif %}{% endfor %}]'>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{ tool.name }}</h3>
@@ -6,34 +7,22 @@
     <div class="panel-body">
       <div class="media">
         <div class="media-left media-middle">
-          <a href="#">
-            {% if tool.imageName is empty %}
-              <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="">
-            {% else %}
-              <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="">
-            {% endif %}
-          </a>
+          {% if tool.imageName is empty %}
+            <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="">
+          {% else %}
+            <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="">
+          {% endif %}
         </div>
         <div class="media-body">
-          <h4 class="media-heading">Middle aligned media</h4>
-          <div>
+          <div class="families">
             {% for family in tool.families %}
               <span class="label label-default">{{ family.nameFr }}</span>
             {% endfor %}
           </div>
           <div class="btn-group btn-group-sm" role="group" aria-label="...">
-            <button type="button" class="btn btn-default"><i class="fa fa-external-link" aria-hidden="true"></i></button>
-            <button type="button" class="btn btn-default"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
-            <div class="btn-group btn-group-sm" role="group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Activités liées
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Dropdown link</a></li>
-                <li><a href="#">Dropdown link</a></li>
-              </ul>
-            </div>
+            <a href="{{ tool.link }}" role="button" class="btn btn-default"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+            {% include 'tools/_tool_info.html.twig' %}
+            {% include 'tools/_tool_activities.html.twig' %}
           </div>
         </div>
       </div>

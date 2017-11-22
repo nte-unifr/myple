@@ -4,7 +4,16 @@
 {% block tools_active %}active{% endblock %}
 
 {% block body %}
-  <div id="tools" class="row">
+  <div id="tools-families" class="row">
+    <div class="col-xs-12 mb-2">
+      <h3>Filtrer :</h3>
+      <button type="button" class="btn btn-primary" data-id="all">Tous</button>
+      {% for family in families %}
+        <button type="button" class="btn" data-id="{{ family.id }}">{{ family.nameFr }}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <div id="tools" class="row invisible">
     {% for tool in tools %}
       {% include 'tools/_tool.html.twig' %}
     {% endfor %}
