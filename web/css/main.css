@@ -69,9 +69,36 @@
   padding: 30px 5px;
 }
 
-/* tools dropdown */
+/* tools */
 #tools .media, #tools .media-body {
   overflow: visible;
+}
+#tools .media-body .families {
+  margin-bottom: 9px;
+}
+#tools .media-body .label {
+  display: inline-block;
+}
+#tools .dropdown-menu {
+  width: 300px;
+}
+#tools .dropdown-menu li a {
+  white-space: normal;
+  max-width: 300px;
+}
+#tools .dropdown-menu li a::before {
+  content: "\f0da";
+  float: left;
+  font-family: FontAwesome;
+	margin-right: 0.6em;
+  display: table-cell;
+  vertical-align: middle;
+}
+#tools-families {
+  margin-bottom: 20px;
+}
+#tools-families .btn {
+  margin-bottom: 4px;
 }
 
 /* others */
