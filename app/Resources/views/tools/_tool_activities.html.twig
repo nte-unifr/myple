@@ -1,0 +1,13 @@
+{% if tool.activities %}
+  <div class="btn-group btn-group-sm" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Activités liées
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      {% for activity in tool.activities %}
+        <li><a href="{{ path('activities_show', {'id': activity.id}) }}">{{ activity.nameFr }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
