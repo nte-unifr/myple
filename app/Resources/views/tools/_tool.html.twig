@@ -22,7 +22,9 @@
           <div class="btn-group btn-group-sm" role="group" aria-label="...">
             <a href="{{ tool.link }}" role="button" class="btn btn-default"><i class="fa fa-external-link" aria-hidden="true"></i></a>
             {% include 'tools/_info.html.twig' %}
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{ tool.id }}Modal">Activités liées</button>
+            {% if tool.activities is not empty %}
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{ tool.id }}Modal">Activités liées</button>
+            {% endif %}
           </div>
         </div>
       </div>
