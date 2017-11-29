@@ -4,30 +4,30 @@
 {% block tasks_active %}active{% endblock %}
 
 {% block body %}
-    <div id="tasks" class="row">
-        <div class="col-xs-12">
-            <div class="well hidden-xs">
-                MyPLE rassemble des ressources d’apprentissage, en libre accès, pour aider les étudiants à choisir et utiliser les outils informatiques dont ils ont besoin pour mieux réussir leurs études à l’Université.
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <div id="video-panel" class="panel panel-default hidden-xs">
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <div class="panel-body text-center">
-                    {{ video.content | raw  }}
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <p class="lead">Parcourir par scénario</p>
-        </div>
-        <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
-            {% for task in tasks %}
-                {{ render(controller(
-                    'AppBundle:Task:show',
-                    { 'id': task.id }
-                )) }}
-            {% endfor %}
-        </div>
+  <div id="tasks" class="row">
+    <div class="col-xs-12">
+      <div class="well hidden-xs">
+        MyPLE rassemble des ressources d’apprentissage, en libre accès, pour aider les étudiants à choisir et utiliser les outils informatiques dont ils ont besoin pour mieux réussir leurs études à l’Université.
+      </div>
     </div>
+    <div class="col-xs-12">
+      <div id="video-panel" class="panel panel-default hidden-xs">
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="panel-body text-center">
+          {{ video.content | raw  }}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <p class="lead">Parcourir par scénario</p>
+    </div>
+    <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
+      {% for task in tasks %}
+        {{ render(controller(
+          'AppBundle:Task:show',
+          { 'id': task.id }
+        )) }}
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}

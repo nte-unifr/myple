@@ -24,10 +24,11 @@
   margin-top: 0;
 }
 
-/* sidelists in tasks view */
+/* sidelists */
 .side-list a {
   display: table;
   text-decoration: none;
+  font-style: italic;
 }
 .side-list a span {
   display: table-cell;
@@ -70,29 +71,11 @@
 }
 
 /* tools */
-#tools .media, #tools .media-body {
-  overflow: visible;
-}
 #tools .media-body .families {
   margin-bottom: 9px;
 }
 #tools .media-body .label {
   display: inline-block;
-}
-#tools .dropdown-menu {
-  width: 300px;
-}
-#tools .dropdown-menu li a {
-  white-space: normal;
-  max-width: 300px;
-}
-#tools .dropdown-menu li a::before {
-  content: "\f0da";
-  float: left;
-  font-family: FontAwesome;
-	margin-right: 0.6em;
-  display: table-cell;
-  vertical-align: middle;
 }
 #tools-families {
   margin-bottom: 20px;
@@ -102,10 +85,13 @@
 }
 
 /* others */
-.tab-content a, .panel-activities a {
+.tab-content a {
   font-style: italic;
 }
 
+#license {
+  text-align: center;
+}
 #license img {
   width: 30px;
 }

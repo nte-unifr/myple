@@ -1,0 +1,43 @@
+{% if resources %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        Ressources liées
+        <span class="label label-primary pull-right">{{ resources | length }}</span>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <ul class="side-list resources-list nav nav-pills nav-stacked">
+        {% for resource in resources %}
+          <li role="presentation">
+            <a class="{{ resource.type }}" href="{{ resource.url }}">
+                <span>{{ resource }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}
+
+{% if tutorials %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        Tutoriels liés
+        <span class="label label-primary pull-right">{{ tutorials | length }}</span>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <ul class="side-list resources-list nav nav-pills nav-stacked">
+        {% for tutorial in tutorials %}
+          <li role="presentation">
+            <a class="{{ tutorial.type }}" href="{{ tutorial.url }}">
+              <span>{{ tutorial }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}
