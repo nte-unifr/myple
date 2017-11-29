@@ -38,10 +38,12 @@ function initShuffle() {
     initialSort: options
   });
 
-  $('#tools-families .btn').click(function() {
+  $('#tools-families .filter').click(function() {
     var id = $(this).data('id')
     shuffleInstance.filter(id)
-    $('#tools-families .btn-primary').removeClass('btn-primary')
-    $(this).addClass('btn-primary')
+    $('#tools-families .filters-inline .filter').removeClass('btn-primary')
+    $('#tools-families .filters-inline').find('.filter[data-id="' + id + '"]').addClass('btn-primary')
+    $('#tools-families .filters-dropdown li').removeClass('active')
+    $('#tools-families .filters-dropdown').find('.filter[data-id="' + id + '"]').parent().addClass('active')
   });
 }
