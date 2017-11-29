@@ -21,11 +21,12 @@
           </div>
           <div class="btn-group btn-group-sm" role="group" aria-label="...">
             <a href="{{ tool.link }}" role="button" class="btn btn-default"><i class="fa fa-external-link" aria-hidden="true"></i></a>
-            {% include 'tools/_tool_info.html.twig' %}
-            {% include 'tools/_tool_activities.html.twig' %}
+            {% include 'tools/_info.html.twig' %}
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{ tool.id }}Modal">Activités liées</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+{% include 'tools/_activities.html.twig' %}

@@ -16,7 +16,7 @@ class ToolController extends Controller
         $tools = $repository->findAll();
 
         $familiyRepository = $this->getDoctrine()->getRepository("AppBundle:ToolFamily");
-        $families = $familiyRepository->findAll();
+        $families = $familiyRepository->findBy(array(), array('nameFr' => 'ASC'));
 
         return $this->render('tools/index.html.twig', array(
             'tools' => $tools,

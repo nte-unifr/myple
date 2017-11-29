@@ -1,0 +1,7 @@
+<p>
+  <a href="{{ path('tasks_index') }}" class="btn btn-default btn-block">Retour à la liste des scénarios</a>
+</p>
+{% if activity.humanUpdatedAt is not empty %}
+  <p class="well">Mise à jour le {{ activity.humanUpdatedAt | date("d.m.Y") }}</p>
+{% endif %}
+{% include '_shared/_activities-panel.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
