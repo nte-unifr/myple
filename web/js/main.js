@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // hide video if asked
-    if (store.get('hide-video')) {
-      $('#video-panel').hide()
+    if (!store.get('hide-video')) {
+      $('#video-panel').show()
     }
     // trigger click to hide video
     $('#video-panel button').click(function () {
