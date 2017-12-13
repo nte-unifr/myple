@@ -99,3 +99,10 @@
 .table-tools > tbody > tr > td {
   vertical-align: middle;
 }
+
+#video-panel button {
+  float: none;
+  vertical-align: top;
+  opacity: 0.6;
+  font-size: 30px;
+}
