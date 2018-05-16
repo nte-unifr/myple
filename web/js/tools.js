@@ -1,7 +1,9 @@
 $(document).ready(function () {
-  initBootstrapPopover()
-  resizePanels()
-  initShuffle()
+  if ($('#tools').length) {
+    initBootstrapPopover()
+    resizePanels()
+    initShuffle()
+  }
 })
 
 function resizePanels() {
