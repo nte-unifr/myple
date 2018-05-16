@@ -24,6 +24,11 @@
   margin-top: 0;
 }
 
+/* bootstrap tooltip override */
+.popover {
+  max-width: 450px;
+}
+
 /* sidelists */
 .side-list a {
   display: table;

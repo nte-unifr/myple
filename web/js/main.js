@@ -8,4 +8,14 @@ $(document).ready(function () {
       $('#video-panel').hide()
       store.set('hide-video', true)
     })
+    // bootstrap tooltips setup
+    $('.popover-toggler').popover({
+      html: true,
+      placement: 'top',
+      trigger: 'hover',
+      delay: { "show": 50, "hide": 2000 }
+    })
+    $('.popover-toggler').hover(function() {
+      $('.popover-toggler').not(this).popover('hide')
+    })
 })
