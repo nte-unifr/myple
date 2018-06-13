@@ -22,4 +22,7 @@
 /.bundle/*
 /log
 
+# webpack / encore
+/node_modules
+
 .DS_Store
