@@ -1,3 +1,7 @@
+var $ = require('jquery')
+import Shuffle from 'shufflejs'
+require('bootstrap-sass')
+
 $(document).ready(function () {
   if ($('#tools').length) {
     initBootstrapPopover()
@@ -10,13 +14,13 @@ function resizePanels() {
   // Resize elements to the tallest
   // Get an array of all element heights
   var elementHeights = $('#tools .panel').map(function() {
-    return $(this).height();
-  }).get();
+    return $(this).height()
+  }).get()
   // Math.max takes a variable number of arguments
   // `apply` is equivalent to passing each height as an argument
-  var maxHeight = Math.max.apply(null, elementHeights);
+  var maxHeight = Math.max.apply(null, elementHeights)
   // Set each height to the max height
-  $('#tools .panel').height(maxHeight);
+  $('#tools .panel').height(maxHeight)
 }
 
 function initBootstrapPopover() {
@@ -28,11 +32,10 @@ function initBootstrapPopover() {
 
 function initShuffle() {
   // Shuffle
-  var Shuffle = window.Shuffle;
-  var element = document.querySelector('#tools');
-  var sizer = element.querySelector('#tools .tool');
-  function sortByTitle(element) { return element.getAttribute('data-title').toLowerCase(); }
-  var options = options = { by: sortByTitle };
+  var element = document.querySelector('#tools')
+  var sizer = element.querySelector('#tools .tool')
+  function sortByTitle(element) { return element.getAttribute('data-title').toLowerCase() }
+  var options = options = { by: sortByTitle }
 
   var shuffleInstance = new Shuffle(element, {
     itemSelector: '#tools .tool',

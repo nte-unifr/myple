@@ -8,7 +8,7 @@
 /bin/
 /composer.phar
 /vendor/
-/web/bundles/
+/web/bundles
 /web/uploads
 /web/media/cache
 	
@@ -24,5 +24,6 @@
 
 # webpack / encore
 /node_modules
+/web/build
 
 .DS_Store

@@ -9,14 +9,9 @@
     <title>{% block title %}{% endblock %} - MyPLE</title>
 
     {% block stylesheets %}
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet"> 
-      {% stylesheets
-        "css/bootstrap.min.css"
-        "css/main.css"
-        filter="cssrewrite" output="css/compiled/app.css" %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-      {% endstylesheets %}
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-oi8o31xSQq8S0RpBcb4FaLB8LJi9AT8oIdmS1QldR8Ui7KUQjNAnDlJjp55Ba8FG" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     {% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -39,8 +34,8 @@
                   <img src="{{ asset('images/square.png') }}" width="22" height="22" alt="">
                 </a>
               </li>
-              <li><a href="https://www3.unifr.ch/it"><i class="fa fa-chevron-right" aria-hidden="true"></i> DIT</a></li>
-              <li><a href="https://nte.unifr.ch"><i class="fa fa-chevron-right" aria-hidden="true"></i> NTE</a></li>
+              <li><a href="https://www3.unifr.ch/it"><i class="fas fa-chevron-right"></i> DIT</a></li>
+              <li><a href="https://nte.unifr.ch"><i class="fas fa-chevron-right"></i> NTE</a></li>
             </ul>
           </div><!-- /.container-fluid -->
         </nav>
@@ -71,7 +66,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="{% block about_active %}{% endblock %}"><a href="{{ path('about') }}">A propos</a></li>
-                  <li><a href="http://www3.unifr.ch/nte/fr/contact.html">Contact <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                  <li><a href="http://www3.unifr.ch/nte/fr/contact.html">Contact <i class="fas fa-external-link"></i></a></li>
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -94,16 +89,7 @@
     </div>
 
     {% block javascripts %}
-      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-      {% javascripts
-        "js/bootstrap.min.js"
-        "js/store.min.js"
-        "js/shuffle.min.js"
-        "js/main.js"
-        "js/tools.js"
-        output="js/compiled/app.js" %}
-        <script src="{{ asset_url }}"></script>
-      {% endjavascripts %}
+      <script src="{{ asset('build/app.js') }}"></script>
     {% endblock %}
 
     <!-- Piwik -->

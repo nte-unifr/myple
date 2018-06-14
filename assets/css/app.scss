@@ -1,3 +1,5 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 .pointer { cursor: pointer; }
 @media (min-width: 1200px) {
   #main-container { width: 88% }
@@ -14,7 +16,7 @@
 #accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
   content: "\f077";
   float: left;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Pro';
 	margin-right: 1em;
 }
 #accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
@@ -43,7 +45,7 @@
 .activities-list a::before {
   content: "\f054";
   float: left;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Pro';
 	margin-right: 1em;
   display: table-cell;
   vertical-align: middle;
@@ -51,7 +53,7 @@
 .resources-list a::before {
   content: "\f1b2";
   float: left;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Pro';
 	margin-right: 1em;
   display: table-cell;
   vertical-align: middle;

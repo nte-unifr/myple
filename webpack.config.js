@@ -10,6 +10,7 @@ Encore
 
   // will create web/build/app.js and web/build/app.css
   .addEntry('app', './assets/js/app.js')
+  .addEntry('tools', './assets/js/tools.js')
 
   // allow legacy applications to use $/jQuery as a global variable
   .autoProvidejQuery()
@@ -21,7 +22,7 @@ Encore
   .cleanupOutputBeforeBuild()
 
   // show OS notifications when builds finish/fail
-  .enableBuildNotifications()
+  // .enableBuildNotifications()
 
   // create hashed filenames (e.g. app.abc123.css)
   // .enableVersioning()
