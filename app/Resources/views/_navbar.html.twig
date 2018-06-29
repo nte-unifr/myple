@@ -1,0 +1,26 @@
+<nav id="navbar-nte-uni" class="navbar navbar-expand-md navbar-dark bg-primary">
+  <div class="navbar-nav d-flex align-items-center">
+    <a class="nav-item nav-link" href="//unifr.ch"><img src="{{ asset('images/square.png') }}" width="30" height="30" alt=""></a>
+    <a class="nav-item nav-link d-none d-md-block"><i class="fas fa-chevron-right"></i></a>
+    <a class="nav-item nav-link d-none d-md-block" href="//unifr.ch/it">DIT</a>
+    <a class="nav-item nav-link d-none d-md-block"><i class="fas fa-chevron-right"></i></a>
+    <a class="nav-item nav-link d-none d-md-block" href="//unifr.ch/nte">NTE</a>
+  </div>
+</nav>
+
+<nav id="navbar-nte-app" class="navbar navbar-expand-md navbar-light bg-light mx-5 my-4">
+  <span class="navbar-brand mb-0 h1">Myple</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav mr-auto">
+      <a class="nav-item nav-link {{ tasks_active }}" href="{{ path('tasks_index') }}">Scénarios</a>
+      <a class="nav-item nav-link {{ tools_active }}" href="{{ path('tools_index') }}">Outils</a>
+    </div>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link {{ about_active }}" href="{{ path('about') }}">A propos</a>
+      <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">Contact <i class="fal fa-external-link-square-alt"></i></a>
+    </div>
+  </div>
+</nav>

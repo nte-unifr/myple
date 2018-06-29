@@ -1,0 +1,10 @@
+<ul class="nav nav-pills flex-column flex-md-row mb-4">
+  <li class="nav-item mb-2 mr-2">
+    <a class="nav-link" href="#" data-mixitup-control data-filter="all" data-sort="order:asc">Tous</a>
+  </li>
+  {% for family in families %}
+    <li class="nav-item mb-2 mr-2">
+      <a class="nav-link" href="#" data-mixitup-control data-filter=".family-{{ family.id }}" data-sort="order:asc">{{ family.nameFr }}</a>
+    </li>
+  {% endfor %}
+</ul>

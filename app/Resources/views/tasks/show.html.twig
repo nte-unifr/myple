@@ -1,40 +1,17 @@
-<div class="panel panel-default panel-content">
-  <div class="panel-heading" role="tab" id="heading{{ task.id }}">
-    <h1 class="panel-title">
-      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ task.id }}" aria-expanded="false" aria-controls="collapse{{ task.id }}">
-        {{ task.nameFr }}
-      </a>
-    </h1>
-  </div>
-  <div id="collapse{{ task.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ task.id }}">
-    <div class="panel-body">
+<div class="task card my-2">
+  <a class="card-header collapsed d-flex align-items-center" id="heading{{ task.id }}" data-toggle="collapse" data-target="#collapse{{ task.id }}" aria-expanded="false" aria-controls="collapse{{ task.id }}">
+    <h2 class="h5 my-2">
+      {{ task.nameFr }}
+    </h2>
+  </a>
+  <div id="collapse{{ task.id }}" class="collapse" aria-labelledby="heading{{ task.id }}" data-parent="#accordion">
+    <div class="card-body">
       <div class="row">
-        <div class="col-xs-12 col-sm-4 pull-right">
-          {% include 'tasks/_sidebar.html.twig' %}
+        <div class="col-12 col-md-8">
+          {% include 'tasks/_content.html.twig' %}
         </div>
-        <div class="col-xs-12 col-sm-8">
-          <div>
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#help{{ task.id }}" aria-controls="help" role="tab" data-toggle="tab"><h3>Résumé</h3></a></li>
-              <li role="presentation" class="visible-xs-block"><a href="#activities{{ task.id }}" aria-controls="help" role="tab" data-toggle="tab"><h3>Activités</h3></a></li>
-              <li role="presentation"><a href="#tools{{ task.id }}" aria-controls="tools" role="tab" data-toggle="tab"><h3>Outils</h3></a></li>
-              <li role="presentation"><a href="#resources{{ task.id }}" aria-controls="resources" role="tab" data-toggle="tab"><h3>Ressources</h3></a></li>
-            </ul>
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="help{{ task.id }}">
-                <div class="tab-inner">{{ task.help | raw }}</div>
-              </div>
-              <div role="tabpanel" class="tab-pane" id="activities{{ task.id }}">
-                <div class="tab-inner">{% include '_shared/_activities-list.html.twig' with { 'activities': task.activities, 'active': 'no' } %}</div>
-              </div>
-              <div role="tabpanel" class="tab-pane" id="tools{{ task.id }}">
-                <div class="tab-inner">{% include '_shared/_tools-table.html.twig' %}</div>
-              </div>
-              <div role="tabpanel" class="tab-pane" id="resources{{ task.id }}">
-                <div class="tab-inner">{% include '_shared/_resources-list.html.twig' %}</div>
-              </div>
-            </div>
-          </div>
+        <div class="col-12 col-md-4">
+          {% include 'tasks/_sidebar.html.twig' %}
         </div>
       </div>
     </div>

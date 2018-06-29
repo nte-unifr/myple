@@ -1,11 +1,6 @@
-<div class="panel panel-default panel-activities">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-      Activités
-      <span class="label label-primary pull-right">{{ activities | length }}</span>
-    </h2>
+<div class="card mb-2">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    Activités du scénario <span class="badge badge-pill badge-primary">{{ activities | length }}</span>
   </div>
-  <div class="panel-body">
-    {% include '_shared/_activities-list.html.twig' %}
-  </div>
+  {% include '_shared/_activities-list.html.twig' %}
 </div>

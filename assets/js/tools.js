@@ -1,54 +1,33 @@
 var $ = require('jquery')
-import Shuffle from 'shufflejs'
-require('bootstrap-sass')
+import mixitup from 'mixitup'
+require('bootstrap')
 
 $(document).ready(function () {
-  if ($('#tools').length) {
-    initBootstrapPopover()
-    resizePanels()
-    initShuffle()
-  }
+  initBootstrap()
+  initMixitup()
 })
 
-function resizePanels() {
-  // Resize elements to the tallest
-  // Get an array of all element heights
-  var elementHeights = $('#tools .panel').map(function() {
-    return $(this).height()
-  }).get()
-  // Math.max takes a variable number of arguments
-  // `apply` is equivalent to passing each height as an argument
-  var maxHeight = Math.max.apply(null, elementHeights)
-  // Set each height to the max height
-  $('#tools .panel').height(maxHeight)
+function initBootstrap() {
+  $('.tools-popover').popover({ content: getToolPopoverContent, html: true })
 }
 
-function initBootstrapPopover() {
-  $('.tool-popover').popover({
-    container: 'body',
-    trigger: 'focus'
+function getToolPopoverContent() {
+  let id = $(this).data('id')
+  return $('.tool-activities[data-id="' + id + '"]').clone()
+}
+
+function initMixitup() {
+  var mixer = mixitup('#tools', {
+    load: {
+      sort: 'order:asc'
+    },
+    selectors: {
+      control: '[data-mixitup-control]'
+    },
+    callbacks: {
+      onMixStart: function() {
+        $('.tools-popover').popover('hide')
+      }
+    }
   })
-}
-
-function initShuffle() {
-  // Shuffle
-  var element = document.querySelector('#tools')
-  var sizer = element.querySelector('#tools .tool')
-  function sortByTitle(element) { return element.getAttribute('data-title').toLowerCase() }
-  var options = options = { by: sortByTitle }
-
-  var shuffleInstance = new Shuffle(element, {
-    itemSelector: '#tools .tool',
-    sizer: sizer,
-    initialSort: options
-  });
-
-  $('#tools-families .filter').click(function() {
-    var id = $(this).data('id')
-    shuffleInstance.filter(id)
-    $('#tools-families .filters-inline .filter').removeClass('btn-primary')
-    $('#tools-families .filters-inline').find('.filter[data-id="' + id + '"]').addClass('btn-primary')
-    $('#tools-families .filters-dropdown li').removeClass('active')
-    $('#tools-families .filters-dropdown').find('.filter[data-id="' + id + '"]').parent().addClass('active')
-  });
 }

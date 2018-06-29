@@ -1,0 +1,44 @@
+$blue: #00134a;
+$orange: #d06516;
+$theme-colors: (
+  "info": $orange
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+#navbar-nte-uni {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+#navbar-nte-app {
+  border-bottom: 2px $blue solid;
+  .navbar-brand {
+    text-transform: uppercase;
+  }
+}
+
+#footer-nte {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

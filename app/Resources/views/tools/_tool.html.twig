@@ -1,34 +1,36 @@
-<div class="tool col-sm-6 col-lg-3" data-title="{{ tool.name }}"
-  data-groups='[{% for family in tool.families %}{{ family.id }}{% if not loop.last %},{% endif %}{% endfor %}]'>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ tool.name }}</h3>
-    </div>
-    <div class="panel-body">
-      <div class="media">
-        <div class="media-left media-middle">
-          {% if tool.imageName is empty %}
-            <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="">
-          {% else %}
-            <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="">
-          {% endif %}
-        </div>
-        <div class="media-body">
-          <div class="families">
-            {% for family in tool.families %}
-              <span class="label label-default">{{ family.nameFr }}</span>
-            {% endfor %}
-          </div>
-          <div class="btn-group btn-group-sm" role="group" aria-label="...">
-            <a href="{{ tool.link }}" role="button" class="btn btn-default"><i class="fas fa-external-link"></i></a>
-            {% include 'tools/_info.html.twig' %}
-            {% if tool.activities is not empty %}
-              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{ tool.id }}Modal">Activités liées</button>
-            {% endif %}
-          </div>
-        </div>
-      </div>
+<div class="tool card mb-3 mix {% for family in tool.families %}family-{{ family.id }} {% endfor %}" data-order="{{ tool.name }}">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      {% if tool.imageName is empty %}
+        <img class="img-thumbnail float-left mr-3" src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="">
+      {% else %}
+        <img class="img-thumbnail float-left mr-3" src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="">
+      {% endif %}
+      <h5 class="card-title">{{ tool.name }}</h5>
+      {% if tool.infoFr %}
+        <i class="fas fa-info-square ml-auto align-self-start" style="font-size:1.2em;"
+          data-toggle="tooltip" title="{{ tool.infoFr | striptags | raw }}">
+        </i>
+      {% endif %}
     </div>
   </div>
+  <div class="list-group list-group-flush">
+    {% if tool.activities is not empty %}
+      <a tabindex="0" class="list-group-item list-group-item-action tools-popover d-flex justify-content-between align-items-center pointer" role="button"
+        data-toggle="popover" data-id="{{ tool.id }}" data-trigger="focus">
+        Activités liées <span class="badge badge-pill badge-primary">{{ tool.activities | length }}</span>
+      </a>
+    {% endif %}
+    <a href="{{ tool.link }}" class="list-group-item list-group-item-action">Accéder à l'outil <i class="fal fa-external-link-square-alt"></i></a>
+  </div>
+  <div class="card-footer">
+    {% for family in tool.families %}
+      <span class="badge badge-primary">{{ family.nameFr }}</span>
+    {% endfor %}
+  </div>
 </div>
-{% include 'tools/_activities.html.twig' %}
+<div class="d-none">
+  <div class="tool-activities" data-id="{{ tool.id }}">
+    {% include '_shared/_activities-list.html.twig' with { 'activities': tool.activities, 'active': 'no' } %}
+  </div>
+</div>

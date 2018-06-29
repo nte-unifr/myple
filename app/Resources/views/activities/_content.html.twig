@@ -1,0 +1,50 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#activity-tab" aria-controls="activity" role="tab" data-toggle="tab" aria-selected="true">
+      <h3 class="h5">Activité</h3>
+    </a>
+  </li>
+  {% if activity.biblio %}
+    <li class="nav-item">
+      <a class="nav-link" href="#biblio-tab" aria-controls="biblio" role="tab" data-toggle="tab" aria-selected="false">
+        <h3 class="h5">Bibliographie</h3>
+      </a>
+    </li>
+  {% endif %}
+  {% if activity.tools is not empty %}
+    <li class="nav-item">
+      <a class="nav-link" href="#tools-tab" aria-controls="tools" role="tab" data-toggle="tab" aria-selected="false">
+        <h3 class="h5">Outils</h3>
+      </a>
+    </li>
+  {% endif %}
+  {% if resources is not empty or tutorials is not empty %}
+    <li class="nav-item">
+      <a class="nav-link" href="#resources-tab" aria-controls="resources" role="tab" data-toggle="tab" aria-selected="false">
+        <h3 class="h5">Ressources</h3>
+      </a>
+    </li>
+  {% endif %}
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade show active py-4 pl-2" id="activity-tab">
+    <div class="card mb-2">
+      <div class="card-header">Finalités</div>
+      <div class="card-body">{{ activity.goalFr | raw }}</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Etapes</div>
+      <div class="card-body">{{ activity.stepsFr | raw }}</div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="biblio-tab">
+    {{ activity.biblio | raw }}
+  </div>
+  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="tools-tab">
+    {% include '_shared/_tools-list.html.twig' with { 'tools': activity.tools } %}
+  </div>
+  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="resources-tab">
+    {% include '_shared/_resources-list.html.twig' with { 'resources': resources, 'list_title': 'Ressources liées' } %}
+    {% include '_shared/_resources-list.html.twig' with { 'resources': tutorials, 'list_title': 'Tutoriels liés' } %}
+  </div>
+</div>

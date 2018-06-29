@@ -1,43 +1,18 @@
 {% if resources %}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-        Ressources liées
-        <span class="label label-primary pull-right">{{ resources | length }}</span>
-      </h2>
+  <div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      {{ list_title }} <span class="badge badge-pill badge-primary">{{ resources | length }}</span>
     </div>
-    <div class="panel-body">
-      <ul class="side-list resources-list nav nav-pills nav-stacked">
-        {% for resource in resources %}
-          <li role="presentation">
-            <a class="{{ resource.type }} popover-toggler" href="{{ resource.url }}" data-toggle="popover" data-content="{{ resource.additional }}">
-                <span>{{ resource }}</span>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% endif %}
-
-{% if tutorials %}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-        Tutoriels liés
-        <span class="label label-primary pull-right">{{ tutorials | length }}</span>
-      </h2>
-    </div>
-    <div class="panel-body">
-      <ul class="side-list resources-list nav nav-pills nav-stacked">
-        {% for tutorial in tutorials %}
-          <li role="presentation">
-            <a class="{{ tutorial.type }} popover-toggler" href="{{ tutorial.url }}" data-toggle="popover" data-content="{{ tutorial.additional }}">
-              <span>{{ tutorial }}</span>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+    <div class="list-group list-group-flush">
+      {% for resource in resources %}
+        <a href="{{ resource.url }}"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center popover-toggler"
+          data-toggle="popover" data-content="{{ resource.additional }}"
+        >
+          {{ resource }}
+          {% include '_shared/_icon_chooser.html.twig' with { 'type': resource.type } %}
+        </a>
+      {% endfor %}
     </div>
   </div>
 {% endif %}

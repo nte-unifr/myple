@@ -4,13 +4,8 @@
 {% block tools_active %}active{% endblock %}
 
 {% block body %}
-  <div id="tools-families" class="row">
-    <div class="col-xs-12">
-      {% include 'tools/_filters-inline.html.twig' %}
-      {% include 'tools/_filters-dropdown.html.twig' %}
-    </div>
-  </div>
-  <div id="tools" class="row">
+  {% include 'tools/_filters.html.twig' %}
+  <div id="tools" class="row card-deck">
     {% for tool in tools %}
       {% include 'tools/_tool.html.twig' %}
     {% endfor %}

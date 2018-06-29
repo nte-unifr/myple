@@ -1,0 +1,26 @@
+{% if tools is not empty %}
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      Outils liés <span class="badge badge-pill badge-primary">{{ tools | length }}</span>
+    </div>
+    <div class="list-group">
+      {% for tool in tools %}
+        <a href="{{ tool.link }}" class="list-group-item list-group-item-action d-flex align-items-center">
+          <div class="py-1 px-2">
+            {% if tool.imageName is empty %}
+              <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
+            {% else %}
+              <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
+            {% endif %}
+          </div>
+          <strong class="px-4">{{ tool.name }}</strong>
+          <div class="ml-auto p-2">
+            {% for family in tool.families %}
+              <span class="badge badge-secondary">{{ family.nameFr }}</span>
+            {% endfor %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

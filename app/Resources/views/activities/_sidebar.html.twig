@@ -1,7 +1,11 @@
-<p>
-  <a href="{{ path('tasks_index') }}" class="btn btn-default btn-block">Retour à la liste des scénarios</a>
-</p>
-{% if activity.humanUpdatedAt is not empty %}
-  <p class="well">Mise à jour le {{ activity.humanUpdatedAt | date("d.m.Y") }}</p>
-{% endif %}
 {% include '_shared/_activities-panel.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
+<a class="btn btn-block btn-light mb-2" href="{{ path('tasks_index') }}">
+  Retour à la liste des scénarios
+</a>
+{% if activity.humanUpdatedAt is not empty %}
+  <div class="card mb-2">
+    <div class="card-header font-italic">
+      Mise à jour le {{ activity.humanUpdatedAt | date("d.m.Y") }}
+    </div>
+  </div>
+{% endif %}

@@ -1,14 +1,16 @@
-{% if task.humanUpdatedAt is not empty %}
-  <p class="well">Mise à jour le {{ task.humanUpdatedAt | date("d.m.Y") }}</p>
-{% endif %}
 {% if task.recap %}
-  <p>
-    <a class="btn btn-lg btn-info btn-block recap" href="{{ vich_uploader_asset(task, 'recapFile') }}" alt="{{ task.recap }}">
-      <i class="fas fa-file-pdf"></i>
-      Scénario complet (PDF)
-    </a>
-  </p>
+  <a class="btn btn-lg btn-info btn-block mb-2" href="{{ vich_uploader_asset(task, 'recapFile') }}" alt="{{ task.recap }}">
+    <i class="fas fa-file-pdf"></i>&nbsp;
+    Scénario complet
+  </a>
 {% endif %}
-<div class="hidden-xs">
+{% if task.humanUpdatedAt is not empty %}
+  <div class="card mb-2">
+    <div class="card-header font-italic">
+      Mise à jour le {{ task.humanUpdatedAt | date("d.m.Y") }}
+    </div>
+  </div>
+{% endif %}
+<div class="d-none d-md-block">
   {% include '_shared/_activities-panel.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
 </div>

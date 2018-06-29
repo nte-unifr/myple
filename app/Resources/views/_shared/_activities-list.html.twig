@@ -1,9 +1,7 @@
-<ul class="side-list activities-list nav nav-pills nav-stacked">
+<div class="list-group list-group-flush">
   {% for activity in activities %}
-    <li role="presentation" {% if activity.id == active %}class="active"{% endif %}>
-      <a href="{{ path('activities_show', {'id': activity.id}) }}">
-        <span>{{ activity }}</span>
-      </a>
-    </li>
+    <a href="{{ path('activities_show', {'id': activity.id}) }}" class="list-group-item list-group-item-action {% if activity.id == active %}active{% endif %}">
+      {{ activity }}
+    </a>
   {% endfor %}
-</ul>
+</div>
