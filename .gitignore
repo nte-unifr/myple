@@ -24,6 +24,5 @@
 
 # webpack / encore
 /node_modules
-/web/build
 
 .DS_Store
