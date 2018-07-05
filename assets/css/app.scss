@@ -1,5 +1,11 @@
 @import "bs_nte";
 @import "bs_override";
 @import "bs_responsive-card-deck";
-@import "tools";
-@import "others";
+
+.mixitup-control-active {
+  color: #fff;
+  background-color: $blue !important;
+  &:hover {
+    color: #fff;
+  }
+}

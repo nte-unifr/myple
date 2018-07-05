@@ -11,7 +11,6 @@ Encore
 
   // will create web/build/app.js and web/build/app.css
   .addEntry('app', './assets/js/app.js')
-  .addEntry('tools', './assets/js/tools.js')
 
   // allow legacy applications to use $/jQuery as a global variable
   .autoProvidejQuery()
