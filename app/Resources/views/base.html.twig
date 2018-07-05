@@ -8,7 +8,11 @@
 
     {% block stylesheets %}
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
-      <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+      {% if app.environment == 'prod' %}
+        <link rel="stylesheet" href="{{ asset('built/app.css') }}">
+      {% else %}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+      {% endif %}
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
