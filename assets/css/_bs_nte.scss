@@ -17,11 +17,15 @@ body {
   flex: 1;
 }
 
-#navbar-nte-uni {
+#navbar-nte {
   border-bottom: 2px $blue solid;
   .navbar-brand {
     text-transform: uppercase;
   }
+}
+
+#container-nte {
+  margin-top: 100px;
 }
 
 #footer-nte {
