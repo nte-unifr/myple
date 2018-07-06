@@ -1,6 +1,6 @@
 {% include '_shared/_activities-panel.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
 <a class="btn btn-block btn-light mb-2" href="{{ path('tasks_index') }}">
-  Retour à la liste des scénarios
+  <i class="fas fa-arrow-circle-left"></i> Retour à la liste des scénarios
 </a>
 {% if activity.humanUpdatedAt is not empty %}
   <div class="card mb-2">

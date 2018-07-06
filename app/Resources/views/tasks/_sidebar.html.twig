@@ -1,7 +1,7 @@
 {% if task.recap %}
   <a class="btn btn-lg btn-info btn-block mb-2" href="{{ vich_uploader_asset(task, 'recapFile') }}" alt="{{ task.recap }}">
     <i class="fas fa-file-pdf"></i>&nbsp;
-    Scénario complet
+    Scénario complet (PDF)
   </a>
 {% endif %}
 {% if task.humanUpdatedAt is not empty %}

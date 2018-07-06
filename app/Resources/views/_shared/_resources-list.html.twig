@@ -7,7 +7,7 @@
       {% for resource in resources %}
         <a href="{{ resource.url }}"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center popover-toggler"
-          data-toggle="popover" data-content="{{ resource.additional }}"
+          data-toggle="popover" data-placement="right" data-content="{{ resource.additional }}"
         >
           {{ resource }}
           {% include '_shared/_icon_chooser.html.twig' with { 'type': resource.type } %}
