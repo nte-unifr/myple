@@ -21,6 +21,9 @@ body {
   border-bottom: 2px $blue solid;
   .navbar-brand {
     text-transform: uppercase;
+    a:hover   {
+      text-decoration: none;
+    }
   }
 }
 
