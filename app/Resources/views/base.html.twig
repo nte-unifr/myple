@@ -20,7 +20,7 @@
 
     {% include '_navbar.html.twig' with { tasks_active: block('tasks_active'), tools_active: block('tools_active'), about_active: block('about_active') } %}
 
-    <div id="container-nte" class="container-fluid flex-grow px-5">
+    <div id="container-nte" class="container-fluid flex-grow px-md-5">
       {% block body %}{% endblock %}
     </div>
 
