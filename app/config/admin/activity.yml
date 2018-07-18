@@ -11,7 +11,7 @@ easy_admin:
         fields:
           - { type: 'tab', label: 'Général' }
           - { type: 'group', css_class: 'col-sm-9', label: 'Bibliographies' }
-          - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
+          - { property: 'biblio', label: ' ', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3', label: 'Organisation' }
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'task', label: 'Tâche' }

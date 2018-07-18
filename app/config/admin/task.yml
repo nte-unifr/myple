@@ -18,14 +18,18 @@ easy_admin:
           - { property: 'published', label: 'Publié' }
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { type: 'tab', label: 'FR' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Français' }
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'help', label: 'Aide', type: 'ckeditor' }
           - { type: 'tab', label: 'DE' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Allemand' }
           - { property: 'nameDe', label: 'Nom' }
           - { property: 'helpDe', label: 'Aide', type: 'ckeditor' }
           - { type: 'tab', label: 'IT' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Italien' }
           - { property: 'nameIt', label: 'Nom' }
           - { property: 'helpIt', label: 'Aide', type: 'ckeditor' }
           - { type: 'tab', label: 'EN' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Anglais' }
           - { property: 'nameEn', label: 'Nom' }
           - { property: 'helpEn', label: 'Aide', type: 'ckeditor' }
