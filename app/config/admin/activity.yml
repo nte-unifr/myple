@@ -9,15 +9,37 @@ easy_admin:
           - { property: 'task', label: 'Tâche' }
       form:
         fields:
-          - { type: 'group', css_class: 'col-sm-9' }
+          - { type: 'tab', label: 'Général' }
+          - { type: 'group', css_class: 'col-sm-9', label: 'Bibliographies' }
+          - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
+          - { type: 'group', css_class: 'col-sm-3', label: 'Organisation' }
+          - { property: 'humanUpdatedAt', label: 'Mise à jour' }
+          - { property: 'task', label: 'Tâche' }
+          - { property: 'rank', label: 'Position' }
+          - { type: 'group', css_class: 'col-sm-9', label: 'Relations' }
+          - { property: 'tools', label: 'Outils' }
+          - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
+          - { type: 'tab', label: 'FR' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Français' }
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'goalFr', label: 'Finalités', type: 'ckeditor' }
           - { property: 'stepsFr', label: 'Étapes', type: 'ckeditor' }
           - { property: 'refFr', label: 'Référentiel', type: 'ckeditor' }
-          - { property: 'biblio', label: 'Bibliographies', type: 'ckeditor' }
-          - { type: 'group', css_class: 'col-sm-3' }
-          - { property: 'humanUpdatedAt', label: 'Mise à jour' }
-          - { property: 'task', label: 'Tâche' }
-          - { property: 'rank', label: 'Position' }
-          - { property: 'tools', label: 'Outils' }
-          - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
+          - { type: 'tab', label: 'DE' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Allemand' }
+          - { property: 'nameDe', label: 'Nom' }
+          - { property: 'goalDe', label: 'Finalités', type: 'ckeditor' }
+          - { property: 'stepsDe', label: 'Étapes', type: 'ckeditor' }
+          - { property: 'refDe', label: 'Référentiel', type: 'ckeditor' }
+          - { type: 'tab', label: 'IT' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Italien' }
+          - { property: 'nameIt', label: 'Nom' }
+          - { property: 'goalIt', label: 'Finalités', type: 'ckeditor' }
+          - { property: 'stepsIt', label: 'Étapes', type: 'ckeditor' }
+          - { property: 'refIt', label: 'Référentiel', type: 'ckeditor' }
+          - { type: 'tab', label: 'EN' }
+          - { type: 'group', css_class: 'col-sm-12', label: 'Anglais' }
+          - { property: 'nameEn', label: 'Nom' }
+          - { property: 'goalEn', label: 'Finalités', type: 'ckeditor' }
+          - { property: 'stepsEn', label: 'Étapes', type: 'ckeditor' }
+          - { property: 'refEn', label: 'Référentiel', type: 'ckeditor' }
