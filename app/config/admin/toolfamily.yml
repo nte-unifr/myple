@@ -9,8 +9,10 @@ easy_admin:
       form:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
-          - { property: 'nameFr', label: 'Nom' }
-          - { property: 'helpFr', label: 'Aide' }
+          - { property: 'nameFr', label: 'Nom (FR)' }
+          - { property: 'nameDe', label: 'Nom (DE)' }
+          - { property: 'nameIt', label: 'Nom (IT)' }
+          - { property: 'nameEn', label: 'Nom (EN)' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'comparativeFileFr', label: 'Tableau comparatif', type: 'vich_file' }
