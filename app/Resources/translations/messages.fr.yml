@@ -1,5 +1,28 @@
-ToolFamily: Famille d'outils
-Tool: Outil
-Task: Tâche
-Activity: Activité
-Resource: Ressource
+about: A propos
+activity: Activité
+activities: Activités
+all: Tous
+app_description: MyPLE rassemble des ressources d’apprentissage, en libre accès, pour aider les étudiants à choisir et utiliser les outils informatiques dont ils ont besoin pour mieux réussir leurs études à l’Université.
+back_to_tasks: Retour à la liste des scénarios
+bibliography: Bibliographie
+browse: Parcourir par scénario
+close_video: Vous pouvez la revoir sur la page A propos
+contact: Contact
+full_task: Scénario complet
+goals: Finalités
+go_to_tool: Accéder à l'outil
+license: Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 Suisse (CC BY-NC-SA 3.0 CH)
+linked_activities: Activités liées
+linked_resources: Ressources liées
+linked_tools: Outils liés
+linked_tutorials: Tutoriels liés
+resource: Ressource
+resources: Ressources 
+steps: Etapes
+summary: Résumé
+task: Scénario
+tasks: Scénarios
+task_activities: Activités du scénario
+tool: Outil
+tools: Outils
+updated: Mise à jour le

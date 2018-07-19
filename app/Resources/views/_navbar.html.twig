@@ -8,12 +8,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link {{ tasks_active }}" href="{{ path('tasks_index') }}">Scénarios</a>
-      <a class="nav-item nav-link {{ tools_active }}" href="{{ path('tools_index') }}">Outils</a>
+      <a class="nav-item nav-link {{ tasks_active }}" href="{{ path('tasks_index') }}">{{ 'tasks'|trans }}</a>
+      <a class="nav-item nav-link {{ tools_active }}" href="{{ path('tools_index') }}">{{ 'tools'|trans }}</a>
     </div>
     <div class="navbar-nav">
-      <a class="nav-item nav-link {{ about_active }}" href="{{ path('about') }}">A propos</a>
-      <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">Contact <i class="fal fa-external-link-square-alt"></i></a>
+      <a class="nav-item nav-link {{ about_active }}" href="{{ path('about') }}">{{ 'about'|trans }}</a>
+      <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">{{ 'contact'|trans }} <i class="fal fa-external-link-square-alt"></i></a>
     </div>
   </div>
 </nav>

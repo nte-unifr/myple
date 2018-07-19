@@ -1,22 +1,22 @@
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" href="#help{{ task.id }}" aria-controls="help" role="tab" data-toggle="tab" aria-selected="true">
-      <h3 class="h5">Résumé</h3>
+      <h3 class="h5">{{ 'summary'|trans }}</h3>
     </a>
   </li>
   <li class="nav-item d-md-none">
     <a class="nav-link" href="#activities{{ task.id }}" aria-controls="activities" role="tab" data-toggle="tab" aria-selected="false">
-      <h3 class="h5">Activités</h3>
+      <h3 class="h5">{{ 'activities'|trans }}</h3>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#tools{{ task.id }}" aria-controls="tools" role="tab" data-toggle="tab" aria-selected="false">
-      <h3 class="h5">Outils</h3>
+      <h3 class="h5">{{ 'tools'|trans }}</h3>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#resources{{ task.id }}" aria-controls="resources" role="tab" data-toggle="tab" aria-selected="false">
-      <h3 class="h5">Ressources</h3>
+      <h3 class="h5">{{ 'resources'|trans }}</h3>
     </a>
   </li>
 </ul>
@@ -31,7 +31,7 @@
     {% include '_shared/_tools-list.html.twig' %}
   </div>
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="resources{{ task.id }}">
-    {% include '_shared/_resources-list.html.twig' with { 'resources': resources, 'list_title': 'Ressources liées' } %}
-    {% include '_shared/_resources-list.html.twig' with { 'resources': tutorials, 'list_title': 'Tutoriels liés' } %}
+    {% include '_shared/_resources-list.html.twig' with { 'resources': resources, 'list_title': 'linked_resources'|trans } %}
+    {% include '_shared/_resources-list.html.twig' with { 'resources': tutorials, 'list_title': 'linked_tutorials'|trans } %}
   </div>
 </div>

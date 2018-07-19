@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Scénarios{% endblock %}
+{% block title %}{{ 'tasks'|trans }}{% endblock %}
 {% block tasks_active %}active{% endblock %}
 
 {% block body %}
   <div class="row">
     <div class="col">
       <div class="card bg-light p-4 mb-4">
-        MyPLE rassemble des ressources d’apprentissage, en libre accès, pour aider les étudiants à choisir et utiliser les outils informatiques dont ils ont besoin pour mieux réussir leurs études à l’Université. 
+        {{ 'app_description'|trans }} 
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="col">
-      <p class="lead">Parcourir par scénario</p>
+      <p class="lead">{{ 'browse'|trans }}</p>
     </div>
   </div>
 

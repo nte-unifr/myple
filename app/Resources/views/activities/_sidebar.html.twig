@@ -1,11 +1,11 @@
 {% include '_shared/_activities-panel.html.twig' with { 'activities': activity.task.activities, 'active': activity.id } %}
 <a class="btn btn-block btn-light mb-2" href="{{ path('tasks_index') }}">
-  <i class="fas fa-arrow-circle-left"></i> Retour à la liste des scénarios
+  <i class="fas fa-arrow-circle-left"></i> {{ 'back_to_tasks'|trans }}
 </a>
 {% if activity.humanUpdatedAt is not empty %}
   <div class="card mb-2">
     <div class="card-header font-italic">
-      Mise à jour le {{ activity.humanUpdatedAt | date("d.m.Y") }}
+      {{ 'updated'|trans }} {{ activity.humanUpdatedAt | date("d.m.Y") }}
     </div>
   </div>
 {% endif %}

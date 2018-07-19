@@ -1,13 +1,13 @@
 {% if task.recap %}
   <a class="btn btn-lg btn-info btn-block mb-2" href="{{ vich_uploader_asset(task, 'recapFile') }}" alt="{{ task.recap }}">
     <i class="fas fa-file-pdf"></i>&nbsp;
-    Scénario complet (PDF)
+    {{ 'full_task'|trans }} (PDF)
   </a>
 {% endif %}
 {% if task.humanUpdatedAt is not empty %}
   <div class="card mb-2">
     <div class="card-header font-italic">
-      Mise à jour le {{ task.humanUpdatedAt | date("d.m.Y") }}
+      {{ 'updated'|trans }} {{ task.humanUpdatedAt | date("d.m.Y") }}
     </div>
   </div>
 {% endif %}
