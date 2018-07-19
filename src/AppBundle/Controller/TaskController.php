@@ -15,11 +15,9 @@ class TaskController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
         $tasks = $repository->findBy(array('published' => true));
-        $video = $this->getDoctrine()->getRepository("AppBundle:Block")->findOneBy(array('slug' => 'video-intro'));
 
         return $this->render('tasks/index.html.twig', array(
-            'tasks' => $tasks,
-            'video' => $video
+            'tasks' => $tasks
         ));
     }
 
