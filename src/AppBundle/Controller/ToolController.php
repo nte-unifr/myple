@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ToolController extends Controller
 {
     /**
-     * @Route("/tools", name="tools_index")
+     * @Route("/{_locale}/tools", name="tools_index")
      */
     public function indexAction()
     {

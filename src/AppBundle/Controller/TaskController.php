@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class TaskController extends Controller
 {
     /**
-     * @Route("/", name="tasks_index")
+     * @Route("/{_locale}", name="tasks_index")
      */
     public function indexAction()
     {

@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ActivityController extends Controller
 {
     /**
-     * @Route("/activities/{id}", requirements={"id" = "\d+"}, name="activities_show")
+     * @Route("/{_locale}/activities/{id}", requirements={"id" = "\d+"}, name="activities_show")
      */
     public function showAction($id)
     {

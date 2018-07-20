@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class PagesController extends Controller
 {
     /**
-     * @Route("/about", name="about")
+     * @Route("/{_locale}/about", name="about")
      */
     public function aboutAction()
     {
