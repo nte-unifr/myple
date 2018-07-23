@@ -4,7 +4,9 @@
   </li>
   {% for family in families %}
     <li class="nav-item mb-2 mr-2">
-      <a class="nav-link" href="#" data-mixitup-control data-filter=".family-{{ family.id }}" data-sort="order:asc">{{ family.nameFr }}</a>
+      <a class="nav-link" href="#" data-mixitup-control data-filter=".family-{{ family.id }}" data-sort="order:asc">
+        {% include '_i18n/print_name.html.twig' with {'entity': family} %}
+      </a>
     </li>
   {% endfor %}
 </ul>

@@ -6,11 +6,7 @@
       <img class="mr-3" src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="">
     {% endif %}
     <h5 class="mb-0">{{ tool.name }}</h5>
-    {% if tool.infoFr %}
-      <i class="fas fa-info-square ml-auto" style="font-size:1.2em;"
-        data-toggle="tooltip" title="{{ tool.infoFr | striptags | raw }}">
-      </i>
-    {% endif %}
+    {% include '_i18n/print_info.html.twig' with {'entity': tool} %}
   </div>
   <div class="card-body p-0">
     <div class="list-group list-group-flush">
@@ -25,7 +21,7 @@
   </div>
   <div class="card-footer">
     {% for family in tool.families %}
-      <span class="badge badge-light bg-white">{{ family.nameFr }}</span>
+      <span class="badge badge-light bg-white">{% include '_i18n/print_name.html.twig' with {'entity': family} %}</span>
     {% endfor %}
   </div>
 </div>

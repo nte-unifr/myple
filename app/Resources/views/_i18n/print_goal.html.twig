@@ -1,0 +1,9 @@
+{% if "en" in app.request.locale and entity.goalEn is not empty %}
+  {{ entity.goalEn | raw }}
+{% elseif "it" in app.request.locale and entity.goalIt is not empty %}
+  {{ entity.goalIt | raw }}
+{% elseif "de" in app.request.locale and entity.goalDe is not empty %}
+  {{ entity.goalDe | raw }}
+{% else %}
+  {{ entity.goalFr | raw }}
+{% endif %}

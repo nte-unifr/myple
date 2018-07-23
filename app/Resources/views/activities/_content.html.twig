@@ -30,11 +30,11 @@
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2" id="activity-tab">
     <div class="card mb-2">
       <div class="card-header">{{ 'goals'|trans }}</div>
-      <div class="card-body">{{ activity.goalFr | raw }}</div>
+      <div class="card-body">{% include '_i18n/print_goal.html.twig' with {'entity': activity} %}</div>
     </div>
     <div class="card">
       <div class="card-header">{{ 'steps'|trans }}</div>
-      <div class="card-body">{{ activity.stepsFr | raw }}</div>
+      <div class="card-body">{% include '_i18n/print_steps.html.twig' with {'entity': activity} %}</div>
     </div>
   </div>
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="biblio-tab">

@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ activity.nameFr }}{% endblock %}
+{% block title %}{% include '_i18n/print_name.html.twig' with {'entity': activity} %}{% endblock %}
 {% block tasks_active %}active{% endblock %}
 
 {% block body %}
   <div id="activity">
     <div class="row my-4">
       <div class="col">
-        <h1 class="h3">{{ activity.nameFr }} <small class="text-muted">{{ activity.task.nameFr }}</small></h1>
+        <h1 class="h3">
+          {% include '_i18n/print_name.html.twig' with {'entity': activity} %}
+          <small class="text-muted">{% include '_i18n/print_name.html.twig' with {'entity': activity.task} %}</small>
+        </h1>
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 <div class="task card my-2">
   <a class="card-header collapsed d-flex align-items-center" id="heading{{ task.id }}" data-toggle="collapse" data-target="#collapse{{ task.id }}" aria-expanded="false" aria-controls="collapse{{ task.id }}">
     <h2 class="h5 my-2">
-      {{ task.nameFr }}
+      {% include '_i18n/print_name.html.twig' with {'entity': task} %}
     </h2>
   </a>
   <div id="collapse{{ task.id }}" class="collapse" aria-labelledby="heading{{ task.id }}" data-parent="#accordion">

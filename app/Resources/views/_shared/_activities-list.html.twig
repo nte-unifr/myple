@@ -2,7 +2,7 @@
   {% for activity in activities %}
     <a href="{{ path('activities_show', {'id': activity.id}) }}" class="d-flex align-items-center list-group-item list-group-item-action {% if activity.id == active %}active{% endif %}">
       <i class="far fa-chevron-right mr-4"></i>
-      {{ activity }}
+      {% include '_i18n/print_name.html.twig' with {'entity': activity} %}
     </a>
   {% endfor %}
 </div>
