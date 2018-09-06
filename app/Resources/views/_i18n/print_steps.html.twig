@@ -1,9 +1,11 @@
-{% if "en" in app.request.locale and entity.stepsEn is not empty %}
-  {{ entity.stepsEn | raw }}
-{% elseif "it" in app.request.locale and entity.stepsIt is not empty %}
-  {{ entity.stepsIt | raw }}
-{% elseif "de" in app.request.locale and entity.stepsDe is not empty %}
-  {{ entity.stepsDe | raw }}
-{% else %}
-  {{ entity.stepsFr | raw }}
-{% endif %}
+<div class="raw">
+  {% if "en" in app.request.locale and entity.stepsEn is not empty %}
+    {{ entity.stepsEn | raw }}
+  {% elseif "it" in app.request.locale and entity.stepsIt is not empty %}
+    {{ entity.stepsIt | raw }}
+  {% elseif "de" in app.request.locale and entity.stepsDe is not empty %}
+    {{ entity.stepsDe | raw }}
+  {% else %}
+    {{ entity.stepsFr | raw }}
+  {% endif %}
+</div>

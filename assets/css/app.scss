@@ -10,3 +10,8 @@
     color: #fff;
   }
 }
+
+.raw a {
+  text-decoration: underline dotted;
+  color: lighten($blue, 20%);
+}
