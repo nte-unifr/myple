@@ -1,0 +1,11 @@
+<div class="raw">
+  {% if "en" in app.request.locale and entity.helpEn is not empty %}
+    {{ entity.helpEn | raw }}
+  {% elseif "it" in app.request.locale and entity.helpIt is not empty %}
+    {{ entity.helpIt | raw }}
+  {% elseif "de" in app.request.locale and entity.helpDe is not empty %}
+    {{ entity.helpDe | raw }}
+  {% else %}
+    {{ entity.help | raw }}
+  {% endif %}
+</div>

@@ -22,7 +22,7 @@
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2 raw" id="help{{ task.id }}">
-    {{ task.help | raw }}
+    {% include '_i18n/print_help.html.twig' with {'entity': task} %}
   </div>
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="activities{{ task.id }}">
     {% include '_shared/_activities-list.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
