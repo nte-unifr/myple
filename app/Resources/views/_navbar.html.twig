@@ -20,7 +20,15 @@
       <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">{{ 'contact'|trans }} <i class="fal fa-external-link-square-alt"></i></a>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="far fa-language"></i>
+          {% if "fr" in app.request.locale %}
+            <span class="flag-icon flag-icon-fr flag-icon-squared rounded-circle"></span>
+          {% elseif "de" in app.request.locale %}
+            <span class="flag-icon flag-icon-de flag-icon-squared rounded-circle"></span>
+          {% elseif "it" in app.request.locale %}
+            <span class="flag-icon flag-icon-it flag-icon-squared rounded-circle"></span>
+          {% elseif "en" in app.request.locale %}
+            <span class="flag-icon flag-icon-gb flag-icon-squared rounded-circle"></span>
+          {% endif %}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
           <a class="dropdown-item {% if "fr" in app.request.locale %}active{% endif %}" href="{{ path(route, params|merge({ _locale: 'fr' })) }}">
