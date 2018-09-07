@@ -15,6 +15,6 @@ class MainController extends Controller
   {
     $path = $request->getBasePath();
     $locale = $request->getLocale();
-    return $this->redirect($path.$locale);
+    return $this->redirect($path.'/'.$locale);
   }
 }
