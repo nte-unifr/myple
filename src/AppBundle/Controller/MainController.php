@@ -13,7 +13,8 @@ class MainController extends Controller
    */
   public function indexAction(Request $request)
   {
+    $path = $request->getBasePath();
     $locale = $request->getLocale();
-    return $this->redirect('/'.$locale);
+    return $this->redirect($path.$locale);
   }
 }
