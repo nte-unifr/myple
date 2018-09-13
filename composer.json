@@ -1,14 +1,22 @@
 {
-    "name": "deilloal/myple",
-    "license": "proprietary",
+    "name": "nte-unifr/myple",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "AppBundle\\": "src/AppBundle"
         },
         "classmap": [
             "app/AppKernel.php",
             "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
         ]
     },
     "require": {
@@ -26,11 +34,9 @@
         "egeloen/ckeditor-bundle": "^4.0",
         "easycorp/easyadmin-bundle": "^1.16",
         "liip/imagine-bundle": "1.9.*",
-        "symfony/assetic-bundle": "^2.8",
         "vich/uploader-bundle": "^1.4"
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "^2.3",
         "sensio/generator-bundle": "~3.0",
         "symfony/phpunit-bridge": "~2.7",
         "symfony/web-server-bundle": "^3.4"
@@ -52,12 +58,14 @@
         ]
     },
     "config": {
-        "bin-dir": "bin",
         "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
         "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"

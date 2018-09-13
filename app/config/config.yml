@@ -31,6 +31,7 @@ framework:
         handler_id: ~
     fragments: ~
     http_method_override: true
+    assets: ~
     translator: { fallbacks: ['%locale%'] }
 
 # Twig Configuration
@@ -67,13 +68,6 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-
-# assetic
-assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-        cssrewrite: ~
 
 # ivory ckeditor
 ivory_ck_editor:
