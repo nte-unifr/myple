@@ -19,4 +19,5 @@ easy_admin:
           - { property: 'infoEn', label: 'Info (EN)', type: 'ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'families', label: "Familles d'outils" }
+          - { property: 'tags', label: "Tags" }
           - { property: 'imageFile', label: 'Image', type: 'vich_image' }

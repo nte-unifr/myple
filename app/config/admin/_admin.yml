@@ -11,7 +11,9 @@ easy_admin:
       - { label: 'Scénario' }
       - { entity: 'Task', icon: 'cube', label: 'Tâches', default: true }
       - { entity: 'Activity', icon: 'cubes', label: 'Activités' }
-      - { label: 'Autre' }
-      - { entity: 'ToolFamily', icon: 'th-list', label: "Familles d'outils" }
+      - { label: 'Outils' }
       - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
+      - { entity: 'ToolFamily', icon: 'th-list', label: "Familles" }
+      - { entity: 'ToolTag', icon: 'th-list', label: "Tags" }
+      - { label: 'Autre' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }

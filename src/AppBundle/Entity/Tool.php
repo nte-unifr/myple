@@ -98,6 +98,16 @@ class Tool
     private $families;
 
     /**
+     * @ORM\ManyToMany(targetEntity="ToolTag")
+     * @ORM\OrderBy({"nameFr" = "ASC"})
+     * @ORM\JoinTable(name="tools_tags",
+     *      joinColumns={@ORM\JoinColumn(name="tool_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $tags;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Activity", mappedBy="tools")
      */
     private $activities;
@@ -313,6 +323,7 @@ class Tool
     public function __construct()
     {
         $this->families = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->activities = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -370,6 +381,39 @@ class Tool
     public function getFamilies()
     {
         return $this->families;
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \AppBundle\Entity\ToolTag $tags
+     * @return Tool
+     */
+    public function addTag(\AppBundle\Entity\ToolTag $tags)
+    {
+        $this->tags[] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \AppBundle\Entity\ToolTag $tags
+     */
+    public function removeTag(\AppBundle\Entity\ToolTag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 
     /**
