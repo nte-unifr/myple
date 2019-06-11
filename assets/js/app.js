@@ -6,6 +6,7 @@ var $ = require('jquery')
 var store = require('store')
 import mixitup from 'mixitup'
 require('bootstrap')
+require('typeface-open-sans')
 
 $(document).ready(function () {
   videoStore()
