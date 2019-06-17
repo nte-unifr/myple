@@ -4,7 +4,7 @@
 @import '~flag-icon-css/sass/flag-icon';
 
 .mixitup-control-active {
-  color: #fff;
+  color: #fff !important;
   background-color: $blue !important;
   &:hover {
     color: #fff;
