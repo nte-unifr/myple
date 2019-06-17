@@ -23,6 +23,9 @@
     {% for family in tool.families %}
       <span class="badge badge-light bg-white">{% include '_i18n/print_name.html.twig' with {'entity': family} %}</span>
     {% endfor %}
+    {% for tag in tool.tags %}
+      <span class="badge badge-light bg-white">{% include '_i18n/print_name.html.twig' with {'entity': tag} %}</span>
+    {% endfor %}
   </div>
 </div>
 <div class="d-none">
