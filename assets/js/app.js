@@ -86,17 +86,20 @@ function initMixitup() {
       control: '[data-mixitup-control]'
     },
     callbacks: {
-      onMixStart: function() {
+      onMixStart: function(state, futureState) {
         $('.tools-popover').popover('hide')
       },
       onMixEnd: function(state) {
         var newHash = '#' + state.activeFilter.selector.replace(/^\./g, '')
         history.replaceState(undefined, undefined, newHash)
-        let count = $('.tool:visible').length
-        $('#tools-counter').text(count)
+        updateToolsCounter(state.totalShow)
       }
     }
   })
+  updateToolsCounter(mixer.getState().totalShow)
+}
+function updateToolsCounter(number) {
+  $('#tools-counter').text(number)
 }
 //
 // Mixitup functions >
