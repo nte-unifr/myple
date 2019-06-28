@@ -1,28 +1,47 @@
 {% if tools is not empty %}
-  <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      {{ 'linked_tools'|trans }} <span class="badge badge-pill badge-primary">{{ tools | length }}</span>
-    </div>
-    <div class="list-group">
-      {% for tool in tools %}
-        <a href="{{ tool.link }}" class="list-group-item list-group-item-action d-flex align-items-center">
-          <div class="py-1 px-2">
-            {% if tool.imageName is empty %}
-              <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
-            {% else %}
-              <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
-            {% endif %}
-          </div>
-          <strong class="px-4">{{ tool.name }}</strong>
-          <div class="ml-auto p-2 d-none d-sm-block">
-            {% for family in tool.families %}
-              <span class="badge badge-light">
+  <div class="tools-list">
+    <div class="card mb-2 families">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        {{ 'linked_families'|trans }}
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-pills flex-column flex-md-row">
+          {% for family in families %}
+            <li class="nav-item mb-2 mr-2 d-none family family-{{ family.id }}">
+              <a class="nav-link" href="{{ path('tools_index', { '_fragment': 'family-' ~ family.id }) }}">
                 {% include '_i18n/print_name.html.twig' with {'entity': family} %}
-              </span>
-            {% endfor %}
-          </div>
-        </a>
-      {% endfor %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="card tools">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        {{ 'linked_tools'|trans }} <span class="badge badge-pill badge-primary">{{ tools | length }}</span>
+      </div>
+      <div class="list-group">
+        {% for tool in tools %}
+          <a href="{{ tool.link }}" class="list-group-item list-group-item-action d-flex align-items-center tool">
+            <div class="py-1 px-2">
+              {% if tool.imageName is empty %}
+                <img src="{{ ('/images/void.png') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
+              {% else %}
+                <img src="{{ vich_uploader_asset(tool, 'imageFile') | imagine_filter('thumb_50') }}" alt="{{ tool.name }}" >
+              {% endif %}
+            </div>
+            <strong class="px-4">{{ tool.name }}</strong>
+            <div class="ml-auto p-2 d-none d-sm-block">
+              {% for family in tool.families %}
+                <span class="badge badge-light family" data-id="{{ family.id }}"">
+                  {% include '_i18n/print_name.html.twig' with {'entity': family} %}
+                </span>
+              {% endfor %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endif %}

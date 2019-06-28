@@ -11,8 +11,11 @@ require('typeface-open-sans')
 $(document).ready(function () {
   videoStore()
   initBsElements()
-  if ($( "#tools" ).length) {
+  if ($('#tools').length) {
     initMixitup()
+  }
+  if ($('.tools-list').length) {
+    displayToolFamilies()
   }
 })
 
@@ -28,6 +31,12 @@ function videoStore() {
     $('#video-intro').removeClass('d-md-block')
     store.set('hide-video', true)
   })
+}
+function displayToolFamilies() {
+  $('.tools-list .tool .family').each(function() {
+    let id = $(this).data('id')
+    $(this).closest('.tools-list').find('.family.family-' + id).removeClass('d-none')
+  });
 }
 //
 // Custom functions >

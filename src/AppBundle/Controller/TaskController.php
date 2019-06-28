@@ -25,6 +25,9 @@ class TaskController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
         $resourcesRepo = $this->getDoctrine()->getRepository('AppBundle:Resource');
+        $toolsRepo = $this->getDoctrine()->getRepository('AppBundle:Tool');
+        $familiesRepo = $this->getDoctrine()->getRepository('AppBundle:ToolFamily');
+        
         $task = $repository->find($id);
 
         // tutorials from the task
@@ -65,18 +68,21 @@ class TaskController extends Controller
         // merge both
         $resources = array_unique(array_merge($tResources, $aResources), SORT_REGULAR);
 
-        $tools = $this->getDoctrine()->getRepository('AppBundle:Tool')->createQueryBuilder('t')
+        $tools = $toolsRepo->createQueryBuilder('t')
             ->select('t')
             ->innerJoin('t.activities', 'a')
             ->where('a.task = :task_id')
             ->setParameter('task_id', $id)
             ->getQuery()->getResult();
+        
+        $families = $familiesRepo->findAll();
 
         return $this->render('tasks/show.html.twig', array(
             'task' => $task,
             'resources' => $resources,
             'tutorials' => $tutorials,
-            'tools' => $tools
+            'tools' => $tools,
+            'families' => $families
         ));
     }
 }

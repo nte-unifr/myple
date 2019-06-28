@@ -28,11 +28,13 @@ class ActivityController extends Controller
             ->andWhere('a.id = :activity_id')
             ->setParameter('activity_id', $activity->getId())
             ->getQuery()->getResult();
+        $families = $this->getDoctrine()->getRepository('AppBundle:ToolFamily')->findAll();
 
         return $this->render('activities/show.html.twig', array(
             'activity' => $activity,
             'tutorials' => $tutorials,
-            'resources' => $resources
+            'resources' => $resources,
+            'families' => $families
         ));
     }
 }
