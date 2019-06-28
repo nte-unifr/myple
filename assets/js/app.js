@@ -92,6 +92,8 @@ function initMixitup() {
       onMixEnd: function(state) {
         var newHash = '#' + state.activeFilter.selector.replace(/^\./g, '')
         history.replaceState(undefined, undefined, newHash)
+        let count = $('.tool:visible').length
+        $('#tools-counter').text(count)
       }
     }
   })
