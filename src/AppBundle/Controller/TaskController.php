@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\Request;
 
 class TaskController extends Controller
 {
@@ -21,8 +22,9 @@ class TaskController extends Controller
         ));
     }
 
-    public function showAction($id)
+    public function showAction($id, Request $request)
     {
+        $locale = strtoupper($request->getLocale());
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
         $resourcesRepo = $this->getDoctrine()->getRepository('AppBundle:Resource');
         $toolsRepo = $this->getDoctrine()->getRepository('AppBundle:Tool');
@@ -34,17 +36,23 @@ class TaskController extends Controller
         $tTutorials = $resourcesRepo->createQueryBuilder('r')
             ->select('r', 't')
             ->innerJoin('r.tasks', 't')
+            ->innerJoin('r.langs', 'l')
             ->where('r.tutorial = 1')
             ->andWhere('t.id = :task_id')
+            ->andWhere('l.code = :lang_code')
             ->setParameter('task_id', $id)
+            ->setParameter('lang_code', $locale)
             ->getQuery()->getResult();
         // tutorials from the activities related to the task
         $aTutorials = $resourcesRepo->createQueryBuilder('r')
             ->select('r')
             ->innerJoin('r.activities', 'a')
+            ->innerJoin('r.langs', 'l')
             ->where('r.tutorial = 1')
             ->andWhere('a.task = :task_id')
+            ->andWhere('l.code = :lang_code')
             ->setParameter('task_id', $id)
+            ->setParameter('lang_code', $locale)
             ->getQuery()->getResult();
         // merge both
         $tutorials = array_unique(array_merge($tTutorials, $aTutorials), SORT_REGULAR);
@@ -53,17 +61,23 @@ class TaskController extends Controller
         $tResources = $resourcesRepo->createQueryBuilder('r')
             ->select('r', 't')
             ->innerJoin('r.tasks', 't')
+            ->innerJoin('r.langs', 'l')
             ->where('r.tutorial = 0')
             ->andWhere('t.id = :task_id')
+            ->andWhere('l.code = :lang_code')
             ->setParameter('task_id', $id)
+            ->setParameter('lang_code', $locale)
             ->getQuery()->getResult();
         // resources from the activities related to the task
         $aResources = $resourcesRepo->createQueryBuilder('r')
             ->select('r')
             ->innerJoin('r.activities', 'a')
+            ->innerJoin('r.langs', 'l')
             ->where('r.tutorial = 0')
             ->andWhere('a.task = :task_id')
+            ->andWhere('l.code = :lang_code')
             ->setParameter('task_id', $id)
+            ->setParameter('lang_code', $locale)
             ->getQuery()->getResult();
         // merge both
         $resources = array_unique(array_merge($tResources, $aResources), SORT_REGULAR);
