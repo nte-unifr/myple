@@ -3,13 +3,11 @@ require('../css/app.scss')
 
 // js
 var $ = require('jquery')
-var store = require('store')
 import mixitup from 'mixitup'
 require('bootstrap')
 require('typeface-open-sans')
 
 $(document).ready(function () {
-  videoStore()
   initBsElements()
   if ($('#tools').length) {
     initMixitup()
@@ -20,18 +18,7 @@ $(document).ready(function () {
 })
 
 // < Custom functions
-// 
-function videoStore() {
-  // hide video if asked
-  if (!store.get('hide-video')) {
-    $('#video-intro').addClass('d-md-block')
-  }
-  // trigger click to hide video
-  $('#video-close-button').click(function () {
-    $('#video-intro').removeClass('d-md-block')
-    store.set('hide-video', true)
-  })
-}
+//
 function displayToolFamilies() {
   $('.tools-list .tool .family').each(function() {
     let id = $(this).data('id')
