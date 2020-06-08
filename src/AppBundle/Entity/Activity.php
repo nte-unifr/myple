@@ -175,6 +175,13 @@ class Activity
     private $rank;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="training", type="boolean")
+     */
+    private $training;
+
+    /**
      * @ORM\Column(type="date", nullable=true)
      *
      * @var \Date
@@ -726,5 +733,29 @@ class Activity
     public function getHumanUpdatedAt()
     {
         return $this->humanUpdatedAt;
+    }
+
+    /**
+     * Set training.
+     *
+     * @param bool $training
+     *
+     * @return Activity
+     */
+    public function setTraining($training)
+    {
+        $this->training = $training;
+
+        return $this;
+    }
+
+    /**
+     * Get training.
+     *
+     * @return bool
+     */
+    public function getTraining()
+    {
+        return $this->training;
     }
 }

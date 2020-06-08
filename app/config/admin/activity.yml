@@ -7,6 +7,7 @@ easy_admin:
         fields:
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'task', label: 'Tâche' }
+          - { property: 'training', label: 'Exercice' }
       form:
         fields:
           - { type: 'tab', label: 'Général' }
@@ -16,6 +17,7 @@ easy_admin:
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { property: 'task', label: 'Tâche' }
           - { property: 'rank', label: 'Position' }
+          - { property: 'training', label: 'Exercice' }
           - { type: 'group', css_class: 'col-sm-9', label: 'Relations' }
           - { property: 'tools', label: 'Outils' }
           - { property: 'resources', label: 'Ressources', type: 'easyadmin_autocomplete' }
