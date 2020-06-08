@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <p class="lead">{{ 'app_description'|trans }}</p>
+  <hr class="my-4">
+  <p class="list"><strong>{{ 'tasks'|trans }}</strong> : {{ 'tasks_explanation'|trans }}</p>
+  <p class="list"><strong>{{ 'tools'|trans }}</strong> : {{ 'tools_explanation'|trans({'%nb%': toolsNb}) }}</p>
+  <p><strong>{{ 'training'|trans }}</strong> : {{ 'training_explanation'|trans }}</p>
+  <a class="btn btn-primary" href="#scenari" role="button" id="scenari">{{ 'tasks_action'|trans }}</a>
+  <a class="btn btn-primary" href="{{ path('tools_index') }}" role="button">{{ 'tools_action'|trans }}</a>
+</div>

@@ -6,9 +6,7 @@
 {% block body %}
   <div class="row">
     <div class="col">
-      <div class="card bg-light p-4 mb-4">
-        {{ 'app_description'|trans }} 
-      </div>
+      {% include 'tasks/_description.html.twig' %}
     </div>
   </div>
 

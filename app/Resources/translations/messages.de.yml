@@ -27,3 +27,9 @@ task_activities: Aktivitäten des Szenarios
 tool: Software
 tools: Software
 updated: Letztes Update
+training: Ausbildung
+tasks_explanation: die Schritte und Werkzeuge der Arbeitsaufgaben
+tools_explanation: eine interaktive Tafel mit %nb% Werkzeugen
+training_explanation: sehr konkrete Arbeitsblätter zur besseren Nutzung der angepassten Werkzeuge
+tasks_action: Szenarien durchsuchen
+tools_action: Software entdecken

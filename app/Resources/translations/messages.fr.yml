@@ -27,3 +27,9 @@ task_activities: Activités du scénario
 tool: Outil
 tools: Outils
 updated: Mise à jour le
+training: Formation
+tasks_explanation: les étapes et outils des tâches de travail
+tools_explanation: un tableau interactif de %nb% outils
+training_explanation: des fiches de travail très concrètes pour mieux utiliser les outils adaptés
+tasks_action: Parcourir les scénarios
+tools_action: Découvrir les outils

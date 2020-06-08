@@ -16,9 +16,11 @@ class TaskController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
         $tasks = $repository->findBy(array('published' => true));
+        $toolsNb = $this->getDoctrine()->getRepository("AppBundle:Tool")->countAll();
 
         return $this->render('tasks/index.html.twig', array(
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'toolsNb' => $toolsNb
         ));
     }
 
