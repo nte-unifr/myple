@@ -79,3 +79,5 @@ ivory_ck_editor:
                 - { name: 'styles', items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
                 - { name: 'paragraph', items : ['NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'] }
                 - { name: 'insert', items : ['Image'] }
+                - { name: 'dev', items: ['Source'] }
+            allowedContent: true
