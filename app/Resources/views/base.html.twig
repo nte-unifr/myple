@@ -19,6 +19,10 @@
     {% block about_active %}{% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" site="MKSDBCEQ" defer></script>
+    <!-- / Fathom -->
   </head>
   <body class="d-flex flex-column">
 
@@ -37,7 +41,5 @@
         <script src="{{ asset('build/app.js') }}"></script>
       {% endif %}
     {% endblock %}
-
-    {% include '_analytics.html.twig' %}
   </body>
 </html>
