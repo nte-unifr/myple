@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block tasks_active %}active{% endblock %}
+
+{% block body %}
+  <div id="{% block identifier %}{% endblock %}">
+    <div class="row my-4">
+      <div class="col">
+        <h1 class="h3">
+          {% include '_i18n/print_name.html.twig' with {'entity': task} %}
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 order-md-2">
+        {% include '_shared/_sidebar.html.twig' %}
+      </div>
+      <div class="col-12 col-md-8 order-md-1">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

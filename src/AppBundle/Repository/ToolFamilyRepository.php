@@ -16,4 +16,11 @@ class ToolFamilyRepository extends EntityRepository
   {
     return $this->findBy(array(), array('nameFr' => 'ASC'));
   }
+  
+  public function countAll()
+  {
+    return $this->createQueryBuilder('tool')
+      ->select('COUNT(tool)')
+      ->getQuery()->getSingleScalarResult();
+  }
 }

@@ -1,0 +1,12 @@
+{% extends 'index/_template-box.html.twig' %}
+
+{% block boxIcon %}toolbox{% endblock %}
+{% block boxTitle %}{{ 'tools'|trans }}{% endblock %}
+{% block boxSubtitle %}{{ 'tools_explanation'|trans }}{% endblock %}
+{% block boxBlock1 %}{{ toolsFamiliesNb }} {{ 'tools_families'|trans }}{% endblock %}
+{% block boxBlock2 %}{{ toolsNb }} {{ 'tools'|trans }}{% endblock %}
+{% block boxLink %}
+  <a href="{{ path('tools_index') }}" class="btn btn-primary btn-block">
+    {{ 'tools_action'|trans }}
+  </a>
+{% endblock %}

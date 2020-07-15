@@ -1,0 +1,19 @@
+{% extends 'index/_template-box.html.twig' %}
+
+{% block boxIcon %}books{% endblock %}
+{% block boxTitle %}{{ 'tasks'|trans }}{% endblock %}
+{% block boxSubtitle %}{{ 'tasks_explanation'|trans }}{% endblock %}
+{% block boxBlock1 %}{{ tasksNb }} {{ 'tasks'|trans }}{% endblock %}
+{% block boxBlock2 %}{{ activitiesNb }} {{ 'activities'|trans }}{% endblock %}
+{% block boxLink %}
+  <div class="dropdown">
+    <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ 'tasks_action'|trans }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      {% for navTask in navTasks %}
+        <a class="dropdown-item" href="{{ path('tasks_show', { 'id': navTask.id }) }}">{% include '_i18n/print_name.html.twig' with {'entity': navTask} %}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

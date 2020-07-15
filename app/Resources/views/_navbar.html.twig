@@ -5,18 +5,27 @@
 <nav id="navbar-nte" class="navbar fixed-top navbar-expand-md navbar-light bg-light">
   <span class="navbar-brand mb-0 h1 d-flex align-items-center">
     <a href="//unifr.ch"><img src="{{ asset('images/square.png') }}" width="40" height="40" alt="" class="mr-4"></a>
-    <a href="{{ path('tasks_index') }}">Myple</a>
+    <a href="{{ path('home') }}">Myple</a>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link {{ tasks_active }}" href="{{ path('tasks_index') }}">{{ 'tasks'|trans }}</a>
+      <li id="nav-dropdown" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle {% if tasks_active %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ 'tasks'|trans }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% for navTask in navTasks %}
+            <a class="dropdown-item {% if task is defined and task == navTask %}active{% endif %}" href="{{ path('tasks_show', { 'id': navTask.id }) }}">{% include '_i18n/print_name.html.twig' with {'entity': navTask} %}</a>
+          {% endfor %}
+        </div>
+      </li>
       <a class="nav-item nav-link {{ tools_active }}" href="{{ path('tools_index') }}">{{ 'tools'|trans }}</a>
     </div>
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">{{ 'contact'|trans }} <i class="fal fa-external-link-square-alt"></i></a>
+      <a class="nav-item nav-link" href="http://www3.unifr.ch/nte/fr/contact.html">{{ 'contact'|trans }} <i class="fad fa-external-link-square-alt"></i></a>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {% if "fr" in app.request.locale %}

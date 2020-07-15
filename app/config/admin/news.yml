@@ -1,0 +1,12 @@
+easy_admin:
+  entities:
+    News:
+      class: AppBundle\Entity\News
+      list:
+        sort: ['id', 'DESC']
+        fields:
+          - { property: 'id', label: 'ID' }
+          - { property: 'content', label: 'Contenu' }
+      form:
+        fields:
+          - { property: 'content', label: 'Contenu' }

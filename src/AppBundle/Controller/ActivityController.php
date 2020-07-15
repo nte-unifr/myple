@@ -5,13 +5,14 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Service\NavService;
 
 class ActivityController extends Controller
 {
     /**
      * @Route("/{_locale}/activities/{id}", requirements={"id" = "\d+"}, name="activities_show")
      */
-    public function showAction($id, Request $request)
+    public function showAction($id, Request $request, NavService $navService)
     {
         $locale = strtoupper($request->getLocale());
         $repository = $this->getDoctrine()->getRepository("AppBundle:Activity");
@@ -40,9 +41,11 @@ class ActivityController extends Controller
 
         return $this->render('activities/show.html.twig', array(
             'activity' => $activity,
+            'task' => $activity->getTask(),
             'tutorials' => $tutorials,
             'resources' => $resources,
-            'families' => $families
+            'families' => $families,
+            'navTasks' => $navService->getTasks()
         ));
     }
 }

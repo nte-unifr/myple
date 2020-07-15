@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="card mb-4 bg-light">
+    <div class="card-body">
+      <p class="lead">{{ 'app_description'|trans }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      {% include 'index/_box-tasks.html.twig' %}
+    </div>
+    <div class="col-12 col-md-4">
+      {% include 'index/_box-tools.html.twig' %}
+    </div>
+    <div class="col-4">
+      {% include 'index/_box-training.html.twig' %}
+    </div>
+  </div>
+  <div class="row">
+    {% for n in news %}
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-subtitle mb-3 text-muted">{{ 'news'|trans }}</h6>
+            <p class="card-text">
+              {{ n.content | raw }}
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

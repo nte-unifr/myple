@@ -10,11 +10,9 @@ easy_admin:
       form:
         fields:
           - { type: 'tab', label: 'Général' }
-          - { type: 'group', css_class: 'col-sm-4', label: 'Ressources' }
+          - { type: 'group', css_class: 'col-sm-6', label: 'Ressources' }
           - { property: 'resources', label: ' ', type: 'easyadmin_autocomplete' }
-          - { type: 'group', css_class: 'col-sm-4', label: 'Récapitulatif' }
-          - { property: 'recapFile', label: ' ', type: 'vich_file' }
-          - { type: 'group', css_class: 'col-sm-4', label: 'Publication' }
+          - { type: 'group', css_class: 'col-sm-6', label: 'Publication' }
           - { property: 'published', label: 'Publié' }
           - { property: 'humanUpdatedAt', label: 'Mise à jour' }
           - { type: 'tab', label: 'FR' }

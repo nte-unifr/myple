@@ -3,10 +3,11 @@ easy_admin:
     Activity:
       class: AppBundle\Entity\Activity
       list:
-        sort: ['nameFr', 'ASC']
+        sort: ['task', 'ASC']
         fields:
           - { property: 'nameFr', label: 'Nom' }
           - { property: 'task', label: 'Tâche' }
+          - { property: 'rank', label: 'Position' }
           - { property: 'training', label: 'Exercice' }
       form:
         fields:

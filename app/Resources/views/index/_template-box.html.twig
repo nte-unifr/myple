@@ -1,0 +1,34 @@
+<div class="card mb-3">
+  <div class="text-center display-1 text-primary">
+    <i class="fad fa-{% block boxIcon %}{% endblock %}"></i>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      {% block boxTitle %}{% endblock %}
+    </h5>
+    <p class="card-text">
+      {% block boxSubtitle %}{% endblock %}
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    {% set _block = block('boxBlock2') %}
+    {% if _block is not empty %}
+      <li class="list-group-item text-center">
+        <span class="badge badge-light" style="font-size:1.1em">
+          {% block boxBlock1 %}{% endblock %}
+        </span>
+      </li>
+    {% endif %}
+    {% set _block = block('boxBlock2') %}
+    {% if _block is not empty %}
+      <li class="list-group-item text-center">
+        <span class="badge badge-light" style="font-size:1.1em">
+          {% block boxBlock2 %}{% endblock %}
+        </span>
+      </li>
+    {% endif %}
+  </ul>
+  <div class="card-body">
+    {% block boxLink %}{% endblock %}
+  </div>
+</div>

@@ -6,25 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Service\NavService;
 
 class TaskController extends Controller
 {
     /**
-     * @Route("/{_locale}", name="tasks_index")
+     * @Route("/{_locale}/tasks/{id}", name="tasks_show")
      */
-    public function indexAction()
-    {
-        $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
-        $tasks = $repository->findBy(array('published' => true));
-        $toolsNb = $this->getDoctrine()->getRepository("AppBundle:Tool")->countAll();
-
-        return $this->render('tasks/index.html.twig', array(
-            'tasks' => $tasks,
-            'toolsNb' => $toolsNb
-        ));
-    }
-
-    public function showAction($id, Request $request)
+    public function showAction($id, Request $request, NavService $navService)
     {
         $locale = strtoupper($request->getLocale());
         $repository = $this->getDoctrine()->getRepository("AppBundle:Task");
@@ -98,7 +87,8 @@ class TaskController extends Controller
             'resources' => $resources,
             'tutorials' => $tutorials,
             'tools' => $tools,
-            'families' => $families
+            'families' => $families,
+            'navTasks' => $navService->getTasks()
         ));
     }
 }

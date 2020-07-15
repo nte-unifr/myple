@@ -1,26 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'tasks.html.twig' %}
 
-{% block title %}{% include '_i18n/print_name.html.twig' with {'entity': activity} %}{% endblock %}
-{% block tasks_active %}active{% endblock %}
+{% block identifier %}activity{% endblock %}
 
-{% block body %}
-  <div id="activity">
-    <div class="row my-4">
-      <div class="col">
-        <h1 class="h3">
-          {% include '_i18n/print_name.html.twig' with {'entity': activity} %}
-          <small class="text-muted">{% include '_i18n/print_name.html.twig' with {'entity': activity.task} %}</small>
-        </h1>
-      </div>
-    </div>
+{% block title %}
+  {% include '_i18n/print_name.html.twig' with {'entity': activity} %}
+{% endblock %}
 
-    <div class="row">
-      <div class="col-12 col-md-8">
-        {% include 'activities/_content.html.twig' %}
-      </div>
-      <div class="col-12 col-md-4">
-        {% include 'activities/_sidebar.html.twig' %}
-      </div>
-    </div>
-  </div>
+{% block content %}
+  {% include 'activities/_content.html.twig' %}
 {% endblock %}

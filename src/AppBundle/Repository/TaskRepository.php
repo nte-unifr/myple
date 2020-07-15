@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class TaskRepository extends EntityRepository
 {
+  public function countAll()
+  {
+    return $this->createQueryBuilder('tool')
+      ->select('COUNT(tool)')
+      ->getQuery()->getSingleScalarResult();
+  }
 }

@@ -4,11 +4,6 @@
       <h3 class="h5">{{ 'summary'|trans }}</h3>
     </a>
   </li>
-  <li class="nav-item d-md-none">
-    <a class="nav-link" href="#activities{{ task.id }}" aria-controls="activities" role="tab" data-toggle="tab" aria-selected="false">
-      <h3 class="h5">{{ 'activities'|trans }}</h3>
-    </a>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="#tools{{ task.id }}" aria-controls="tools" role="tab" data-toggle="tab" aria-selected="false">
       <h3 class="h5">{{ 'tools'|trans }}</h3>
@@ -23,9 +18,6 @@
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2 raw" id="help{{ task.id }}">
     {% include '_i18n/print_help.html.twig' with {'entity': task} %}
-  </div>
-  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="activities{{ task.id }}">
-    {% include '_shared/_activities-list.html.twig' with { 'activities': task.activities, 'active': 'no' } %}
   </div>
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="tools{{ task.id }}">
     {% include '_shared/_tools-list.html.twig' %}
