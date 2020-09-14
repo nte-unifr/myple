@@ -15,6 +15,7 @@ return new class extends DefaultDeployer
             ->repositoryUrl('git@github.com:nte-unifr/myple.git')
             // the repository branch to deploy
             ->repositoryBranch('master')
+            ->remoteComposerBinaryPath('composer')
         ;
     }
 
