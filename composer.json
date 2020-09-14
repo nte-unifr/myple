@@ -37,6 +37,7 @@
         "vich/uploader-bundle": "^1.4"
     },
     "require-dev": {
+        "easycorp/easy-deploy-bundle": "^1.0",
         "sensio/generator-bundle": "~3.0",
         "symfony/phpunit-bridge": "~2.7",
         "symfony/web-server-bundle": "^3.4"
