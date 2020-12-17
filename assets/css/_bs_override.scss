@@ -1,16 +1,3 @@
-#accordion a[data-toggle="collapse"]::before  {
-  content: "\f077";
-  float: left;
-  font-family: 'Font Awesome 5 Pro';
-	margin-right: 1em;
-}
-#accordion a.collapsed[data-toggle="collapse"]::before  {
-  content: "\f078";
-}
-#accordion a {
-  cursor: pointer;
-}
-
 .popover {
   max-width: 450px;
 }

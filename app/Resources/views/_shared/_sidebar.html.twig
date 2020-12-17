@@ -12,11 +12,11 @@
     </div>
     <div class="list-group list-group-flush">
       <a href="{{ path('tasks_show', {'id': task.id}) }}" class="d-flex align-items-center list-group-item list-group-item-action {% if active_entity == task %}active{% endif %}">
-        <i class="fad fa-chevron-right mr-4"></i>{{ 'introduction'|trans }}
+        <i data-feather="chevron-right" class="mr-2"></i>{{ 'introduction'|trans }}
       </a>
       {% for a in task.activities %}
         <a href="{{ path('activities_show', {'id': a.id}) }}" class="d-flex align-items-center list-group-item list-group-item-action {% if a == active_entity %}active{% endif %}">
-          <i class="fad fa-chevron-right mr-4"></i>
+          <i data-feather="chevron-right" class="mr-2"></i>
           {% include '_i18n/print_name.html.twig' with {'entity': a} %}
           {% if a.training %}
             &nbsp;<span class="badge badge-secondary">{{ 'exercise'|trans }}</span>
@@ -30,7 +30,6 @@
   {% if active_entity.humanUpdatedAt is not empty %}
     <div class="d-flex justify-content-center">
       <span class="badge badge-light p-2">
-        <i class="fad fa-history"></i>&nbsp;
         {{ 'updated'|trans }} {{ active_entity.humanUpdatedAt | date("d.m.Y") }}
       </span>
     </div>

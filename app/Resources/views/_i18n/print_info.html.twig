@@ -1,19 +1,19 @@
 <div class="raw">
   &nbsp;
   {% if "en" in app.request.locale and entity.infoEn is not empty %}
-    <i class="fas fa-info-square ml-auto" style="font-size:1.2em;"
+    <i data-feather="info" class="ml-auto"
       data-toggle="tooltip" title="{{ entity.infoEn | striptags | raw }}">
     </i>
   {% elseif "it" in app.request.locale and entity.infoIt is not empty %}
-    <i class="fas fa-info-square ml-auto" style="font-size:1.2em;"
-      data-toggle="tooltip" title="{{ entity.infoIt | striptags | raw }}">
+    <i data-feather="info" class="ml-auto"
+      data-toggle="tooltip" title="{{ entity.infoIr | striptags | raw }}">
     </i>
   {% elseif "de" in app.request.locale and entity.infoDe is not empty %}
-    <i class="fas fa-info-square ml-auto" style="font-size:1.2em;"
+    <i data-feather="info" class="ml-auto"
       data-toggle="tooltip" title="{{ entity.infoDe | striptags | raw }}">
     </i>
   {% elseif entity.infoFr is not empty %}
-    <i class="fas fa-info-square ml-auto" style="font-size:1.2em;"
+    <i data-feather="info" class="ml-auto" width="18" height="18"
       data-toggle="tooltip" title="{{ entity.infoFr | striptags | raw }}">
     </i>
   {% endif %}
