@@ -28,9 +28,17 @@
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2" id="activity-tab">
-    <div class="card mb-2">
-      <div class="card-header">{{ 'goals'|trans }}</div>
-      <div class="card-body">{% include '_i18n/print_goal.html.twig' with {'entity': activity} %}</div>
+    <div class="accordion" id="accordionGoals">
+      <div class="card mb-2">
+        <a class="card-header d-flex justify-content-between align-items-center" id="headingGoals" data-toggle="collapse" data-target="#collapseGoals" aria-expanded="false" aria-controls="collapseGoals">
+          {{ 'goals'|trans }} <i class="chevron" data-feather="chevron-down"></i>
+        </a>
+        <div id="collapseGoals" class="collapse" aria-labelledby="headingGoals" data-parent="#accordionGoals">
+          <div class="card-body">
+            {% include '_i18n/print_goal.html.twig' with {'entity': activity} %}
+          </div>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="card-header">{{ 'steps'|trans }}</div>

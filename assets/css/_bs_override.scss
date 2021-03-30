@@ -1,3 +1,5 @@
+$blue: #00134a;
+
 .popover {
   max-width: 450px;
 }
@@ -5,4 +7,15 @@
 .nav-pills .nav-link:not(.active) {
   background-color: #f8f9fa;
   cursor: pointer;
+}
+
+.accordion {
+  .card-header[aria-expanded="true"] {
+    background-color: $blue;
+    color: #fff;
+  }
+  .card-header:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
