@@ -1,29 +1,23 @@
 about: Chi siamo
-activity: Attività
-activities: Attività
+activity: Tappa
+activities: Tappe
 all: Tutto
 app_description: MyPLE offre agli studenti 3 tipi di aiuto, disponibili gratuitamente, sugli strumenti informatici che possono aiutarli a svolgere le attività legate agli studi.
-back_to_tasks: Ritornare alla lista degli scenari
 bibliography: Bibliografia
-browse:  Esplorare per scenario
 close_video: Potrete rivedere il video sulla pagina Chi siamo
 contact: Contatti
-full_task: Tutti gli scenari
-goals: Finalità
 go_to_tool: Accedere allo strumento
 license: Attribuzione – Non commerciale – Condividi allo stesso modo 3.0 Svizzera (CC BY-NC-SA 3.0 CH)
-linked_activities: Accedere all’attività
+linked_activities: Tappe correlate
 linked_resources: Accedere alla risorsa
 linked_tools: Strumenti collegati
 linked_tutorials: Tutorials collegati
 linked_families: Famiglie di strumenti correlate
 resource: Risorsa
 resources: Risorse
-steps: Tappe
 summary: Riassunto
-task: Scenario
-tasks: Scenari
-task_activities: Attività degli scenari
+tasks: Attività
+task_activities: Tappe dell'attività
 tool: Strumento
 tools: Strumenti
 tools_families: Famiglie di strumenti
@@ -32,7 +26,7 @@ training: Formazione
 tasks_explanation: le tappe e gli strumenti per le varie attività legate allo studio
 tools_explanation: una tabella interattiva di strumenti
 training_explanation: schede di lavoro molto concrete per un migliore utilizzo degli strumenti
-tasks_action: Esplorare gli scenari
+tasks_action: Esplorare le attività
 tools_action: Scopri gli strumenti
 exercise: Esercizio
 introduction: Introduzione

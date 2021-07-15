@@ -1,29 +1,23 @@
 about: Über uns 
-activity: Aktivität 
-activities: Aktivitäten 
+activity: Schritt 
+activities: Schritte 
 all: Alle
 app_description: MyPLE bietet den Studierenden 3 Arten von Hilfe an, die frei verfügbar sind, und zwar in Form von Computertools, die ihnen bei der Ausführung der Aufgaben des Studentenjobs helfen können.
-back_to_tasks: Zurück zu den Szenarien 
-bibliography: Bibliographie 
-browse: Nach Szenario durchsuchen 
+bibliography: Bibliographie
 close_video: Sie können die Video auf der Seite "über uns" nochmals sehen
 contact: Kontakt
-full_task: Vollständiges Szenario
-goals: Ziel
 go_to_tool: Auf das Tool zugreifen
 license: Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Schweiz (CC BY-NC-SA 3.0 CH)
-linked_activities: Verbundene Aktivitäten
+linked_activities: Verbundene Schritte
 linked_resources: Verbundene Ressourcen
 linked_tools:  Verbundene Software
 linked_tutorials: Verbundene Tutorials
 linked_families: Verbundene Softwarefamilie
 resource: Ressource
 resources: Ressourcen
-steps: Schritte
 summary: Zusammenfassung
-task: Szenario
-tasks: Szenarien
-task_activities: Aktivitäten des Szenarios
+tasks: Aktivitäten
+task_activities: Schritte der Aktivität
 tool: Software
 tools: Software
 tools_families: Softwarefamilie
@@ -32,7 +26,7 @@ training: Ausbildung
 tasks_explanation: die Schritte und Werkzeuge der Arbeitsaufgaben
 tools_explanation: eine interaktive Tafel mit Werkzeugen
 training_explanation: sehr konkrete Arbeitsblätter zur besseren Nutzung der angepassten Werkzeuge
-tasks_action: Szenarien durchsuchen
+tasks_action: Aktivitäten durchsuchen
 tools_action: Software entdecken
 exercise: Übung
 introduction: Einführung

@@ -1,29 +1,23 @@
 about: A propos
-activity: Activité
-activities: Activités
+activity: Étape
+activities: Étapes
 all: Tous
 app_description: MyPLE propose aux étudiant·es 3 types d'aides, en libre accès, sur les outils informatiques pouvant aider à réaliser les tâches de travail du métier d'étudiant·e.
-back_to_tasks: Retour à la liste des scénarios
 bibliography: Bibliographie
-browse: Parcourir par scénario
 close_video: Vous pouvez la revoir sur la page A propos
 contact: Contact
-full_task: Scénario complet
-goals: Finalités
 go_to_tool: Accéder à l'outil
 license: Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 Suisse (CC BY-NC-SA 3.0 CH)
-linked_activities: Activités liées
+linked_activities: Étapes liées
 linked_resources: Ressources liées
 linked_tools: Outils liés
 linked_tutorials: Tutoriels liés
 linked_families: Familles d'outils liées
 resource: Ressource
-resources: Ressources 
-steps: Etapes
+resources: Ressources
 summary: Résumé
-task: Scénario
-tasks: Scénarios
-task_activities: Activités du scénario
+tasks: Activités
+task_activities: Étapes de l'activité
 tool: Outil
 tools: Outils
 tools_families: Familles d'outils
@@ -32,7 +26,7 @@ training: Formation
 tasks_explanation: les étapes et outils des tâches de travail
 tools_explanation: un tableau interactif d'outils
 training_explanation: des fiches de travail très concrètes pour mieux utiliser les outils adaptés
-tasks_action: Parcourir les scénarios
+tasks_action: Parcourir les activités
 tools_action: Découvrir les outils
 exercise: Exercice
 introduction: Introduction
