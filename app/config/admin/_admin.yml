@@ -2,7 +2,6 @@ easy_admin:
   site_name: 'MyPLE'
   design:
     brand_color: '#00134a'
-    form_theme: 'vertical'
     menu:
       - { label: 'Scénario' }
       - { entity: 'Task', icon: 'cube', label: 'Tâches', default: true }
