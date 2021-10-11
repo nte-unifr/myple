@@ -2,7 +2,7 @@ liip_imagine:
   loaders:
     default:
       filesystem:
-        locator: filesystem_insecure
+        data_root: '%kernel.project_dir%/web'
   resolvers:
     default:
       web_path:
