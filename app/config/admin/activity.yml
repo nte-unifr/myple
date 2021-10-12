@@ -22,18 +22,18 @@ easy_admin:
           - { type: 'tab', label: 'FR' }
           - { type: 'group', css_class: 'col-sm-12', label: 'Français' }
           - { property: 'nameFr', label: 'Nom', css_class: 'long' }
-          - { property: 'goalFr', label: 'Finalités', type: 'text_editor' }
-          - { property: 'stepsFr', label: 'Étapes', type: 'text_editor' }
-          - { property: 'refFr', label: 'Référentiel', type: 'text_editor' }
+          - { property: 'goalFr', label: 'Finalités', type: 'fos_ckeditor' }
+          - { property: 'stepsFr', label: 'Étapes', type: 'fos_ckeditor' }
+          - { property: 'refFr', label: 'Référentiel', type: 'fos_ckeditor' }
           - { type: 'tab', label: 'DE' }
           - { type: 'group', css_class: 'col-sm-12', label: 'Allemand' }
           - { property: 'nameDe', label: 'Nom', css_class: 'long' }
-          - { property: 'goalDe', label: 'Finalités', type: 'text_editor' }
-          - { property: 'stepsDe', label: 'Étapes', type: 'text_editor' }
-          - { property: 'refDe', label: 'Référentiel', type: 'text_editor' }
+          - { property: 'goalDe', label: 'Finalités', type: 'fos_ckeditor' }
+          - { property: 'stepsDe', label: 'Étapes', type: 'fos_ckeditor' }
+          - { property: 'refDe', label: 'Référentiel', type: 'fos_ckeditor' }
           - { type: 'tab', label: 'IT' }
           - { type: 'group', css_class: 'col-sm-12', label: 'Italien' }
           - { property: 'nameIt', label: 'Nom', css_class: 'long' }
-          - { property: 'goalIt', label: 'Finalités', type: 'text_editor' }
-          - { property: 'stepsIt', label: 'Étapes', type: 'text_editor' }
-          - { property: 'refIt', label: 'Référentiel', type: 'text_editor' }
+          - { property: 'goalIt', label: 'Finalités', type: 'fos_ckeditor' }
+          - { property: 'stepsIt', label: 'Étapes', type: 'fos_ckeditor' }
+          - { property: 'refIt', label: 'Référentiel', type: 'fos_ckeditor' }
