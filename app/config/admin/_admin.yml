@@ -2,6 +2,9 @@ easy_admin:
   site_name: 'MyPLE'
   design:
     brand_color: '#00134a'
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
     menu:
       - { label: 'Scénario' }
       - { entity: 'Task', icon: 'cube', label: 'Tâches', default: true }
