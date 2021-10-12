@@ -16,3 +16,10 @@ easy_admin:
       - { label: 'Autre' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
       - { entity: 'News', icon: 'th-list', label: 'Actualités' }
+
+fos_ck_editor:
+  input_sync: true
+  default_config: simple_config
+  configs:
+      simple_config:
+          allowedContent: true
