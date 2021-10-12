@@ -2,7 +2,9 @@ easy_admin:
   site_name: 'MyPLE'
   design:
     brand_color: '#00134a'
-    form_theme: 'vertical'
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
     menu:
       - { label: 'Scénario' }
       - { entity: 'Task', icon: 'cube', label: 'Tâches', default: true }
@@ -14,3 +16,17 @@ easy_admin:
       - { label: 'Autre' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
       - { entity: 'News', icon: 'th-list', label: 'Actualités' }
+
+fos_ck_editor:
+  input_sync: true
+  default_config: simple_config
+  configs:
+      simple_config:
+          allowedContent: true
+          toolbar:
+            - { name: 'document', items: [ 'Source' ] },
+            - { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'CopyFormatting', 'RemoveFormat' ] }
+            - { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] }
+            - { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] }
+            - { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
+            - { name: 'tools', items: [ 'Maximize' ] }

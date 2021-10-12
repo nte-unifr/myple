@@ -25,7 +25,6 @@ framework:
         engines: ['twig']
     default_locale: '%locale%'
     trusted_hosts: ~
-    trusted_proxies: ~
     session:
         # handler_id set to null will use default session handler from php.ini
         handler_id: ~
@@ -60,24 +59,3 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
-
-# Swiftmailer Configuration
-swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
-
-# ivory ckeditor
-ivory_ck_editor:
-    input_sync: true
-    default_config: base_config
-    configs:
-        base_config:
-            toolbar:
-                - { name: 'styles', items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
-                - { name: 'paragraph', items : ['NumberedList','BulletedList', 'Blockquote','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'] }
-                - { name: 'insert', items : ['Image'] }
-                - { name: 'dev', items: ['Source'] }
-            allowedContent: true

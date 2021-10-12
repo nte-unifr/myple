@@ -13,10 +13,9 @@ easy_admin:
           - { type: 'group', css_class: 'col-sm-9' }
           - { property: 'name', label: 'Nom' }
           - { property: 'link', label: 'Lien' }
-          - { property: 'infoFr', label: 'Info (FR)', type: 'ckeditor' }
-          - { property: 'infoDe', label: 'Info (DE)', type: 'ckeditor' }
-          - { property: 'infoIt', label: 'Info (IT)', type: 'ckeditor' }
-          - { property: 'infoEn', label: 'Info (EN)', type: 'ckeditor' }
+          - { property: 'infoFr', label: 'Info (FR)', type: 'fos_ckeditor' }
+          - { property: 'infoDe', label: 'Info (DE)', type: 'fos_ckeditor' }
+          - { property: 'infoIt', label: 'Info (IT)', type: 'fos_ckeditor' }
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'families', label: "Familles d'outils" }
           - { property: 'tags', label: "Tags" }

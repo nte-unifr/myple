@@ -3,5 +3,5 @@ vich_uploader:
     mappings:
         uploads:
             uri_prefix: uploads
-            upload_destination: %kernel.root_dir%/../web/uploads
+            upload_destination: "%kernel.root_dir%/../web/uploads"
             namer: vich_uploader.namer_uniqid
