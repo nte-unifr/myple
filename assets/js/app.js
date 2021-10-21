@@ -6,10 +6,10 @@ var $ = require('jquery')
 import mixitup from 'mixitup'
 require('bootstrap')
 require('typeface-open-sans')
-const feather = require('feather-icons')
+//const feather = require('feather-icons')
+//feather.replace()
 
 $(document).ready(function () {
-  feather.replace()
   initBsElements()
   if ($('#tools').length) {
     initMixitup()
