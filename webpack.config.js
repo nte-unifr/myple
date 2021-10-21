@@ -2,6 +2,9 @@
 var Encore = require('@symfony/webpack-encore');
 
 Encore
+  // quickfix, to investigate
+  .disableSingleRuntimeChunk()
+
   // the project directory where all compiled assets will be stored
   .setOutputPath(Encore.isProduction() ? 'web/built/' : 'web/build')
 
