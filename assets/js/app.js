@@ -54,22 +54,6 @@ function initBsElements() {
 
   // tooltips activation
   $('[data-toggle="tooltip"]').tooltip()
-
-  // collapse behavior
-  $('.accordion').on('hide.bs.collapse', function(e) {
-    let chevron = $(this).find('.chevron')
-    let parent = chevron.parent()
-    chevron.remove()
-    parent.append('<i class="chevron" data-feather="chevron-down"></i>')
-    feather.replace()
-  })
-  $('.accordion').on('show.bs.collapse', function(e) {
-    let chevron = $(this).find('.chevron')
-    let parent = chevron.parent()
-    chevron.remove()
-    parent.append('<i class="chevron" data-feather="chevron-up"></i>')
-    feather.replace()
-  })
 }
 //
 // Bootstrap functions >
