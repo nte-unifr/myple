@@ -13,6 +13,9 @@ easy_admin:
       - { entity: 'Tool', icon: 'th-list', label: 'Outils' }
       - { entity: 'ToolFamily', icon: 'th-list', label: "Familles" }
       - { entity: 'ToolTag', icon: 'th-list', label: "Tags" }
+      - { label: 'Formations' }  
+      - { entity: 'Formation', icon: 'th-list', label: 'Formations' }
+      - { entity: 'FormationTag', icon: 'th-list', label: 'Tags' }
       - { label: 'Autre' }
       - { entity: 'Resource', icon: 'th-list', label: 'Ressources' }
       - { entity: 'News', icon: 'th-list', label: 'Actualités' }

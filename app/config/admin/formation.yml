@@ -1,0 +1,20 @@
+easy_admin:
+  entities:
+    Formation:
+      class: AppBundle\Entity\Formation
+      list:
+        sort: ['titleFr', 'ASC']
+        fields:
+          - { property: 'titleFr', label: 'Nom' }
+      form:
+        fields:
+          - { type: 'group', css_class: 'col-sm-9' }
+          - { property: 'titleFr', label: 'Nom (FR)' }
+          - { property: 'titleDe', label: 'Nom (DE)' }
+          - { property: 'titleIt', label: 'Nom (IT)' }
+          - { property: 'descriptionFr', label: 'Description (FR)', type: 'fos_ckeditor' }
+          - { property: 'descriptionDe', label: 'Description (DE)', type: 'fos_ckeditor' }
+          - { property: 'descriptionIt', label: 'Description (IT)', type: 'fos_ckeditor' }
+          - { type: 'group', css_class: 'col-sm-3' }
+          - { property: 'tags', label: "Tags" }
+          - { property: 'activities', label: "Activités" }
