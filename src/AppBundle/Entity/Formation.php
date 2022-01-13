@@ -65,13 +65,6 @@ class Formation
     private $descriptionIt;
 
     /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var \DateTime
-     */
-    private $updatedAt;
-
-    /**
      * @ORM\ManyToMany(targetEntity="FormationTag")
      * @ORM\OrderBy({"nameFr" = "ASC"})
      * @ORM\JoinTable(name="formations_tags",
@@ -82,7 +75,12 @@ class Formation
     private $tags;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Activity", mappedBy="formations")
+     * @ORM\ManyToMany(targetEntity="Activity")
+     * @ORM\OrderBy({"nameFr" = "ASC"})
+     * @ORM\JoinTable(name="formations_activities",
+     *      joinColumns={@ORM\JoinColumn(name="formation_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
      */
     private $activities;
 
@@ -102,26 +100,13 @@ class Formation
     }
 
     /**
-     * Set updatedAt
+     * Get id
      *
-     * @param \DateTime $updatedAt
-     * @return Formation
+     * @return integer 
      */
-    public function setUpdatedAt($updatedAt)
+    public function getId()
     {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
+        return $this->id;
     }
 
     /**
