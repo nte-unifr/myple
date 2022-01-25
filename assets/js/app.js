@@ -50,6 +50,15 @@ function initBsElements() {
     html: true 
   })
 
+  // formations popover
+  $('.formations-popover').popover({
+    content: function() {
+      let id = $(this).data('id')
+      return $('.formation-activities[data-id="' + id + '"]').clone()
+    },
+    html: true 
+  })
+
   // tooltips activation
   $('[data-toggle="tooltip"]').tooltip()
 }

@@ -16,6 +16,7 @@
 
     {% block tasks_active %}{% endblock %}
     {% block tools_active %}{% endblock %}
+    {% block formations_active %}{% endblock %}
     {% block about_active %}{% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" >
@@ -26,7 +27,7 @@
   </head>
   <body class="d-flex flex-column">
 
-    {% include '_navbar.html.twig' with { tasks_active: block('tasks_active'), tools_active: block('tools_active'), about_active: block('about_active') } %}
+    {% include '_navbar.html.twig' with { tasks_active: block('tasks_active'), tools_active: block('tools_active'), formations_active: block('formations_active'), about_active: block('about_active') } %}
 
     <div id="container-nte" class="container-fluid flex-grow px-md-5">
       {% block body %}{% endblock %}

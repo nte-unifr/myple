@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'formations'|trans }}{% endblock %}
+{% block formations_active %}active{% endblock %}
+
+{% block body %}
+  <div id="formations" class="row card-deck">
+    {% if formations %}
+      {% for formation in formations %}
+        {% include 'formations/_formation.html.twig' %}
+      {% endfor %}
+    {% else %}
+      <p>{{ 'no_formation'|trans }}</p>
+    {% endif %}
+  </div>
+{% endblock %}

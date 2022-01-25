@@ -1,0 +1,7 @@
+{% if "it" in app.request.locale and entity.titleIt is not empty %}
+  {{ entity.titleIt }}
+{% elseif "de" in app.request.locale and entity.titleDe is not empty %}
+  {{ entity.titleDe }}
+{% else %}
+  {{ entity.titleFr }}
+{% endif %}
