@@ -65,6 +65,13 @@ class Formation
     private $descriptionIt;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=500, nullable=true)
+     */
+    private $url;
+
+    /**
      * @ORM\ManyToMany(targetEntity="FormationTag")
      * @ORM\OrderBy({"nameFr" = "ASC"})
      * @ORM\JoinTable(name="formations_tags",
@@ -245,6 +252,29 @@ class Formation
     public function getDescriptionIt()
     {
         return $this->descriptionIt;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Formation
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 
     /**

@@ -15,6 +15,7 @@ easy_admin:
           - { property: 'descriptionFr', label: 'Description (FR)', type: 'fos_ckeditor' }
           - { property: 'descriptionDe', label: 'Description (DE)', type: 'fos_ckeditor' }
           - { property: 'descriptionIt', label: 'Description (IT)', type: 'fos_ckeditor' }
+          - { property: 'url', label: 'URL' }  
           - { type: 'group', css_class: 'col-sm-3' }
           - { property: 'tags', label: "Tags" }
           - { property: 'activities', label: "Activités" }
