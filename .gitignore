@@ -17,7 +17,7 @@
 /web/bundles/
 /web/uploads
 /web/media/cache
-	
+
 # Capistrano
 /Capfile
 /Gemfile
@@ -31,5 +31,10 @@
 # webpack / encore
 /node_modules
 /web/build
+/web/built
+
+# scp files
+myple.sql
+uploads.tar
 
 .DS_Store

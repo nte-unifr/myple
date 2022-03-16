@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "typeface-open-sans": "^0.0.54"
+  },
+  "scripts": {
+    "encore": "encore"
   }
 }
