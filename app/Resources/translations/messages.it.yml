@@ -35,4 +35,5 @@ form.label.delete: "eliminare?"
 go_to_formation: Accedere alla formazione
 formations: Formazioni
 formation: Formazione
+formations_action: Consultare le formazioni
 no_formation: Nessuna formazione attualmente prevista.

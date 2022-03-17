@@ -1,6 +1,6 @@
-about: Über uns 
-activity: Schritt 
-activities: Schritte 
+about: Über uns
+activity: Schritt
+activities: Schritte
 all: Alle
 app_description: MyPLE bietet den Studierenden 3 Arten von Hilfe an, die frei verfügbar sind, und zwar in Form von Computertools, die ihnen bei der Ausführung der Aufgaben des Studentenjobs helfen können.
 bibliography: Bibliographie
@@ -35,4 +35,5 @@ form.label.delete: "Löschen?"
 go_to_formation: Zugang zur Ausbildung
 formations: Ausbildungen
 formation: Ausbildung
+formations_action: Ausbildungen konsultieren
 no_formation: Derzeit keine Ausbildung geplant.

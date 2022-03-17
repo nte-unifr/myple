@@ -35,4 +35,5 @@ form.label.delete: "Supprimer ?"
 go_to_formation: Accéder à la formation
 formations: Formations
 formation: Formation
+formations_action: Consulter les formations
 no_formation: Aucune formation prévue actuellement.

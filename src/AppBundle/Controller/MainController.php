@@ -30,14 +30,17 @@ class MainController extends Controller
     $toolsFamiliesNb = $this->getDoctrine()->getRepository("AppBundle:ToolFamily")->countAll();
     $toolsNb = $this->getDoctrine()->getRepository("AppBundle:Tool")->countAll();
 
+    $formationsNb = $this->getDoctrine()->getRepository("AppBundle:Formation")->countAll();
+
     $news = $this->getDoctrine()->getRepository("AppBundle:News")->getRecentNews();
-    
+
     return $this->render('index/index.html.twig', array(
       'navTasks' => $navService->getTasks(),
       'tasksNb' => $tasksNb,
       'activitiesNb' => $activitiesNb,
       'toolsFamiliesNb' => $toolsFamiliesNb,
       'toolsNb' => $toolsNb,
+      'formationsNb' => $formationsNb,
       'news' => $news
     ));
   }
