@@ -25,6 +25,13 @@
       </a>
     </li>
   {% endif %}
+  {% if activity.formations is not empty %}
+    <li class="nav-item">
+      <a class="nav-link" href="#formations-tab" aria-controls="formations" role="tab" data-toggle="tab" aria-selected="false">
+        <h3 class="h5">{{ 'formations'|trans }}</h3>
+      <a>
+    </li>
+  {% endif %}
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2" id="activity-tab">
@@ -39,5 +46,8 @@
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="resources-tab">
     {% include '_shared/_resources-list.html.twig' with { 'resources': resources, 'list_title': 'linked_resources'|trans } %}
     {% include '_shared/_resources-list.html.twig' with { 'resources': tutorials, 'list_title': 'linked_tutorials'|trans } %}
+  </div>
+  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="formations-tab">
+    {% include '_shared/_formations-list.html.twig' with { 'formations': activity.formations, 'list_title': 'linked_formations'|trans } %}
   </div>
 </div>

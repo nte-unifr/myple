@@ -1,0 +1,18 @@
+{% if formations %}
+  <div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      {{ list_title }} <span class="badge badge-pill badge-primary">{{ formations | length }}</span>
+    </div>
+    <div class="list-group list-group-flush">
+      {% for formation in formations %}
+        <a href="{{ formation.url }}"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center popover-toggler"
+          data-toggle="popover" data-placement="right" data-content="{% include '_i18n/print_description.html.twig' with {'entity': formation} %}"
+        >
+          {% include '_i18n/print_title.html.twig' with {'entity': formation} %}
+          <i data-feather="clipboard" alt="formation"></i>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

@@ -182,6 +182,11 @@ class Activity
     private $training;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Formation", mappedBy="activities")
+     */
+    private $formations;
+
+    /**
      * @ORM\Column(type="date", nullable=true)
      *
      * @var \Date
@@ -197,11 +202,11 @@ class Activity
     {
         return $this->getNameFr();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -224,7 +229,7 @@ class Activity
     /**
      * Get nameFr
      *
-     * @return string 
+     * @return string
      */
     public function getNameFr()
     {
@@ -247,7 +252,7 @@ class Activity
     /**
      * Get nameDe
      *
-     * @return string 
+     * @return string
      */
     public function getNameDe()
     {
@@ -270,7 +275,7 @@ class Activity
     /**
      * Get nameIt
      *
-     * @return string 
+     * @return string
      */
     public function getNameIt()
     {
@@ -293,7 +298,7 @@ class Activity
     /**
      * Get nameEn
      *
-     * @return string 
+     * @return string
      */
     public function getNameEn()
     {
@@ -316,7 +321,7 @@ class Activity
     /**
      * Get stepsFr
      *
-     * @return string 
+     * @return string
      */
     public function getStepsFr()
     {
@@ -339,7 +344,7 @@ class Activity
     /**
      * Get stepsDe
      *
-     * @return string 
+     * @return string
      */
     public function getStepsDe()
     {
@@ -362,7 +367,7 @@ class Activity
     /**
      * Get stepsIt
      *
-     * @return string 
+     * @return string
      */
     public function getStepsIt()
     {
@@ -385,7 +390,7 @@ class Activity
     /**
      * Get stepsEn
      *
-     * @return string 
+     * @return string
      */
     public function getStepsEn()
     {
@@ -408,7 +413,7 @@ class Activity
     /**
      * Get goalFr
      *
-     * @return string 
+     * @return string
      */
     public function getGoalFr()
     {
@@ -431,7 +436,7 @@ class Activity
     /**
      * Get goalDe
      *
-     * @return string 
+     * @return string
      */
     public function getGoalDe()
     {
@@ -454,7 +459,7 @@ class Activity
     /**
      * Get goalIt
      *
-     * @return string 
+     * @return string
      */
     public function getGoalIt()
     {
@@ -477,7 +482,7 @@ class Activity
     /**
      * Get goalEn
      *
-     * @return string 
+     * @return string
      */
     public function getGoalEn()
     {
@@ -500,7 +505,7 @@ class Activity
     /**
      * Get refFr
      *
-     * @return string 
+     * @return string
      */
     public function getRefFr()
     {
@@ -523,7 +528,7 @@ class Activity
     /**
      * Get refDe
      *
-     * @return string 
+     * @return string
      */
     public function getRefDe()
     {
@@ -546,7 +551,7 @@ class Activity
     /**
      * Get refIt
      *
-     * @return string 
+     * @return string
      */
     public function getRefIt()
     {
@@ -569,7 +574,7 @@ class Activity
     /**
      * Get refEn
      *
-     * @return string 
+     * @return string
      */
     public function getRefEn()
     {
@@ -592,7 +597,7 @@ class Activity
     /**
      * Get biblio
      *
-     * @return string 
+     * @return string
      */
     public function getBiblio()
     {
@@ -615,7 +620,7 @@ class Activity
     /**
      * Get task
      *
-     * @return \AppBundle\Entity\Task 
+     * @return \AppBundle\Entity\Task
      */
     public function getTask()
     {
@@ -648,7 +653,7 @@ class Activity
     /**
      * Get tools
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTools()
     {
@@ -681,7 +686,7 @@ class Activity
     /**
      * Get resources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getResources()
     {
@@ -705,7 +710,7 @@ class Activity
     /**
      * Get rank
      *
-     * @return integer 
+     * @return integer
      */
     public function getRank()
     {
@@ -728,7 +733,7 @@ class Activity
     /**
      * Get humanUpdatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getHumanUpdatedAt()
     {
@@ -757,5 +762,15 @@ class Activity
     public function getTraining()
     {
         return $this->training;
+    }
+
+    /**
+     * Get formation.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormations()
+    {
+        return $this->formations;
     }
 }

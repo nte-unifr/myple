@@ -14,6 +14,13 @@
       <h3 class="h5">{{ 'resources'|trans }}</h3>
     </a>
   </li>
+  {% if formations %}
+    <li class="nav-item">
+      <a class="nav-link" href="#formations{{ task.id }}" aria-controls="formations" role="tab" data-toggle="tab" aria-selected="false">
+        <h3 class="h5">{{ 'formations'|trans }}</h3>
+      </a>
+    </li>
+  {% endif %}
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active py-4 pl-2 raw" id="help{{ task.id }}">
@@ -25,5 +32,8 @@
   <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="resources{{ task.id }}">
     {% include '_shared/_resources-list.html.twig' with { 'resources': resources, 'list_title': 'linked_resources'|trans } %}
     {% include '_shared/_resources-list.html.twig' with { 'resources': tutorials, 'list_title': 'linked_tutorials'|trans } %}
+  </div>
+  <div role="tabpanel" class="tab-pane fade py-4 pl-2" id="formations{{ task.id }}">
+    {% include '_shared/_formations-list.html.twig' with { 'formations': formations, 'list_title': 'linked_formations'|trans } %}
   </div>
 </div>

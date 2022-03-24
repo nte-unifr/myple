@@ -20,7 +20,8 @@ class TaskController extends Controller
         $resourcesRepo = $this->getDoctrine()->getRepository('AppBundle:Resource');
         $toolsRepo = $this->getDoctrine()->getRepository('AppBundle:Tool');
         $familiesRepo = $this->getDoctrine()->getRepository('AppBundle:ToolFamily');
-        
+        $formationsRepo = $this->getDoctrine()->getRepository('AppBundle:Formation');
+
         $task = $repository->find($id);
 
         // tutorials from the task
@@ -79,8 +80,15 @@ class TaskController extends Controller
             ->where('a.task = :task_id')
             ->setParameter('task_id', $id)
             ->getQuery()->getResult();
-        
+
         $families = $familiesRepo->findAll();
+
+        $formations = $formationsRepo->createQueryBuilder('f')
+            ->select('f')
+            ->innerJoin('f.activities', 'a')
+            ->where('a.task = :task_id')
+            ->setParameter('task_id', $id)
+            ->getQuery()->getResult();
 
         return $this->render('tasks/show.html.twig', array(
             'task' => $task,
@@ -88,6 +96,7 @@ class TaskController extends Controller
             'tutorials' => $tutorials,
             'tools' => $tools,
             'families' => $families,
+            'formations' => $formations,
             'navTasks' => $navService->getTasks()
         ));
     }
