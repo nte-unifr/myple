@@ -1,20 +1,9 @@
-<div class="raw">
-  &nbsp;
-  {% if "en" in app.request.locale and entity.infoEn is not empty %}
-    <i data-feather="info" class="ml-auto"
-      data-toggle="tooltip" title="{{ entity.infoEn | striptags | raw }}">
-    </i>
-  {% elseif "it" in app.request.locale and entity.infoIt is not empty %}
-    <i data-feather="info" class="ml-auto"
-      data-toggle="tooltip" title="{{ entity.infoIr | striptags | raw }}">
-    </i>
-  {% elseif "de" in app.request.locale and entity.infoDe is not empty %}
-    <i data-feather="info" class="ml-auto"
-      data-toggle="tooltip" title="{{ entity.infoDe | striptags | raw }}">
-    </i>
-  {% elseif entity.infoFr is not empty %}
-    <i data-feather="info" class="ml-auto" width="18" height="18"
-      data-toggle="tooltip" title="{{ entity.infoFr | striptags | raw }}">
-    </i>
-  {% endif %}
-</div>
+{% if "en" in app.request.locale and entity.infoEn is not empty %}
+  <a class="list-group-item list-group-item-action pointer" data-toggle="tooltip" data-trigger="click" title="{{ tool.infoEn | striptags | raw }}">Info</a>
+{% elseif "it" in app.request.locale and entity.infoIt is not empty %}
+  <a class="list-group-item list-group-item-action pointer" data-toggle="tooltip" data-trigger="click" title="{{ tool.infoIt | striptags | raw }}">Info</a>
+{% elseif "de" in app.request.locale and entity.infoDe is not empty %}
+  <a class="list-group-item list-group-item-action pointer" data-toggle="tooltip" data-trigger="click" title="{{ tool.infoDe | striptags | raw }}">Info</a>
+{% elseif entity.infoFr is not empty %}
+  <a class="list-group-item list-group-item-action pointer" data-toggle="tooltip" data-trigger="click" title="{{ tool.infoFr | striptags | raw }}">Info</a>
+{% endif %}
