@@ -81,34 +81,6 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="goalFr", type="text")
-     */
-    private $goalFr;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="goalDe", type="text", nullable=true)
-     */
-    private $goalDe;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="goalIt", type="text", nullable=true)
-     */
-    private $goalIt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="goalEn", type="text", nullable=true)
-     */
-    private $goalEn;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="refFr", type="text", nullable=true)
      */
     private $refFr;
@@ -395,98 +367,6 @@ class Activity
     public function getStepsEn()
     {
         return $this->stepsEn;
-    }
-
-    /**
-     * Set goalFr
-     *
-     * @param string $goalFr
-     * @return Activity
-     */
-    public function setGoalFr($goalFr)
-    {
-        $this->goalFr = $goalFr;
-
-        return $this;
-    }
-
-    /**
-     * Get goalFr
-     *
-     * @return string
-     */
-    public function getGoalFr()
-    {
-        return $this->goalFr;
-    }
-
-    /**
-     * Set goalDe
-     *
-     * @param string $goalDe
-     * @return Activity
-     */
-    public function setGoalDe($goalDe)
-    {
-        $this->goalDe = $goalDe;
-
-        return $this;
-    }
-
-    /**
-     * Get goalDe
-     *
-     * @return string
-     */
-    public function getGoalDe()
-    {
-        return $this->goalDe;
-    }
-
-    /**
-     * Set goalIt
-     *
-     * @param string $goalIt
-     * @return Activity
-     */
-    public function setGoalIt($goalIt)
-    {
-        $this->goalIt = $goalIt;
-
-        return $this;
-    }
-
-    /**
-     * Get goalIt
-     *
-     * @return string
-     */
-    public function getGoalIt()
-    {
-        return $this->goalIt;
-    }
-
-    /**
-     * Set goalEn
-     *
-     * @param string $goalEn
-     * @return Activity
-     */
-    public function setGoalEn($goalEn)
-    {
-        $this->goalEn = $goalEn;
-
-        return $this;
-    }
-
-    /**
-     * Get goalEn
-     *
-     * @return string
-     */
-    public function getGoalEn()
-    {
-        return $this->goalEn;
     }
 
     /**
