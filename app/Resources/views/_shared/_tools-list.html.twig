@@ -34,7 +34,7 @@
             <strong class="px-4">{{ tool.name }}</strong>
             <div class="ml-auto p-2 d-none d-sm-block">
               {% for family in tool.families %}
-                <span class="badge badge-light family" data-id="{{ family.id }}"">
+                <span class="badge badge-light family" data-id="{{ family.id }}">
                   {% include '_i18n/print_name.html.twig' with {'entity': family} %}
                 </span>
               {% endfor %}

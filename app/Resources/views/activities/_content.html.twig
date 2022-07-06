@@ -6,30 +6,30 @@
   </li>
   {% if activity.biblio %}
     <li class="nav-item">
-      <a class="nav-link" href="#biblio-tab" aria-controls="biblio" role="tab" data-toggle="tab" aria-selected="false">
+      <a class="nav-link" href="#biblio-tab" aria-controls="biblio-tab" role="tab" data-toggle="tab" aria-selected="false">
         <h3 class="h5">{{ 'bibliography'|trans }}</h3>
       </a>
     </li>
   {% endif %}
   {% if activity.tools is not empty %}
     <li class="nav-item">
-      <a class="nav-link" href="#tools-tab" aria-controls="tools" role="tab" data-toggle="tab" aria-selected="false">
+      <a class="nav-link" href="#tools-tab" aria-controls="tools-tab" role="tab" data-toggle="tab" aria-selected="false">
         <h3 class="h5">{{ 'tools'|trans }}</h3>
       </a>
     </li>
   {% endif %}
   {% if resources is not empty or tutorials is not empty %}
     <li class="nav-item">
-      <a class="nav-link" href="#resources-tab" aria-controls="resources" role="tab" data-toggle="tab" aria-selected="false">
+      <a class="nav-link" href="#resources-tab" aria-controls="resources-tab" role="tab" data-toggle="tab" aria-selected="false">
         <h3 class="h5">{{ 'resources'|trans }}</h3>
       </a>
     </li>
   {% endif %}
   {% if activity.formations is not empty %}
     <li class="nav-item">
-      <a class="nav-link" href="#formations-tab" aria-controls="formations" role="tab" data-toggle="tab" aria-selected="false">
+      <a class="nav-link" href="#formations-tab" aria-controls="formations-tab" role="tab" data-toggle="tab" aria-selected="false">
         <h3 class="h5">{{ 'formations'|trans }}</h3>
-      <a>
+      </a>
     </li>
   {% endif %}
 </ul>
